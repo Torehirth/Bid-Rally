@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>BidMaster - Online Auction Platform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-base-100 shadow-md">
+      <div class="navbar container mx-auto">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost lg:hidden">
+              <i class="fas fa-bars"></i>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <a
+                  href="index.html"
+                  class="font-medium"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="items.html"
+                  class="font-medium"
+                  >All Items</a
+                >
+              </li>
+              <li>
+                <a class="font-medium">Categories</a>
+                <ul class="p-2">
+                  <li><a href="category.html?id=art">Art</a></li>
+                  <li>
+                    <a href="category.html?id=electronics"
+                      >Electronics</a
+                    >
+                  </li>
+                  <li>
+                    <a href="category.html?id=collectibles"
+                      >Collectibles</a
+                    >
+                  </li>
+                  <li>
+                    <a href="category.html?id=jewelry">Jewelry</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="font-medium"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="font-medium"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a
+            href="index.html"
+            class="btn btn-ghost text-xl">
+            <i class="fas fa-gavel text-primary mr-2"></i>
+            <span class="font-bold">BidMaster</span>
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <a
+                href="index.html"
+                class="font-medium"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="items.html"
+                class="font-medium"
+                >All Items</a
+              >
+            </li>
+            <li>
+              <details>
+                <summary class="font-medium">Categories</summary>
+                <ul class="p-2 bg-base-100 z-10">
+                  <li><a href="category.html?id=art">Art</a></li>
+                  <li>
+                    <a href="category.html?id=electronics"
+                      >Electronics</a
+                    >
+                  </li>
+                  <li>
+                    <a href="category.html?id=collectibles"
+                      >Collectibles</a
+                    >
+                  </li>
+                  <li>
+                    <a href="category.html?id=jewelry">Jewelry</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="font-medium"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="font-medium"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            href="login.html"
+            class="btn btn-ghost btn-sm mr-2"
+            >Login</a
+          >
+          <a
+            href="register.html"
+            class="btn btn-primary btn-sm"
+            >Register</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section
+        class="hero min-h-[60vh] bg-base-200"
+        style="
+          background-image: url('https://picsum.photos/id/1083/1600/800');
+          background-size: cover;
+          background-position: center;
+        ">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">
+              Discover Unique Treasures
+            </h1>
+            <p class="mb-5">
+              Bid on exclusive items from around the world. Find rare
+              collectibles, art, electronics, and more at competitive
+              prices.
+            </p>
+            <a
+              href="items.html"
+              class="btn btn-primary"
+              >Browse Auctions</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="py-12 bg-base-100">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-center">
+            How It Works
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100">
+              <div class="card-body items-center text-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  1
+                </div>
+                <h3 class="card-title">Register</h3>
+                <p>
+                  Create an account to start bidding on items. It's
+                  quick and easy to get started.
+                </p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100">
+              <div class="card-body items-center text-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  2
+                </div>
+                <h3 class="card-title">Browse & Bid</h3>
+                <p>
+                  Find items you're interested in and place your bids.
+                  Monitor your active bids in real-time.
+                </p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100">
+              <div class="card-body items-center text-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
+                  3
+                </div>
+                <h3 class="card-title">Win & Collect</h3>
+                <p>
+                  If you win, you'll be notified immediately. Pay
+                  securely and arrange delivery or pickup.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section class="py-12 bg-base-200">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-center">
+            Popular Categories
+          </h2>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a
+              href="category.html?id=art"
+              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
+              <div class="card-body items-center text-center">
+                <i
+                  class="fas fa-palette text-4xl text-primary mb-2"></i>
+                <h3 class="card-title">Art</h3>
+                <p class="text-sm">Paintings, Sculptures, Prints</p>
+              </div>
+            </a>
+
+            <a
+              href="category.html?id=electronics"
+              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
+              <div class="card-body items-center text-center">
+                <i
+                  class="fas fa-laptop text-4xl text-primary mb-2"></i>
+                <h3 class="card-title">Electronics</h3>
+                <p class="text-sm">Vintage & Modern Gadgets</p>
+              </div>
+            </a>
+
+            <a
+              href="category.html?id=jewelry"
+              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
+              <div class="card-body items-center text-center">
+                <i class="fas fa-gem text-4xl text-primary mb-2"></i>
+                <h3 class="card-title">Jewelry</h3>
+                <p class="text-sm">Watches, Rings, Necklaces</p>
+              </div>
+            </a>
+
+            <a
+              href="category.html?id=collectibles"
+              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
+              <div class="card-body items-center text-center">
+                <i
+                  class="fas fa-trophy text-4xl text-primary mb-2"></i>
+                <h3 class="card-title">Collectibles</h3>
+                <p class="text-sm">Stamps, Coins, Memorabilia</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Auctions -->
+      <section class="py-12 bg-base-100">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Featured Auctions</h2>
+            <a
+              href="items.html"
+              class="btn btn-outline btn-sm"
+              >View All</a
+            >
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Auction Item 1 -->
+            <div class="card bg-base-100 shadow-xl">
+              <figure>
+                <img
+                  src="https://picsum.photos/id/96/400/300"
+                  alt="Vintage Camera" />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Vintage Camera
+                  <div class="badge badge-secondary">New</div>
+                </h3>
+                <p>
+                  A rare vintage camera from the 1950s in excellent
+                  condition.
+                </p>
+                <div class="flex items-center mt-2">
+                  <div class="badge badge-outline">Collectibles</div>
+                  <div class="badge badge-outline ml-2">
+                    Electronics
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-sm">Current Bid:</p>
+                  <p class="font-bold text-xl text-primary">$450</p>
+                  <p class="text-xs text-gray-500">
+                    Ends in 2d 5h 30m
+                  </p>
+                </div>
+                <div class="card-actions justify-end mt-2">
+                  <a
+                    href="item.html?id=1"
+                    class="btn btn-primary btn-sm"
+                    >Bid Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction Item 2 -->
+            <div class="card bg-base-100 shadow-xl">
+              <figure>
+                <img
+                  src="https://picsum.photos/id/25/400/300"
+                  alt="Antique Pocket Watch" />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">Antique Pocket Watch</h3>
+                <p>
+                  18th century gold-plated pocket watch with intricate
+                  engravings.
+                </p>
+                <div class="flex items-center mt-2">
+                  <div class="badge badge-outline">Antiques</div>
+                  <div class="badge badge-outline ml-2">Jewelry</div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-sm">Current Bid:</p>
+                  <p class="font-bold text-xl text-primary">$1,200</p>
+                  <p class="text-xs text-gray-500">
+                    Ends in 1d 12h 45m
+                  </p>
+                </div>
+                <div class="card-actions justify-end mt-2">
+                  <a
+                    href="item.html?id=2"
+                    class="btn btn-primary btn-sm"
+                    >Bid Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction Item 3 -->
+            <div class="card bg-base-100 shadow-xl">
+              <figure>
+                <img
+                  src="https://picsum.photos/id/65/400/300"
+                  alt="Modern Art Painting" />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">Modern Art Painting</h3>
+                <p>
+                  Original abstract painting by emerging contemporary
+                  artist.
+                </p>
+                <div class="flex items-center mt-2">
+                  <div class="badge badge-outline">Art</div>
+                  <div class="badge badge-outline ml-2">Modern</div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-sm">Current Bid:</p>
+                  <p class="font-bold text-xl text-primary">$750</p>
+                  <p class="text-xs text-gray-500">
+                    Ends in 3d 8h 15m
+                  </p>
+                </div>
+                <div class="card-actions justify-end mt-2">
+                  <a
+                    href="item.html?id=3"
+                    class="btn btn-primary btn-sm"
+                    >Bid Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction Item 4 -->
+            <div class="card bg-base-100 shadow-xl">
+              <figure>
+                <img
+                  src="https://picsum.photos/id/119/400/300"
+                  alt="Rare Vinyl Record" />
+              </figure>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Rare Vinyl Record
+                  <div class="badge badge-secondary">Hot</div>
+                </h3>
+                <p>
+                  First pressing of a legendary album, mint condition,
+                  never played.
+                </p>
+                <div class="flex items-center mt-2">
+                  <div class="badge badge-outline">Music</div>
+                  <div class="badge badge-outline ml-2">
+                    Collectibles
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-sm">Current Bid:</p>
+                  <p class="font-bold text-xl text-primary">$325</p>
+                  <p class="text-xs text-gray-500">Ends in 5h 20m</p>
+                </div>
+                <div class="card-actions justify-end mt-2">
+                  <a
+                    href="item.html?id=4"
+                    class="btn btn-primary btn-sm"
+                    >Bid Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <!-- <section class="py-12 bg-base-200">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-center">
+            What Our Users Say
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card bg-base-100 shadow-xl">
+              <div class="card-body">
+                <div class="flex items-center mb-4">
+                  <div class="avatar">
+                    <div class="w-12 rounded-full">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=John"
+                        alt="John D." />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="font-bold">John D.</h3>
+                    <div class="rating rating-sm">
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-1"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  "I found a rare vintage watch that I'd been
+                  searching for years. The bidding process was
+                  exciting and the transaction was smooth."
+                </p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+              <div class="card-body">
+                <div class="flex items-center mb-4">
+                  <div class="avatar">
+                    <div class="w-12 rounded-full">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                        alt="Sarah M." />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="font-bold">Sarah M.</h3>
+                    <div class="rating rating-sm">
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-2"
+                        class="mask mask-star-2 bg-orange-400" />
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  "As an art collector, I appreciate the verification
+                  process for all listed items. I've purchased several
+                  pieces and have been very satisfied."
+                </p>
+              </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+              <div class="card-body">
+                <div class="flex items-center mb-4">
+                  <div class="avatar">
+                    <div class="w-12 rounded-full">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Robert"
+                        alt="Robert K." />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="font-bold">Robert K.</h3>
+                    <div class="rating rating-sm">
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                      <input
+                        type="radio"
+                        name="rating-3"
+                        class="mask mask-star-2 bg-orange-400"
+                        checked />
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  "I've been both a buyer and seller on BidMaster. The
+                  platform is intuitive and the customer service is
+                  exceptional when you need assistance."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      <!-- </section> -->
+
+      <!-- Newsletter -->
+      <!-- <section class="py-12 bg-primary text-primary-content">
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0 md:w-1/2">
+              <h2 class="text-3xl font-bold mb-2">Stay Updated</h2>
+              <p>
+                Subscribe to our newsletter to get notified about new
+                auctions and exclusive offers.
+              </p>
+            </div>
+            <div class="w-full md:w-1/2">
+              <form class="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="input input-bordered w-full" />
+                <button
+                  class="btn bg-white text-primary hover:bg-gray-200">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral text-neutral-content">
+      <div class="container mx-auto px-4">
+        <div class="footer py-10">
+          <div>
+            <span class="footer-title">About BidMaster</span>
+            <a
+              href="about.html"
+              class="link link-hover"
+              >About Us</a
+            >
+            <a
+              href="about.html#team"
+              class="link link-hover"
+              >Our Team</a
+            >
+            <a
+              href="about.html#history"
+              class="link link-hover"
+              >History</a
+            >
+            <a
+              href="careers.html"
+              class="link link-hover"
+              >Careers</a
+            >
+          </div>
+          <div>
+            <span class="footer-title">Services</span>
+            <a
+              href="services.html#selling"
+              class="link link-hover"
+              >Selling</a
+            >
+            <a
+              href="services.html#buying"
+              class="link link-hover"
+              >Buying</a
+            >
+            <a
+              href="services.html#authentication"
+              class="link link-hover"
+              >Authentication</a
+            >
+            <a
+              href="services.html#shipping"
+              class="link link-hover"
+              >Shipping</a
+            >
+          </div>
+          <div>
+            <span class="footer-title">Help & Support</span>
+            <a
+              href="faq.html"
+              class="link link-hover"
+              >FAQ</a
+            >
+            <a
+              href="contact.html"
+              class="link link-hover"
+              >Contact Us</a
+            >
+            <a
+              href="terms.html"
+              class="link link-hover"
+              >Terms of Service</a
+            >
+            <a
+              href="privacy.html"
+              class="link link-hover"
+              >Privacy Policy</a
+            >
+          </div>
+          <div>
+            <span class="footer-title">Connect With Us</span>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="text-xl"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="text-xl"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-xl"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-xl"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+            <div class="mt-4">
+              <p>Download our app:</p>
+              <div class="flex gap-2 mt-2">
+                <a
+                  href="#"
+                  class="btn btn-outline btn-sm">
+                  <i class="fab fa-apple mr-1"></i> App Store
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-outline btn-sm">
+                  <i class="fab fa-google-play mr-1"></i> Google Play
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="footer footer-center p-4 border-t border-base-300">
+          <div>
+            <p>© 2025 BidRally - All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script>
+      // Simple JavaScript for countdown timers
+      document.addEventListener("DOMContentLoaded", function () {
+        // This would be replaced with actual auction end times from your database
+        console.log("Auction website loaded successfully");
+      });
+    </script> -->
+  </body>
+</html>
