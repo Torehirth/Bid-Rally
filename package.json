@@ -1,0 +1,29 @@
+{
+  "name": "bid-rally",
+  "version": "1.0.0",
+  "description": "A bidding application built with Vite and Tailwind CSS",
+  "homepage": "https://github.com/Torehirth/Bid-Rally#readme",
+  "bugs": {
+    "url": "https://github.com/Torehirth/Bid-Rally/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torehirth/Bid-Rally.git"
+  },
+  "license": "ISC",
+  "author": "Tore Hirth <torehirth@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.6"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

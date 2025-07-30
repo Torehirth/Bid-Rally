@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white: #f5f5f5;
+  --color-black: #171717;
+  --color-dark-green: #047857;
+  --color-mint-green: #6ee7b7;
+  --color-gray: #a1a1a1;
+  --color-gray-base: color-mix(
+    in srgb,
+    var(--color-gray) 20%,
+    transparent
+  );
+  --color-warning: #ff8904;
+  --color-error: #e7000b;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-dark-green  text-white border-2 border-dark-green  px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-mint-green hover:border-mint-green hover:text-black;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-dark-green border-2 border-dark-green  px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-dark-green hover:text-white;
+  }
+
+  .alert-info {
+    @apply p-4 rounded-lg border-2 my-4 bg-gray/10 border-gray text-black;
+  }
+
+  .alert-warning {
+    @apply p-4 rounded-lg border-2 my-4 bg-warning/10 border-warning text-black;
+  }
+
+  .alert-error {
+    @apply p-4 rounded-lg border-2 my-4 bg-error/10 border-error text-black;
+  }
+
+  .card {
+    @apply bg-white border border-gray rounded-xl p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply bg-white border-2 border-gray text-black p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:border-dark-green focus:ring-4 focus:ring-dark-green/10;
+  }
+
+  .input-error {
+    @apply bg-white border-2 border-error text-black p-3 rounded-lg transition-colors duration-300 focus:outline-none focus:border-error focus:ring-4 focus:ring-error/10;
+  }
+}

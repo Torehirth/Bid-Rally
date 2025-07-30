@@ -1,188 +1,224 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>BidMaster - Online Auction Platform</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
-      rel="stylesheet"
-      type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>BidRally - Online Auction Platform</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      href="/src/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/c4115ef720.js"
+      crossorigin="anonymous"></script>
+    <link
+      rel="icon"
+      href="/assets/favicon/favicon.ico"
+      type="image/x-icon" />
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen bg-white text-black">
     <!-- Header -->
-    <header class="bg-base-100 shadow-md">
-      <div class="navbar container mx-auto">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div
-              tabindex="0"
-              role="button"
-              class="btn btn-ghost lg:hidden">
-              <i class="fas fa-bars"></i>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
-                <a
-                  href="index.html"
-                  class="font-medium"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="items.html"
-                  class="font-medium"
-                  >All Items</a
-                >
-              </li>
-              <li>
-                <a class="font-medium">Categories</a>
-                <ul class="p-2">
-                  <li><a href="category.html?id=art">Art</a></li>
-                  <li>
-                    <a href="category.html?id=electronics"
-                      >Electronics</a
-                    >
-                  </li>
-                  <li>
-                    <a href="category.html?id=collectibles"
-                      >Collectibles</a
-                    >
-                  </li>
-                  <li>
-                    <a href="category.html?id=jewelry">Jewelry</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="font-medium"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="font-medium"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+    <header
+      class="shadow-md"
+      role="banner">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a
+              href="index.html"
+              class="flex gap-2 items-center text-xl font-bold hover:text-dark-green transition-colors"
+              aria-label="BidRally home page">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5"
+                viewBox="0 0 576 512"
+                fill="currentColor"
+                aria-hidden="true">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M169.6 153.4l-18.7-18.7c-12.5-12.5-12.5-32.8 0-45.3L265.6-25.4c12.5-12.5 32.8-12.5 45.3 0L329.6-6.6c12.5 12.5 12.5 32.8 0 45.3L214.9 153.4c-12.5 12.5-32.8 12.5-45.3 0zM276 211.7l-31.4-31.4 112-112 119.4 119.4-112 112-31.4-31.4-232 232c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6l232-232zM390.9 374.6c-12.5-12.5-12.5-32.8 0-45.3L505.6 214.6c12.5-12.5 32.8-12.5 45.3 0l18.7 18.7c12.5 12.5 12.5 32.8 0 45.3L454.9 393.4c-12.5 12.5-32.8 12.5-45.3 0l-18.7-18.7z" />
+              </svg>
+              <span class="text-2xl">BidRally</span>
+            </a>
           </div>
-          <a
-            href="index.html"
-            class="btn btn-ghost text-xl">
-            <i class="fas fa-gavel text-primary mr-2"></i>
-            <span class="font-bold">BidMaster</span>
-          </a>
+
+          <!-- Desktop Navigation -->
+          <nav
+            class="hidden lg:flex gap-4"
+            role="navigation"
+            aria-label="Main navigation">
+            <a
+              href="index.html"
+              class="hover:text-dark-green font-medium text-lg transition-colors"
+              aria-current="page"
+              >Home</a
+            >
+            <a
+              href="items.html"
+              class="hover:text-dark-green font-medium text-lg transition-colors"
+              >All Items</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-dark-green font-medium text-lg transition-colors"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-dark-green font-medium text-lg transition-colors"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="lg:flex">
+            <!-- User profile and logout buttons -->
+            <div
+              class="flex items-center gap-4"
+              role="group"
+              aria-label="User account actions">
+              <a
+                href="#"
+                class="flex flex-col justify-center items-center gap-1 hover:text-dark-green font-medium text-sm transition-colors"
+                aria-label="View user profile">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
+                </svg>
+                <span>Profile</span>
+              </a>
+              <a
+                href="#"
+                class="flex flex-col justify-center items-center gap-1 hover:text-dark-green font-medium text-sm transition-colors"
+                aria-label="Log out of account">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0zM502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+                </svg>
+                <span>log out</span>
+              </a>
+            </div>
+            <!-- login and register buttons -->
+            <div
+              class="flex items-center gap-2"
+              role="group"
+              aria-label="Authentication actions">
+              <a
+                href="login.html"
+                class="px-4 py-2 hover:text-dark-green font-medium transition-colors"
+                >Login</a
+              >
+              <a
+                href="register.html"
+                class="btn-primary font-medium px-4 py-2"
+                >Register</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              id="mobile-menu-button"
+              class="p-2 rounded-md hover:text-dark-green cursor-pointer focus:outline-none focus:ring-2"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile navigation menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <a
-                href="index.html"
-                class="font-medium"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="items.html"
-                class="font-medium"
-                >All Items</a
-              >
-            </li>
-            <li>
-              <details>
-                <summary class="font-medium">Categories</summary>
-                <ul class="p-2 bg-base-100 z-10">
-                  <li><a href="category.html?id=art">Art</a></li>
-                  <li>
-                    <a href="category.html?id=electronics"
-                      >Electronics</a
-                    >
-                  </li>
-                  <li>
-                    <a href="category.html?id=collectibles"
-                      >Collectibles</a
-                    >
-                  </li>
-                  <li>
-                    <a href="category.html?id=jewelry">Jewelry</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a
-                href="about.html"
-                class="font-medium"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                class="font-medium"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a
-            href="login.html"
-            class="btn btn-ghost btn-sm mr-2"
-            >Login</a
-          >
-          <a
-            href="register.html"
-            class="btn btn-primary btn-sm"
-            >Register</a
-          >
-        </div>
+
+        <!-- Mobile Navigation -->
+        <nav
+          id="mobile-menu"
+          class="lg:hidden hidden border-t border-gray-base py-4"
+          role="navigation"
+          aria-label="Mobile navigation">
+          <div class="flex flex-col gap-3">
+            <a
+              href="index.html"
+              class="hover:text-dark-green font-medium transition-colors"
+              aria-current="page"
+              >Home</a
+            >
+            <a
+              href="items.html"
+              class="hover:text-dark-green font-medium transition-colors"
+              >All Items</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-dark-green font-medium transition-colors"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-dark-green font-medium transition-colors"
+              >Contact</a
+            >
+          </div>
+        </nav>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main
+      class="flex-grow"
+      role="main">
       <!-- Hero Section -->
       <section
-        class="hero min-h-[60vh] bg-base-200"
-        style="
-          background-image: url('https://picsum.photos/id/1083/1600/800');
-          background-size: cover;
-          background-position: center;
-        ">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">
+        class="relative"
+        aria-labelledby="hero-heading">
+        <img
+          src="/assets/images/john-2FPjlAyMQTA-unsplash.jpg"
+          alt="several persons looking at auction items on a laptop"
+          class="absolute inset-0 w-full h-full object-cover"
+          role="presentation" />
+        <!-- Dark overlay on top of image -->
+        <div
+          class="absolute inset-0 bg-black/80"
+          aria-hidden="true"></div>
+        <div
+          class="relative flex items-center justify-center min-h-[60vh] px-4">
+          <div
+            class="flex flex-col gap-4 max-w-md text-white text-center">
+            <h1
+              id="hero-heading"
+              class="text-5xl font-bold tracking-wide">
               Discover Unique Treasures
             </h1>
-            <p class="mb-5">
+            <p class="font-medium tracking-wide">
               Bid on exclusive items from around the world. Find rare
               collectibles, art, electronics, and more at competitive
               prices.
             </p>
             <a
               href="items.html"
-              class="btn btn-primary"
+              class="btn-primary text-lg max-w-[300px] mx-auto"
+              role="button"
               >Browse Auctions</a
             >
           </div>
@@ -190,588 +226,400 @@
       </section>
 
       <!-- How It Works -->
-      <section class="py-12 bg-base-100">
+      <section
+        class="py-16 bg-gray-base"
+        aria-labelledby="how-it-works-heading">
         <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-8 text-center">
+          <h2
+            id="how-it-works-heading"
+            class="text-3xl font-bold mb-8 text-center">
             How It Works
           </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card bg-base-100">
-              <div class="card-body items-center text-center">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
-                  1
-                </div>
-                <h3 class="card-title">Register</h3>
-                <p>
-                  Create an account to start bidding on items. It's
-                  quick and easy to get started.
-                </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8"
+            role="list">
+            <article
+              class="bg-white rounded-lg shadow-md p-6 text-center"
+              role="listitem">
+              <div
+                class="w-16 h-16 rounded-full bg-dark-green flex items-center justify-center text-white text-xl font-bold mb-4 mx-auto"
+                aria-label="Step 1">
+                1
               </div>
-            </div>
+              <h3 class="text-lg font-bold mb-3">Register</h3>
+              <p>
+                Create an account to start bidding on items. It's
+                quick and easy to get started.
+              </p>
+            </article>
 
-            <div class="card bg-base-100">
-              <div class="card-body items-center text-center">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
-                  2
-                </div>
-                <h3 class="card-title">Browse & Bid</h3>
-                <p>
-                  Find items you're interested in and place your bids.
-                  Monitor your active bids in real-time.
-                </p>
+            <article
+              class="bg-white rounded-lg shadow-md p-6 text-center"
+              role="listitem">
+              <div
+                class="w-16 h-16 rounded-full bg-dark-green flex items-center justify-center text-white text-xl font-bold mb-4 mx-auto"
+                aria-label="Step 2">
+                2
               </div>
-            </div>
+              <h3 class="text-lg font-bold mb-3">Browse & Bid</h3>
+              <p>
+                Find items you're interested in and place your bids.
+                Monitor your active bids in real-time.
+              </p>
+            </article>
 
-            <div class="card bg-base-100">
-              <div class="card-body items-center text-center">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mb-4">
-                  3
-                </div>
-                <h3 class="card-title">Win & Collect</h3>
-                <p>
-                  If you win, you'll be notified immediately. Pay
-                  securely and arrange delivery or pickup.
-                </p>
+            <article
+              class="bg-white rounded-lg shadow-md p-6 text-center"
+              role="listitem">
+              <div
+                class="w-16 h-16 rounded-full bg-dark-green flex items-center justify-center text-white text-xl font-bold mb-4 mx-auto"
+                aria-label="Step 3">
+                3
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Categories Section -->
-      <section class="py-12 bg-base-200">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-8 text-center">
-            Popular Categories
-          </h2>
-
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a
-              href="category.html?id=art"
-              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-              <div class="card-body items-center text-center">
-                <i
-                  class="fas fa-palette text-4xl text-primary mb-2"></i>
-                <h3 class="card-title">Art</h3>
-                <p class="text-sm">Paintings, Sculptures, Prints</p>
-              </div>
-            </a>
-
-            <a
-              href="category.html?id=electronics"
-              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-              <div class="card-body items-center text-center">
-                <i
-                  class="fas fa-laptop text-4xl text-primary mb-2"></i>
-                <h3 class="card-title">Electronics</h3>
-                <p class="text-sm">Vintage & Modern Gadgets</p>
-              </div>
-            </a>
-
-            <a
-              href="category.html?id=jewelry"
-              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-              <div class="card-body items-center text-center">
-                <i class="fas fa-gem text-4xl text-primary mb-2"></i>
-                <h3 class="card-title">Jewelry</h3>
-                <p class="text-sm">Watches, Rings, Necklaces</p>
-              </div>
-            </a>
-
-            <a
-              href="category.html?id=collectibles"
-              class="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
-              <div class="card-body items-center text-center">
-                <i
-                  class="fas fa-trophy text-4xl text-primary mb-2"></i>
-                <h3 class="card-title">Collectibles</h3>
-                <p class="text-sm">Stamps, Coins, Memorabilia</p>
-              </div>
-            </a>
+              <h3 class="text-lg font-bold mb-3">Win & Collect</h3>
+              <p>
+                If you win, you'll be notified immediately. Pay
+                securely and arrange delivery or pickup.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
       <!-- Featured Auctions -->
-      <section class="py-12 bg-base-100">
+      <section
+        class="py-16"
+        aria-labelledby="featured-auctions-heading">
         <div class="container mx-auto px-4">
           <div class="flex justify-between items-center mb-8">
-            <h2 class="text-3xl font-bold">Featured Auctions</h2>
+            <h2
+              id="featured-auctions-heading"
+              class="text-3xl font-bold">
+              Featured Auctions
+            </h2>
             <a
               href="items.html"
-              class="btn btn-outline btn-sm"
-              >View All</a
-            >
+              class="px-4 py-2 border-2 border-dark-green text-dark-green rounded-md hover:bg-dark-green hover:text-white transition-colors font-medium"
+              aria-label="View all auction items">
+              View All
+            </a>
           </div>
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            role="list"
+            aria-label="Featured auction items">
             <!-- Auction Item 1 -->
-            <div class="card bg-base-100 shadow-xl">
-              <figure>
+            <article
+              class="rounded-lg shadow-xl overflow-hidden"
+              role="listitem">
+              <div class="relative">
                 <img
-                  src="https://picsum.photos/id/96/400/300"
-                  alt="Vintage Camera" />
-              </figure>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Vintage Camera
-                  <div class="badge badge-secondary">New</div>
-                </h3>
-                <p>
+                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.jpg"
+                  alt="Vintage camera from the 1950s"
+                  class="w-full h-48 object-cover" />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-lg font-bold">Vintage Camera</h3>
+                </div>
+                <p class="mb-3 text-sm">
                   A rare vintage camera from the 1950s in excellent
                   condition.
                 </p>
-                <div class="flex items-center mt-2">
-                  <div class="badge badge-outline">Collectibles</div>
-                  <div class="badge badge-outline ml-2">
-                    Electronics
-                  </div>
-                </div>
-                <div class="mt-4">
+                <div class="mb-4">
                   <p class="text-sm">Current Bid:</p>
-                  <p class="font-bold text-xl text-primary">$450</p>
-                  <p class="text-xs text-gray-500">
+                  <p
+                    class="font-bold text-xl text-dark-green"
+                    aria-label="Current bid amount">
+                    $450
+                  </p>
+                  <p
+                    class="text-xs"
+                    aria-label="Auction ends in 2 days, 5 hours, 30 minutes">
                     Ends in 2d 5h 30m
                   </p>
                 </div>
-                <div class="card-actions justify-end mt-2">
+                <div class="flex justify-end">
                   <a
                     href="item.html?id=1"
-                    class="btn btn-primary btn-sm"
-                    >Bid Now</a
-                  >
+                    class="btn-primary px-4 py-2 text-sm"
+                    aria-label="Place bid on vintage camera">
+                    Bid Now
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- Auction Item 2 -->
-            <div class="card bg-base-100 shadow-xl">
-              <figure>
+            <article
+              class="rounded-lg shadow-xl overflow-hidden"
+              role="listitem">
+              <div class="relative">
                 <img
-                  src="https://picsum.photos/id/25/400/300"
-                  alt="Antique Pocket Watch" />
-              </figure>
-              <div class="card-body">
-                <h3 class="card-title">Antique Pocket Watch</h3>
-                <p>
+                  src="assets/images/kjartan-einarsson-hxwvWHmCdBM-unsplash.jpg"
+                  alt="18th century pocket watch"
+                  class="w-full h-48 object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-2">
+                  Antique Pocket Watch
+                </h3>
+                <p class="mb-3 text-sm">
                   18th century gold-plated pocket watch with intricate
                   engravings.
                 </p>
-                <div class="flex items-center mt-2">
-                  <div class="badge badge-outline">Antiques</div>
-                  <div class="badge badge-outline ml-2">Jewelry</div>
-                </div>
-                <div class="mt-4">
+                <div class="mb-4">
                   <p class="text-sm">Current Bid:</p>
-                  <p class="font-bold text-xl text-primary">$1,200</p>
-                  <p class="text-xs text-gray-500">
+                  <p
+                    class="font-bold text-xl text-dark-green"
+                    aria-label="Current bid amount">
+                    $1,200
+                  </p>
+                  <p
+                    class="text-xs"
+                    aria-label="Auction ends in 1 day, 12 hours, 45 minutes">
                     Ends in 1d 12h 45m
                   </p>
                 </div>
-                <div class="card-actions justify-end mt-2">
+                <div class="flex justify-end">
                   <a
                     href="item.html?id=2"
-                    class="btn btn-primary btn-sm"
-                    >Bid Now</a
-                  >
+                    class="btn-primary px-4 py-2 text-sm"
+                    aria-label="Place bid on antique pocket watch">
+                    Bid Now
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- Auction Item 3 -->
-            <div class="card bg-base-100 shadow-xl">
-              <figure>
+            <article
+              class="rounded-lg shadow-xl overflow-hidden"
+              role="listitem">
+              <div class="relative">
                 <img
-                  src="https://picsum.photos/id/65/400/300"
-                  alt="Modern Art Painting" />
-              </figure>
-              <div class="card-body">
-                <h3 class="card-title">Modern Art Painting</h3>
-                <p>
+                  src="assets/images/steve-johnson-RKRnPx9e4jQ-unsplash.jpg"
+                  alt="Original abstract painting by emerging contemporary artist"
+                  class="w-full h-48 object-cover" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-2">
+                  Modern Art Painting
+                </h3>
+                <p class="mb-3 text-sm">
                   Original abstract painting by emerging contemporary
                   artist.
                 </p>
-                <div class="flex items-center mt-2">
-                  <div class="badge badge-outline">Art</div>
-                  <div class="badge badge-outline ml-2">Modern</div>
-                </div>
-                <div class="mt-4">
+                <div class="mb-4">
                   <p class="text-sm">Current Bid:</p>
-                  <p class="font-bold text-xl text-primary">$750</p>
-                  <p class="text-xs text-gray-500">
+                  <p
+                    class="font-bold text-xl text-dark-green"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p
+                    class="text-xs"
+                    aria-label="Auction ends in 3 days, 8 hours, 15 minutes">
                     Ends in 3d 8h 15m
                   </p>
                 </div>
-                <div class="card-actions justify-end mt-2">
+                <div class="flex justify-end">
                   <a
                     href="item.html?id=3"
-                    class="btn btn-primary btn-sm"
-                    >Bid Now</a
-                  >
+                    class="btn-primary px-4 py-2 text-sm"
+                    aria-label="Place bid on modern art painting">
+                    Bid Now
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- Auction Item 4 -->
-            <div class="card bg-base-100 shadow-xl">
-              <figure>
+            <article
+              class="rounded-lg shadow-xl overflow-hidden"
+              role="listitem">
+              <div class="relative">
                 <img
-                  src="https://picsum.photos/id/119/400/300"
-                  alt="Rare Vinyl Record" />
-              </figure>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Rare Vinyl Record
-                  <div class="badge badge-secondary">Hot</div>
-                </h3>
-                <p>
+                  src="assets/images/jon-tyson-H1QqPZ-WZdQ-unsplash.jpg"
+                  alt="First pressing rare vinyl record in mint condition, never played"
+                  class="w-full h-48 object-cover" />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
+                </div>
+                <p class="mb-3 text-sm">
                   First pressing of a legendary album, mint condition,
                   never played.
                 </p>
-                <div class="flex items-center mt-2">
-                  <div class="badge badge-outline">Music</div>
-                  <div class="badge badge-outline ml-2">
-                    Collectibles
-                  </div>
-                </div>
-                <div class="mt-4">
+                <div class="mb-4">
                   <p class="text-sm">Current Bid:</p>
-                  <p class="font-bold text-xl text-primary">$325</p>
-                  <p class="text-xs text-gray-500">Ends in 5h 20m</p>
+                  <p
+                    class="font-bold text-xl text-dark-green"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p
+                    class="text-xs"
+                    aria-label="Auction ends in 5 hours, 20 minutes">
+                    Ends in 5h 20m
+                  </p>
                 </div>
-                <div class="card-actions justify-end mt-2">
+                <div class="flex justify-end">
                   <a
                     href="item.html?id=4"
-                    class="btn btn-primary btn-sm"
-                    >Bid Now</a
-                  >
+                    class="btn-primary px-4 py-2 text-sm"
+                    aria-label="Place bid on rare vinyl record">
+                    Bid Now
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
-
-      <!-- Testimonials -->
-      <!-- <section class="py-12 bg-base-200">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-8 text-center">
-            What Our Users Say
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="card bg-base-100 shadow-xl">
-              <div class="card-body">
-                <div class="flex items-center mb-4">
-                  <div class="avatar">
-                    <div class="w-12 rounded-full">
-                      <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=John"
-                        alt="John D." />
-                    </div>
-                  </div>
-                  <div class="ml-4">
-                    <h3 class="font-bold">John D.</h3>
-                    <div class="rating rating-sm">
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-1"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "I found a rare vintage watch that I'd been
-                  searching for years. The bidding process was
-                  exciting and the transaction was smooth."
-                </p>
-              </div>
-            </div>
-
-            <div class="card bg-base-100 shadow-xl">
-              <div class="card-body">
-                <div class="flex items-center mb-4">
-                  <div class="avatar">
-                    <div class="w-12 rounded-full">
-                      <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                        alt="Sarah M." />
-                    </div>
-                  </div>
-                  <div class="ml-4">
-                    <h3 class="font-bold">Sarah M.</h3>
-                    <div class="rating rating-sm">
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        class="mask mask-star-2 bg-orange-400" />
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "As an art collector, I appreciate the verification
-                  process for all listed items. I've purchased several
-                  pieces and have been very satisfied."
-                </p>
-              </div>
-            </div>
-
-            <div class="card bg-base-100 shadow-xl">
-              <div class="card-body">
-                <div class="flex items-center mb-4">
-                  <div class="avatar">
-                    <div class="w-12 rounded-full">
-                      <img
-                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Robert"
-                        alt="Robert K." />
-                    </div>
-                  </div>
-                  <div class="ml-4">
-                    <h3 class="font-bold">Robert K.</h3>
-                    <div class="rating rating-sm">
-                      <input
-                        type="radio"
-                        name="rating-3"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-3"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-3"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-3"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                      <input
-                        type="radio"
-                        name="rating-3"
-                        class="mask mask-star-2 bg-orange-400"
-                        checked />
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "I've been both a buyer and seller on BidMaster. The
-                  platform is intuitive and the customer service is
-                  exceptional when you need assistance."
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      <!-- </section> -->
-
-      <!-- Newsletter -->
-      <!-- <section class="py-12 bg-primary text-primary-content">
-        <div class="container mx-auto px-4">
-          <div
-            class="flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-6 md:mb-0 md:w-1/2">
-              <h2 class="text-3xl font-bold mb-2">Stay Updated</h2>
-              <p>
-                Subscribe to our newsletter to get notified about new
-                auctions and exclusive offers.
-              </p>
-            </div>
-            <div class="w-full md:w-1/2">
-              <form class="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  class="input input-bordered w-full" />
-                <button
-                  class="btn bg-white text-primary hover:bg-gray-200">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> -->
     </main>
 
     <!-- Footer -->
-    <footer class="bg-neutral text-neutral-content">
+    <footer
+      class="bg-black text-white"
+      role="contentinfo">
       <div class="container mx-auto px-4">
-        <div class="footer py-10">
-          <div>
-            <span class="footer-title">About BidMaster</span>
-            <a
-              href="about.html"
-              class="link link-hover"
-              >About Us</a
-            >
-            <a
-              href="about.html#team"
-              class="link link-hover"
-              >Our Team</a
-            >
-            <a
-              href="about.html#history"
-              class="link link-hover"
-              >History</a
-            >
-            <a
-              href="careers.html"
-              class="link link-hover"
-              >Careers</a
-            >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
+          <div class="flex flex-col lg:max-w-screen lg:mx-auto">
+            <h3 class="text-lg font-light mb-2 text-white/80">
+              About BidRally
+            </h3>
+            <nav aria-label="About BidRally links">
+              <a
+                href="about.html"
+                class="hover:text-gray transition-colors"
+                >About Us</a
+              >
+            </nav>
           </div>
-          <div>
-            <span class="footer-title">Services</span>
-            <a
-              href="services.html#selling"
-              class="link link-hover"
-              >Selling</a
-            >
-            <a
-              href="services.html#buying"
-              class="link link-hover"
-              >Buying</a
-            >
-            <a
-              href="services.html#authentication"
-              class="link link-hover"
-              >Authentication</a
-            >
-            <a
-              href="services.html#shipping"
-              class="link link-hover"
-              >Shipping</a
-            >
+
+          <div class="flex flex-col lg:max-w-screen lg:mx-auto">
+            <h3 class="text-lg font-light mb-2 text-white/80">
+              Help & Support
+            </h3>
+            <nav aria-label="Help and support links">
+              <a
+                href="contact.html"
+                class="hover:text-gray transition-colors"
+                >Contact Us</a
+              >
+            </nav>
           </div>
-          <div>
-            <span class="footer-title">Help & Support</span>
-            <a
-              href="faq.html"
-              class="link link-hover"
-              >FAQ</a
-            >
-            <a
-              href="contact.html"
-              class="link link-hover"
-              >Contact Us</a
-            >
-            <a
-              href="terms.html"
-              class="link link-hover"
-              >Terms of Service</a
-            >
-            <a
-              href="privacy.html"
-              class="link link-hover"
-              >Privacy Policy</a
-            >
-          </div>
-          <div>
-            <span class="footer-title">Connect With Us</span>
-            <div class="flex gap-4">
+          <div class="flex flex-col lg:max-w-screen lg:mx-auto">
+            <h3 class="text-lg font-light mb-2 text-white/80">
+              Connect With Us
+            </h3>
+            <nav
+              class="flex gap-4 mb-2"
+              aria-label="Social media links">
               <a
-                href="#"
-                class="text-xl"
-                ><i class="fab fa-facebook"></i
-              ></a>
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Facebook"
+                class="hover:text-gray transition-colors flex items-center">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z" />
+                </svg>
+              </a>
               <a
-                href="#"
-                class="text-xl"
-                ><i class="fab fa-twitter"></i
-              ></a>
+                href="https://github.com/Torehirth/Bid-Rally"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally project on GitHub"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+              </a>
               <a
-                href="#"
-                class="text-xl"
-                ><i class="fab fa-instagram"></i
-              ></a>
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Instagram"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </a>
               <a
-                href="#"
-                class="text-xl"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </div>
-            <div class="mt-4">
-              <p>Download our app:</p>
-              <div class="flex gap-2 mt-2">
-                <a
-                  href="#"
-                  class="btn btn-outline btn-sm">
-                  <i class="fab fa-apple mr-1"></i> App Store
-                </a>
-                <a
-                  href="#"
-                  class="btn btn-outline btn-sm">
-                  <i class="fab fa-google-play mr-1"></i> Google Play
-                </a>
-              </div>
-            </div>
+                href="https://www.linkedin.com/in/torehirth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on LinkedIn"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z" />
+                </svg>
+              </a>
+            </nav>
           </div>
         </div>
 
-        <div
-          class="footer footer-center p-4 border-t border-base-300">
-          <div>
-            <p>© 2025 BidRally - All rights reserved</p>
-          </div>
+        <div class="border-t border-gray-base py-4 text-center">
+          <p class="text-sm text-white/80">
+            © 2025 BidRally - All rights reserved
+          </p>
         </div>
       </div>
     </footer>
 
-    <!-- <script>
-      // Simple JavaScript for countdown timers
+    <script>
+      // Mobile menu toggle
       document.addEventListener("DOMContentLoaded", function () {
-        // This would be replaced with actual auction end times from your database
+        const mobileMenuButton = document.getElementById(
+          "mobile-menu-button"
+        );
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          const isExpanded = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+
+          // Update aria-expanded attribute for screen readers
+          mobileMenuButton.setAttribute(
+            "aria-expanded",
+            isExpanded.toString()
+          );
+        });
+
         console.log("Auction website loaded successfully");
       });
-    </script> -->
+    </script>
   </body>
 </html>
