@@ -1,1 +1,4 @@
 node_modules/
+# JavaScript folder/files that needs to be deleted
+src/js/delete/
+# ---------------------------

@@ -1,11 +1,32 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+    <script type="module" src="/src/js/app.mjs"></script>
+    <title>BidRally | Online Auction Platform</title>
+    <!-- Meta tags for SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BidRally - Online Auction Platform</title>
-    <link rel="stylesheet" href="/src/css/index.css" />
-    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="BidRally is your go-to online auction platform for unique items, collectibles, and more. Join us to discover and bid on exclusive treasures."
+    />
+    <meta
+      name="keywords"
+      content="online auction, bid, collectibles, unique items, auction platform"
+    />
+    <meta name="author" content="BidRally Team" />
+    <!-- Meta tags for Social Media platforms -->
+    <meta property="og:title" content="BidRally | Online Auction Platform" />
+    <meta
+      property="og:description"
+      content="Join BidRally to discover and bid on unique items, collectibles, and more. Your go-to online auction platform."
+    />
+    <meta
+      property="og:image"
+      content="/assets/images/john-2FPjlAyMQTA-unsplash.webp"
+    />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -37,29 +58,28 @@
 
           <!-- Desktop Navigation -->
           <nav
-            class="hidden gap-4 lg:flex"
+            class="hidden gap-1 lg:flex"
             role="navigation"
             aria-label="Main navigation"
           >
             <a
-              href="index.html"
-              class="hover:text-dark-green text-lg font-medium transition-colors"
-              aria-current="page"
+              href="/"
+              class="hover:text-dark-green hover:border-dark-green border-b border-black px-3 py-1 font-medium transition-colors"
               >Home</a
             >
             <a
-              href="items.html"
-              class="hover:text-dark-green text-lg font-medium transition-colors"
-              >All Items</a
+              href="/auctions/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors"
+              >All Auctions</a
             >
             <a
-              href="about.html"
-              class="hover:text-dark-green text-lg font-medium transition-colors"
+              href="/about/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors"
               >About</a
             >
             <a
-              href="contact.html"
-              class="hover:text-dark-green text-lg font-medium transition-colors"
+              href="/contact/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors"
               >Contact</a
             >
           </nav>
@@ -67,12 +87,12 @@
           <div class="lg:flex">
             <!-- User profile and logout buttons -->
             <div
-              class="flex items-center gap-4"
+              class="flex hidden items-center gap-4"
               role="group"
               aria-label="User account actions"
             >
               <a
-                href="#"
+                href="/profile/"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
                 aria-label="View user profile"
               >
@@ -117,11 +137,11 @@
               aria-label="Authentication actions"
             >
               <a
-                href="login.html"
+                href="/login/"
                 class="hover:text-dark-green px-4 py-2 font-medium transition-colors"
                 >Login</a
               >
-              <a href="register.html" class="btn-primary px-4 py-2 font-medium"
+              <a href="/register/" class="btn-primary px-4 py-2 font-medium"
                 >Register</a
               >
             </div>
@@ -161,23 +181,23 @@
         >
           <div class="flex flex-col gap-3">
             <a
-              href="index.html"
+              href="/"
               class="hover:text-dark-green font-medium transition-colors"
               aria-current="page"
               >Home</a
             >
             <a
-              href="items.html"
+              href="/auctions/"
               class="hover:text-dark-green font-medium transition-colors"
-              >All Items</a
+              >All Auctions</a
             >
             <a
-              href="about.html"
+              href="/about/"
               class="hover:text-dark-green font-medium transition-colors"
               >About</a
             >
             <a
-              href="contact.html"
+              href="/contact/"
               class="hover:text-dark-green font-medium transition-colors"
               >Contact</a
             >
@@ -502,7 +522,7 @@
               About BidRally
             </h3>
             <nav aria-label="About BidRally links">
-              <a href="about.html" class="hover:text-gray transition-colors"
+              <a href="/about/" class="hover:text-gray transition-colors"
                 >About Us</a
               >
             </nav>
@@ -513,7 +533,7 @@
               Help & Support
             </h3>
             <nav aria-label="Help and support links">
-              <a href="contact.html" class="hover:text-gray transition-colors"
+              <a href="/contact/" class="hover:text-gray transition-colors"
                 >Contact Us</a
               >
             </nav>
@@ -614,23 +634,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      // Mobile menu toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuButton.addEventListener("click", function () {
-          const isExpanded = mobileMenu.classList.contains("hidden");
-          mobileMenu.classList.toggle("hidden");
-
-          // Update aria-expanded attribute for screen readers
-          mobileMenuButton.setAttribute("aria-expanded", isExpanded.toString());
-        });
-
-        console.log("Auction website loaded successfully");
-      });
-    </script>
   </body>
 </html>
