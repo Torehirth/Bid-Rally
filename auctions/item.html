@@ -1,11 +1,759 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+    <script type="module" src="/src/js/app.mjs"></script>
+    <title>Vintage Camera | BidRally</title>
+    <!-- Meta tags for SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Bid on this vintage camera from the 1950s in excellent condition. Current bid: $1,850. Auction ends in 2 hours." />
+    <meta
+      name="keywords"
+      content="vintage camera, auction, bid, photography equipment, collectible" />
+    <meta name="author" content="BidRally Team" />
+    <!-- Meta tags for Social Media platforms -->
+    <meta property="og:title" content="Vintage Camera | BidRally" />
+    <meta
+      property="og:description"
+      content="Bid on this vintage camera from the 1950s in excellent condition. Current bid: $1,850." />
+    <meta
+      property="og:image"
+      content="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp" />
   </head>
-  <body>
-    Tøft
+  <body class="flex min-h-screen flex-col bg-white text-black">
+    <!-- Header -->
+    <header class="shadow-md" role="banner">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a
+              href="/"
+              class="hover:text-dark-green flex items-center gap-2 text-xl font-bold transition-colors"
+              aria-label="BidRally home page">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5"
+                viewBox="0 0 576 512"
+                fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M169.6 153.4l-18.7-18.7c-12.5-12.5-12.5-32.8 0-45.3L265.6-25.4c12.5-12.5 32.8-12.5 45.3 0L329.6-6.6c12.5 12.5 12.5 32.8 0 45.3L214.9 153.4c-12.5 12.5-32.8 12.5-45.3 0zM276 211.7l-31.4-31.4 112-112 119.4 119.4-112 112-31.4-31.4-232 232c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6l232-232zM390.9 374.6c-12.5-12.5-12.5-32.8 0-45.3L505.6 214.6c12.5-12.5 32.8-12.5 45.3 0l18.7 18.7c12.5 12.5 12.5 32.8 0 45.3L454.9 393.4c-12.5 12.5-32.8 12.5-45.3 0l-18.7-18.7z" />
+              </svg>
+              <span class="text-2xl">BidRally</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav
+            class="hidden gap-1 lg:flex"
+            role="navigation"
+            aria-label="Main navigation">
+            <a
+              href="/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          <div class="lg:flex">
+            <!-- User profile and logout buttons -->
+            <div
+              class="flex hidden items-center gap-4"
+              role="group"
+              aria-label="User account actions">
+              <a
+                href="/profile/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="View user profile">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
+                </svg>
+                <span>Profile</span>
+              </a>
+              <a
+                href="#"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="Log out of account"
+                id="logout-btn">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0zM502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+                </svg>
+                <span>log out</span>
+              </a>
+            </div>
+            <!-- login and register buttons -->
+            <div
+              class="flex items-center gap-2"
+              role="group"
+              aria-label="Authentication actions">
+              <a
+                href="/login/"
+                class="hover:text-dark-green px-4 py-2 font-medium transition-colors">
+                Login
+              </a>
+              <a href="/register/" class="btn-primary px-4 py-2 font-medium">
+                Register
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              id="mobile-menu-button"
+              class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile navigation menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true">
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav
+          id="mobile-menu"
+          class="border-gray-base hidden border-t py-4 lg:hidden"
+          role="navigation"
+          aria-label="Mobile navigation">
+          <div class="flex flex-col gap-3">
+            <a
+              href="/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow" role="main">
+      <section class="bg-gray-base" aria-label="Breadcrumbs">
+        <ul class="container mx-auto flex gap-3 px-4 py-4 text-xs">
+          <li><a href="/">Home</a></li>
+          <li>&gt;</li>
+          <li><a href="/auctions/index.html">Auctions</a></li>
+          <li>&gt;</li>
+          <li>
+            <a href="#"></a>
+            Vintage Camera
+          </li>
+        </ul>
+      </section>
+      <!-- Item Details Section -->
+      <section class="py-8" aria-labelledby="item-heading">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <!-- Image -->
+            <div class="space-y-4">
+              <div class="relative">
+                <img
+                  id="main-image"
+                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
+                  alt="Vintage camera from the 1950s"
+                  class="h-96 w-full rounded-lg object-cover" />
+              </div>
+            </div>
+
+            <!-- Item Information -->
+            <div
+              class="border-gray/50 space-y-6 rounded-lg border bg-white p-6">
+              <!-- Title and Seller Info -->
+              <div>
+                <h1 id="item-heading" class="mb-2 text-3xl font-bold">
+                  Vintage Camera
+                </h1>
+                <p class="text-gray-600">
+                  Listed by:
+                  <span class="font-medium text-black">john_photographer</span>
+                </p>
+              </div>
+
+              <!-- Current Bid and Deadline -->
+              <div class="border-gray/50 rounded-lg border bg-white p-6">
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <p class="mb-1 text-sm text-black/80">
+                      Current Highest Bid
+                    </p>
+                    <p
+                      class="text-dark-green text-3xl font-bold"
+                      id="current-bid">
+                      $1,850
+                    </p>
+                    <p class="text-sm text-black/80" id="bid-count">
+                      3 bids placed
+                    </p>
+                  </div>
+                  <div>
+                    <p class="mb-1 text-sm text-black/80">Auction Ends</p>
+                    <p class="text-lg font-semibold" id="deadline">
+                      August 1, 2025 at 6:33 PM
+                    </p>
+                    <p
+                      class="text-error text-sm font-medium"
+                      id="time-remaining">
+                      2 hours 33 minutes remaining
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bidding Section -->
+              <div class="border-gray/50 rounded-lg border bg-white p-6">
+                <h2 class="mb-4 text-xl font-semibold">Place Your Bid</h2>
+                <form id="bid-form" class="space-y-4">
+                  <div>
+                    <label
+                      for="bid-amount"
+                      class="mb-2 block text-sm font-medium text-gray-700">
+                      Your Bid Amount
+                    </label>
+                    <div class="relative">
+                      <span class="absolute top-2.5 left-3 text-gray-500">
+                        $
+                      </span>
+                      <input
+                        type="number"
+                        id="bid-amount"
+                        name="bid-amount"
+                        min="1851"
+                        step="1"
+                        placeholder="1851"
+                        class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 pl-8 focus:ring-2 focus:outline-none"
+                        aria-describedby="bid-help"
+                        required />
+                    </div>
+                    <p id="bid-help" class="mt-1 text-sm text-black/80">
+                      Minimum bid: $1,851 (current bid + $1)
+                    </p>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn-primary w-full py-3 text-lg font-semibold"
+                    id="place-bid-btn">
+                    Place Bid
+                  </button>
+                </form>
+
+                <!-- Login Message (shown when not logged in) -->
+                <div id="login-required" class="text-center">
+                  <p class="mt-1 text-black/80">
+                    You must be logged in to place a bid
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item Description -->
+              <div>
+                <h2 class="mb-4 text-xl font-semibold">Description</h2>
+                <div class="flex max-w-[65ch] flex-col gap-3">
+                  <p>
+                    This exceptional vintage camera from the 1950s represents a
+                    remarkable piece of photographic history. Manufactured
+                    during the golden age of film photography, this camera has
+                    been meticulously maintained and remains in excellent
+                    working condition.
+                  </p>
+                  <p>
+                    The camera features original leather body covering, all
+                    original chrome fittings, and comes with its original
+                    leather case. The lens is crystal clear with no fungus,
+                    scratches, or haze. All mechanical functions operate
+                    smoothly, including the film advance, shutter speeds, and
+                    aperture settings.
+                  </p>
+                  <p>
+                    This would make an excellent addition to any photography
+                    collection or could still be used for creating beautiful
+                    film photographs. A true collector's piece that combines
+                    historical significance with practical functionality.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item Details -->
+              <div class="border-gray/50 rounded-lg border bg-white p-6">
+                <h2 class="mb-4 text-xl font-semibold">Item Details</h2>
+                <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <dt class="text-sm font-medium text-black/80">Id:</dt>
+                    <dd class="text-sm text-black">19</dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm font-medium text-black/80">
+                      Date listed:
+                    </dt>
+                    <dd class="text-sm text-black">05.06.2025</dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm font-medium text-black/80">Tags:</dt>
+                    <dd class="text-sm text-black">Camera</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bid History Section -->
+      <section class="pt-8 pb-16" aria-labelledby="bid-history-heading">
+        <div class="container mx-auto px-4">
+          <h2 id="bid-history-heading" class="mb-6 text-2xl font-semibold">
+            Bid History
+          </h2>
+          <div class="border-gray/50 overflow-hidden rounded-lg border">
+            <div class="border-gray/30 border-b px-6 py-4">
+              <div class="flex items-center justify-between">
+                <p class="text-sm text-black" id="total-bids">3 bids placed</p>
+              </div>
+            </div>
+
+            <div id="bid-list" class="divide-gray/30 divide-y">
+              <!-- Bid Entry 1 -->
+              <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="bg-mint-green flex h-8 w-8 items-center justify-center rounded-full">
+                      <span class="text-xs font-semibold text-black">1</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">camera_collector_42</p>
+                    <p class="text-xs text-black/80">2 hours ago</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-dark-green text-lg font-semibold">$1,850</p>
+                  <p class="text-xs text-black/80">Highest bid</p>
+                </div>
+              </div>
+
+              <!-- Bid Entry 2 -->
+              <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
+                      <span class="text-xs font-semibold text-black/80">2</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">vintage_lover_88</p>
+                    <p class="text-xs text-black/80">5 hours ago</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-semibold">$1,200</p>
+                </div>
+              </div>
+
+              <!-- Bid Entry 3 -->
+              <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
+                      <span class="text-xs font-semibold text-black/80">3</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium">photo_enthusiast</p>
+                    <p class="text-xs text-black/80">1 day ago</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-lg font-semibold">$800</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Empty State (when no bids) -->
+            <div id="no-bids" class="hidden px-6 py-8 text-center">
+              <svg
+                class="mx-auto mb-4 h-12 w-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="text-black/80">No bids have been placed yet.</p>
+              <p class="mt-2 text-sm text-gray-400">
+                Be the first to bid on this item!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Auctions -->
+      <section
+        class="bg-gray-base py-16"
+        aria-labelledby="featured-auctions-heading">
+        <div class="container mx-auto px-4">
+          <div class="mb-8 flex items-center justify-between">
+            <h2 id="featured-auctions-heading" class="text-3xl font-bold">
+              Featured Auctions
+            </h2>
+            <a
+              href="/auctions/"
+              class="border-dark-green text-dark-green hover:bg-dark-green rounded-md border-2 px-4 py-2 font-medium transition-colors hover:text-white"
+              aria-label="View all auction items">
+              View All
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+            role="list"
+            aria-label="Featured auction items">
+            <!-- Auction Item 1 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/jon-tyson-H1QqPZ-WZdQ-unsplash.webp"
+                  alt="First pressing rare vinyl record in mint condition, never played"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  First pressing of a legendary album, mint condition, never
+                  played.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">3 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=4"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on rare vinyl record">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 2 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
+                  alt="Vintage camera from the 1950s"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Vintage Camera</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  A rare vintage camera from the 1950s in excellent condition.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $450
+                  </p>
+                  <p class="text-xs text-black/80">5 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=1"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on vintage camera">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 3 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/kjartan-einarsson-hxwvWHmCdBM-unsplash.webp"
+                  alt="18th century pocket watch"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Antique Pocket Watch</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  18th century gold-plated pocket watch with intricate
+                  engravings.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $1,200
+                  </p>
+                  <p class="text-xs text-black/80">8 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=2"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on antique pocket watch">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 4 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/steve-johnson-RKRnPx9e4jQ-unsplash.webp"
+                  alt="Original abstract painting by emerging contemporary artist"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Modern Art Painting</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  Original abstract painting by emerging contemporary artist.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">12 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=3"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on modern art painting">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white" role="contentinfo">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              About BidRally
+            </h3>
+            <nav aria-label="About BidRally links">
+              <a href="/about/" class="hover:text-gray transition-colors">
+                About Us
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Help & Support
+            </h3>
+            <nav aria-label="Help and support links">
+              <a href="/contact/" class="hover:text-gray transition-colors">
+                Contact Us
+              </a>
+            </nav>
+          </div>
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Connect With Us
+            </h3>
+            <nav class="mb-2 flex gap-4" aria-label="Social media links">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Facebook"
+                class="hover:text-gray flex items-center transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Torehirth/Bid-Rally"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally project on GitHub"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Instagram"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/torehirth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on LinkedIn"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="border-gray-base border-t py-4 text-center">
+          <p class="text-sm text-white/80">
+            © 2025 BidRally - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
