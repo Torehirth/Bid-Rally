@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+    <script type="module" src="/src/js/new-listing.mjs"></script>
+    <title>Create New Listing | BidRally</title>
+    <!-- Meta tags for SEO -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create a new auction listing on BidRally. Add title, description, images, and set your auction deadline." />
+    <meta
+      name="keywords"
+      content="create listing, auction, new item, sell, bidding, marketplace" />
+    <meta name="author" content="BidRally Team" />
+    <!-- Meta tags for Social Media platforms -->
+    <meta property="og:title" content="Create New Listing | BidRally" />
+    <meta
+      property="og:description"
+      content="Create a new auction listing on BidRally." />
+    <meta
+      property="og:image"
+      content="/assets/images/create-listing-banner.webp" />
+  </head>
+  <body class="flex min-h-screen flex-col bg-white text-black">
+    <!-- Header -->
+    <header class="shadow-md" role="banner">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a
+              href="/"
+              class="hover:text-dark-green flex items-center gap-2 text-xl font-bold transition-colors"
+              aria-label="BidRally home page">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5"
+                viewBox="0 0 576 512"
+                fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M169.6 153.4l-18.7-18.7c-12.5-12.5-12.5-32.8 0-45.3L265.6-25.4c12.5-12.5 32.8-12.5 45.3 0L329.6-6.6c12.5 12.5 12.5 32.8 0 45.3L214.9 153.4c-12.5 12.5-32.8 12.5-45.3 0zM276 211.7l-31.4-31.4 112-112 119.4 119.4-112 112-31.4-31.4-232 232c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6l232-232zM390.9 374.6c-12.5-12.5-12.5-32.8 0-45.3L505.6 214.6c12.5-12.5 32.8-12.5 45.3 0l18.7 18.7c12.5 12.5 12.5 32.8 0 45.3L454.9 393.4c-12.5 12.5-32.8 12.5-45.3 0l-18.7-18.7z" />
+              </svg>
+              <span class="text-2xl">BidRally</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav
+            class="hidden gap-1 lg:flex"
+            role="navigation"
+            aria-label="Main navigation">
+            <a
+              href="/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          <div class="hidden lg:flex">
+            <!-- User profile and New listing buttons -->
+            <div
+              class="flex items-center gap-4"
+              role="group"
+              aria-label="Authentication actions">
+              <a
+                href="/profile/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="View your user profile">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
+                </svg>
+                <span>Profile</span>
+              </a>
+              <a
+                href="/new-listing/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="Create a new auction listing">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="size-5"
+                  fill="currentColor"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                </svg>
+                <span>New listing</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              id="mobile-menu-button"
+              class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile navigation menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true">
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav
+          id="mobile-menu"
+          class="border-gray-base hidden border-t py-4 lg:hidden"
+          role="navigation"
+          aria-label="Mobile navigation">
+          <div class="flex flex-col gap-3">
+            <a
+              href="/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow" role="main">
+      <!-- Breadcrumbs -->
+      <section class="bg-gray-base" aria-label="Breadcrumbs">
+        <ul class="container mx-auto flex gap-3 px-4 py-4 text-xs">
+          <li><a href="/">Home</a></li>
+          <li>&gt;</li>
+          <li><a href="/profile/">Profile</a></li>
+          <li>&gt;</li>
+          <li>Create New Listing</li>
+        </ul>
+      </section>
+
+      <!-- Page Header -->
+      <section class="py-8" aria-labelledby="create-listing-heading">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col items-center gap-2 rounded-lg p-6">
+            <h1 id="create-listing-heading" class="mb-2 text-3xl font-bold">
+              Create New Auction Listing
+            </h1>
+            <p class="text-sm text-black/80">
+              Fill in the details below to create your auction listing and start
+              receiving bids.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Create Listing Form -->
+      <section
+        class="container mx-auto px-4 pb-16"
+        aria-labelledby="listing-form-heading">
+        <div class="border-gray/50 rounded-lg border p-6">
+          <h2 id="listing-form-heading" class="sr-only">
+            Listing Details Form
+          </h2>
+
+          <form id="create-listing-form" class="space-y-6">
+            <!-- Title Section -->
+            <div>
+              <label
+                for="title"
+                class="mb-2 block text-sm font-medium text-black">
+                Auction Title *
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                required
+                maxlength="100"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="Enter a descriptive title for your auction item" />
+            </div>
+
+            <!-- Description Section -->
+            <div>
+              <label
+                for="description"
+                class="mb-2 block text-sm font-medium text-black">
+                Description *
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                required
+                rows="6"
+                maxlength="1000"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="Provide a detailed description of your item"></textarea>
+              <div
+                class="mt-1 flex justify-between text-xs text-black/80"></div>
+            </div>
+
+            <!-- Deadline Section -->
+            <div>
+              <label
+                for="deadline"
+                class="mb-2 block text-sm font-medium text-black">
+                Auction End Date & Time *
+              </label>
+              <input
+                type="datetime-local"
+                id="deadline"
+                name="deadline"
+                required
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+            </div>
+
+            <!-- Image Section -->
+            <div>
+              <label class="mb-2 block text-sm font-medium text-black">
+                Images (optional)
+              </label>
+              <p class="mb-4 text-xs text-black/80">
+                Add image URL to showcase your item
+              </p>
+
+              <div id="media-container" class="space-y-3">
+                <!-- Initial media input -->
+                <div class="media-input-group flex items-center gap-3">
+                  <input
+                    type="url"
+                    name="media"
+                    placeholder="https://example.com/image.jpg"
+                    class="border-gray/50 focus:border-dark-green focus:ring-dark-green flex-1 rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags Section -->
+            <div>
+              <label
+                for="tags"
+                class="mb-2 block text-sm font-medium text-black">
+                Tags (Optional)
+              </label>
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="electronics, vintage, collectible (separate with commas)" />
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex flex-col justify-end gap-4 pt-6 sm:flex-row">
+              <button
+                type="submit"
+                class="btn-primary flex flex-1 items-center justify-center gap-2 px-6 py-3 font-medium md:max-w-sm">
+                <svg
+                  class="size-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true">
+                  <path
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                </svg>
+                Create Auction
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white" role="contentinfo">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              About BidRally
+            </h3>
+            <nav aria-label="About BidRally links">
+              <a href="/about/" class="hover:text-gray transition-colors">
+                About Us
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Help & Support
+            </h3>
+            <nav aria-label="Help and support links">
+              <a href="/contact/" class="hover:text-gray transition-colors">
+                Contact Us
+              </a>
+            </nav>
+          </div>
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Connect With Us
+            </h3>
+            <nav class="mb-2 flex gap-4" aria-label="Social media links">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Facebook"
+                class="hover:text-gray flex items-center transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Torehirth/Bid-Rally"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally project on GitHub"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Instagram"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/torehirth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on LinkedIn"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="border-gray-base border-t py-4 text-center">
+          <p class="text-sm text-white/80">
+            © 2025 BidRally - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div
+      id="loading-overlay"
+      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      <div class="border-gray/50 rounded-lg border bg-white p-8 text-center">
+        <div
+          class="border-dark-green mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2"></div>
+        <p class="text-black">Creating your auction...</p>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div
+      id="success-modal"
+      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      <div
+        class="border-gray/50 mx-4 max-w-md rounded-lg border bg-white p-8 text-center">
+        <div
+          class="bg-mint-green mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+          <svg
+            class="text-dark-green h-8 w-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-black">
+          Auction Created Successfully!
+        </h3>
+        <p class="mb-6 text-black/80">
+          Your auction is now live and accepting bids.
+        </p>
+        <div class="flex gap-3">
+          <button
+            onclick="goToListings()"
+            class="btn-primary flex-1 px-4 py-2 text-sm">
+            View All Listings
+          </button>
+          <button
+            onclick="createAnother()"
+            class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-50">
+            Create Another
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
