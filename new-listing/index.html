@@ -3,28 +3,26 @@
   <head>
     <link rel="stylesheet" href="/src/css/styles.css" />
     <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
-    <script type="module" src="/src/js/app.mjs"></script>
-    <title>Login | BidRally</title>
+    <script type="module" src="/src/js/new-listing.mjs"></script>
+    <title>Create New Listing | BidRally</title>
     <!-- Meta tags for SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Login to your BidRally account to access your profile, view your bids, create listings, and manage your auction activities." />
+      content="Create a new auction listing on BidRally. Add title, description, images, and set your auction deadline." />
     <meta
       name="keywords"
-      content="login BidRally, auction account login, signin bidding platform, noroff auction login, access auction account" />
+      content="create listing, auction, new item, sell, bidding, marketplace" />
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
-    <meta
-      property="og:title"
-      content="Login to BidRally | Access Your Auction Account" />
+    <meta property="og:title" content="Create New Listing | BidRally" />
     <meta
       property="og:description"
-      content="Login to your BidRally account to access your profile, view your bids, create listings, and manage your auction activities." />
+      content="Create a new auction listing on BidRally." />
     <meta
       property="og:image"
-      content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
+      content="/assets/images/create-listing-banner.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -61,38 +59,59 @@
               Home
             </a>
             <a
-              href="../auctions/"
+              href="/auctions/"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               All Auctions
             </a>
             <a
-              href="../about/"
+              href="/about/"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               About
             </a>
             <a
-              href="../contact/"
+              href="/contact/"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Contact
             </a>
           </nav>
 
-          <div class="lg:flex">
-            <!-- login and register buttons -->
+          <div class="hidden lg:flex">
+            <!-- User profile and New listing buttons -->
             <div
-              class="flex items-center gap-2"
+              class="flex items-center gap-4"
               role="group"
-              aria-label="login and register buttons">
+              aria-label="Authentication actions">
               <a
-                href="../login/"
-                class="hover:text-dark-green hover:border-dark-green border-b border-black px-3 py-1 font-medium transition-colors"
-                aria-current="page">
-                Login
+                href="/profile/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="View your user profile">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
+                </svg>
+                <span>Profile</span>
               </a>
               <a
-                href="../register/"
-                class="hover:text-dark-green btn-primary px-5.5 py-2 font-medium transition-colors">
-                Register
+                href="/new-listing/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="Create a new auction listing">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="size-5"
+                  fill="currentColor"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                </svg>
+                <span>New listing</span>
               </a>
             </div>
           </div>
@@ -131,33 +150,20 @@
               Home
             </a>
             <a
-              href="../auctions/"
+              href="/auctions/"
               class="hover:text-dark-green font-medium transition-colors">
-              All Items
+              All Auctions
             </a>
             <a
-              href="../about/"
+              href="/about/"
               class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
             <a
-              href="../contact/"
+              href="/contact/"
               class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
-            <div class="border-gray-base border-t pt-3">
-              <a
-                href="../login/"
-                class="hover:text-dark-green block font-medium transition-colors"
-                aria-current="page">
-                Login
-              </a>
-              <a
-                href="../register/"
-                class="btn-primary mt-2 inline-block px-4 py-2 font-medium">
-                Register
-              </a>
-            </div>
           </div>
         </nav>
       </div>
@@ -165,127 +171,146 @@
 
     <!-- Main Content -->
     <main class="flex-grow" role="main">
-      <!-- Login Section -->
-      <section class="bg-gray-base py-16" aria-labelledby="login-heading">
+      <!-- Breadcrumbs -->
+      <section class="bg-gray-base" aria-label="Breadcrumbs">
+        <ul class="container mx-auto flex gap-3 px-4 py-4 text-xs">
+          <li><a href="/">Home</a></li>
+          <li>&gt;</li>
+          <li><a href="/profile/">Profile</a></li>
+          <li>&gt;</li>
+          <li>Create New Listing</li>
+        </ul>
+      </section>
+
+      <!-- Page Header -->
+      <section class="py-8" aria-labelledby="create-listing-heading">
         <div class="container mx-auto px-4">
-          <div class="mx-auto max-w-md">
-            <!-- Header -->
-            <div class="mb-8 text-center">
+          <div class="flex flex-col items-center gap-2 rounded-lg p-6">
+            <h1 id="create-listing-heading" class="mb-2 text-3xl font-bold">
+              Create New Auction Listing
+            </h1>
+            <p class="text-sm text-black/80">
+              Fill in the details below to create your auction listing and start
+              receiving bids.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Create Listing Form -->
+      <section
+        class="container mx-auto px-4 pb-16"
+        aria-labelledby="listing-form-heading">
+        <div class="border-gray/50 rounded-lg border p-6">
+          <h2 id="listing-form-heading" class="sr-only">
+            Listing Details Form
+          </h2>
+
+          <form id="create-listing-form" class="space-y-6">
+            <!-- Title Section -->
+            <div>
+              <label
+                for="title"
+                class="mb-2 block text-sm font-medium text-black">
+                Auction Title *
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                required
+                maxlength="100"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="Enter a descriptive title for your auction item" />
+            </div>
+
+            <!-- Description Section -->
+            <div>
+              <label
+                for="description"
+                class="mb-2 block text-sm font-medium text-black">
+                Description *
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                required
+                rows="6"
+                maxlength="1000"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="Provide a detailed description of your item"></textarea>
               <div
-                class="bg-dark-green mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white">
+                class="mt-1 flex justify-between text-xs text-black/80"></div>
+            </div>
+
+            <!-- Deadline Section -->
+            <div>
+              <label
+                for="deadline"
+                class="mb-2 block text-sm font-medium text-black">
+                Auction End Date & Time *
+              </label>
+              <input
+                type="datetime-local"
+                id="deadline"
+                name="deadline"
+                required
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+            </div>
+
+            <!-- Image Section -->
+            <div>
+              <label class="mb-2 block text-sm font-medium text-black">
+                Images (optional)
+              </label>
+              <p class="mb-4 text-xs text-black/80">
+                Add image URL to showcase your item
+              </p>
+
+              <div id="media-container" class="space-y-3">
+                <!-- Initial media input -->
+                <div class="media-input-group flex items-center gap-3">
+                  <input
+                    type="url"
+                    name="media"
+                    placeholder="https://example.com/image.jpg"
+                    class="border-gray/50 focus:border-dark-green focus:ring-dark-green flex-1 rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags Section -->
+            <div>
+              <label
+                for="tags"
+                class="mb-2 block text-sm font-medium text-black">
+                Tags (Optional)
+              </label>
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                placeholder="electronics, vintage, collectible (separate with commas)" />
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex flex-col justify-end gap-4 pt-6 sm:flex-row">
+              <button
+                type="submit"
+                class="btn-primary flex flex-1 items-center justify-center gap-2 px-6 py-3 font-medium md:max-w-sm">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="size-8"
-                  viewBox="0 0 448 512"
+                  class="size-4"
                   fill="currentColor"
+                  viewBox="0 0 24 24"
                   aria-hidden="true">
                   <path
-                    d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
                 </svg>
-              </div>
-              <h1 id="login-heading" class="mb-2 text-3xl font-bold">
-                Welcome Back
-              </h1>
-              <p class="text-lg font-medium">
-                Sign in to your BidRally account
-              </p>
-              <p class="mt-2 text-sm text-black/70">
-                Access your profile and start bidding
-              </p>
+                Create Auction
+              </button>
             </div>
-
-            <!-- Login Form -->
-            <div class="rounded-lg bg-white p-8 shadow-xl">
-              <form id="loginForm" class="space-y-6">
-                <!-- Email Field -->
-                <div>
-                  <label for="email" class="mb-2 block text-sm font-medium">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                    placeholder="your.name@stud.noroff.no" />
-                  <div
-                    id="emailError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
-
-                <!-- Password Field -->
-                <div>
-                  <label for="password" class="mb-2 block text-sm font-medium">
-                    Password *
-                  </label>
-                  <div class="relative">
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      required
-                      class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 pr-12 transition-colors focus:ring-2 focus:outline-none"
-                      placeholder="Enter your password" />
-                  </div>
-                  <div
-                    id="passwordError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
-
-                <!-- Submit Button -->
-                <div>
-                  <button
-                    type="submit"
-                    id="submitButton"
-                    class="btn-primary flex w-full items-center justify-center py-3 text-lg font-medium">
-                    <span id="submitText">Sign In</span>
-                    <svg
-                      id="loadingSpinner"
-                      class="ml-2 hidden h-5 w-5 animate-spin"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true">
-                      <circle
-                        class="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        stroke-width="4"></circle>
-                      <path
-                        class="opacity-75"
-                        fill="currentColor"
-                        d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                  </button>
-                </div>
-
-                <!-- Error Message Display -->
-                <div
-                  id="generalError"
-                  class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
-
-                <!-- Success Message Display -->
-                <div
-                  id="successMessage"
-                  class="hidden rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"></div>
-              </form>
-
-              <!-- Register Link -->
-              <div class="border-gray-base mt-6 border-t pt-6 text-center">
-                <p class="text-black/70">
-                  Don't have an account?
-                  <a
-                    href="../register/"
-                    class="text-dark-green hover:text-gray font-medium underline transition-colors">
-                    Create one here
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>
@@ -299,7 +324,7 @@
               About BidRally
             </h3>
             <nav aria-label="About BidRally links">
-              <a href="about.html" class="hover:text-gray transition-colors">
+              <a href="/about/" class="hover:text-gray transition-colors">
                 About Us
               </a>
             </nav>
@@ -310,12 +335,11 @@
               Help & Support
             </h3>
             <nav aria-label="Help and support links">
-              <a href="contact.html" class="hover:text-gray transition-colors">
+              <a href="/contact/" class="hover:text-gray transition-colors">
                 Contact Us
               </a>
             </nav>
           </div>
-
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
             <h3 class="mb-2 text-lg font-light text-white/80">
               Connect With Us
@@ -396,5 +420,58 @@
         </div>
       </div>
     </footer>
+
+    <!-- Loading Overlay -->
+    <div
+      id="loading-overlay"
+      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      <div class="border-gray/50 rounded-lg border bg-white p-8 text-center">
+        <div
+          class="border-dark-green mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2"></div>
+        <p class="text-black">Creating your auction...</p>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div
+      id="success-modal"
+      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      <div
+        class="border-gray/50 mx-4 max-w-md rounded-lg border bg-white p-8 text-center">
+        <div
+          class="bg-mint-green mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+          <svg
+            class="text-dark-green h-8 w-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="mb-2 text-xl font-bold text-black">
+          Auction Created Successfully!
+        </h3>
+        <p class="mb-6 text-black/80">
+          Your auction is now live and accepting bids.
+        </p>
+        <div class="flex gap-3">
+          <button
+            onclick="goToListings()"
+            class="btn-primary flex-1 px-4 py-2 text-sm">
+            View All Listings
+          </button>
+          <button
+            onclick="createAnother()"
+            class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-50">
+            Create Another
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

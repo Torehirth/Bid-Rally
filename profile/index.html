@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
+    <script type="module" src="/src/js/profile.mjs"></script>
+    <title>My Profile | BidRally</title>
+    <!-- Meta tags for SEO -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Manage your BidRally profile, view your credit balance, update avatar, and manage your listings and bids." />
+    <meta
+      name="keywords"
+      content="profile, account, auction, bidding, listings, credit balance" />
+    <meta name="author" content="BidRally Team" />
+    <!-- Meta tags for Social Media platforms -->
+    <meta property="og:title" content="My Profile | BidRally" />
+    <meta
+      property="og:description"
+      content="Manage your BidRally profile and auction activities." />
+    <meta property="og:image" content="/assets/images/profile-banner.webp" />
+  </head>
+  <body class="flex min-h-screen flex-col bg-white text-black">
+    <!-- Header -->
+    <header class="shadow-md" role="banner">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a
+              href="/"
+              class="hover:text-dark-green flex items-center gap-2 text-xl font-bold transition-colors"
+              aria-label="BidRally home page">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5"
+                viewBox="0 0 576 512"
+                fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M169.6 153.4l-18.7-18.7c-12.5-12.5-12.5-32.8 0-45.3L265.6-25.4c12.5-12.5 32.8-12.5 45.3 0L329.6-6.6c12.5 12.5 12.5 32.8 0 45.3L214.9 153.4c-12.5 12.5-32.8 12.5-45.3 0zM276 211.7l-31.4-31.4 112-112 119.4 119.4-112 112-31.4-31.4-232 232c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6l232-232zM390.9 374.6c-12.5-12.5-12.5-32.8 0-45.3L505.6 214.6c12.5-12.5 32.8-12.5 45.3 0l18.7 18.7c12.5 12.5 12.5 32.8 0 45.3L454.9 393.4c-12.5 12.5-32.8 12.5-45.3 0l-18.7-18.7z" />
+              </svg>
+              <span class="text-2xl">BidRally</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav
+            class="hidden gap-1 lg:flex"
+            role="navigation"
+            aria-label="Main navigation">
+            <a
+              href="/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          <div class="hidden lg:flex">
+            <!-- User profile and New listing buttons -->
+            <div
+              class="flex items-center gap-4"
+              role="group"
+              aria-label="Authentication actions">
+              <a
+                href="/profile/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="View your user profile">
+                <svg
+                  class="size-5"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
+                </svg>
+                <span>Profile</span>
+              </a>
+              <a
+                href="/new-listing/"
+                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
+                aria-label="Create a new auction listing">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="size-5"
+                  fill="currentColor"
+                  aria-hidden="true">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM232 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                </svg>
+                <span>New listing</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              id="mobile-menu-button"
+              class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile navigation menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true">
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav
+          id="mobile-menu"
+          class="border-gray-base hidden border-t py-4 lg:hidden"
+          role="navigation"
+          aria-label="Mobile navigation">
+          <div class="flex flex-col gap-3">
+            <a
+              href="/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Home
+            </a>
+            <a
+              href="/auctions/"
+              class="hover:text-dark-green font-medium transition-colors">
+              All Auctions
+            </a>
+            <a
+              href="/about/"
+              class="hover:text-dark-green font-medium transition-colors">
+              About
+            </a>
+            <a
+              href="/contact/"
+              class="hover:text-dark-green font-medium transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow" role="main">
+      <!-- Breadcrumbs -->
+      <section class="bg-gray-base" aria-label="Breadcrumbs">
+        <ul class="container mx-auto flex gap-3 px-4 py-4 text-xs">
+          <li><a href="/">Home</a></li>
+          <li>&gt;</li>
+          <li>Profile</li>
+        </ul>
+      </section>
+
+      <!-- Profile Header Section -->
+      <section class="py-8" aria-labelledby="profile-heading">
+        <div class="container mx-auto px-4">
+          <div class="border-gray/50 rounded-lg border bg-white p-6">
+            <div
+              class="flex flex-col items-center gap-6 md:flex-row md:items-start">
+              <!-- Avatar Section -->
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <img
+                    id="user-avatar"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                    alt="User profile avatar"
+                    class="h-32 w-32 rounded-full border-4 border-gray-200 object-cover" />
+                  <button
+                    id="edit-avatar-btn"
+                    class="hover:bg-dark-green absolute right-0 bottom-0 cursor-pointer rounded-full bg-black p-2 text-white transition-colors"
+                    aria-label="Edit profile picture">
+                    <svg
+                      class="size-4"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      aria-hidden="true">
+                      <path
+                        d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- User Info Section -->
+              <div class="flex-grow text-center md:text-left">
+                <h1
+                  id="profile-heading"
+                  class="mb-2 text-3xl font-bold capitalize">
+                  <span id="user-name">john photographer</span>
+                </h1>
+                <p class="text-black80 mb-4 text-sm">
+                  Member since:
+                  <span id="member-since">June 2024</span>
+                </p>
+
+                <!-- Credit Balance -->
+                <div class="mb-6 flex items-center gap-4">
+                  <div
+                    class="border-gray/50 mb-4 inline-block rounded-lg border bg-white p-4">
+                    <p class="mb-1 text-sm text-black">Available Credit</p>
+                    <p
+                      class="text-dark-green text-2xl font-bold"
+                      id="user-credit">
+                      $2,500
+                    </p>
+                  </div>
+                  <div class="inline-block">
+                    <a
+                      href="/new-listing/"
+                      class="btn-primary inline-block text-center">
+                      Create Listing
+                    </a>
+                  </div>
+                </div>
+                <!-- User Stats -->
+                <div
+                  class="flex justify-center gap-8 text-center md:justify-start">
+                  <div>
+                    <p class="text-2xl font-bold" id="total-listings">12</p>
+                    <p class="text-sm text-black/80">Total Listings</p>
+                  </div>
+                  <div>
+                    <p class="text-2xl font-bold" id="total-wins">8</p>
+                    <p class="text-sm text-black/80">Bids won</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- My listings Section -->
+      <section
+        class="container mx-auto px-4 py-8 pb-16"
+        aria-labelledby="auctions-heading">
+        <div class="">
+          <h2 class="mb-6 text-2xl font-semibold">My Listings</h2>
+        </div>
+        <div class="">
+          <h2 id="auctions-heading" class="sr-only">Auction items</h2>
+          <div
+            class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            role="list"
+            aria-label="Auction items"
+            id="auctions-grid">
+            <!-- Auction Item 1 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/jon-tyson-H1QqPZ-WZdQ-unsplash.webp"
+                  alt="First pressing rare vinyl record in mint condition, never played"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  First pressing of a legendary album, mint condition, never
+                  played.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">3 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=4"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on rare vinyl record">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 2 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
+                  alt="Vintage camera from the 1950s"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Vintage Camera</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  A rare vintage camera from the 1950s in excellent condition.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $450
+                  </p>
+                  <p class="text-xs text-black/80">5 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=1"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on vintage camera">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 3 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/kjartan-einarsson-hxwvWHmCdBM-unsplash.webp"
+                  alt="18th century pocket watch"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Antique Pocket Watch</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  18th century gold-plated pocket watch with intricate
+                  engravings.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $1,200
+                  </p>
+                  <p class="text-xs text-black/80">8 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=2"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on antique pocket watch">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 4 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/steve-johnson-RKRnPx9e4jQ-unsplash.webp"
+                  alt="Original abstract painting by emerging contemporary artist"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Modern Art Painting</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  Original abstract painting by emerging contemporary artist.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">12 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=3"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on modern art painting">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 5 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/jon-tyson-H1QqPZ-WZdQ-unsplash.webp"
+                  alt="First pressing rare vinyl record in mint condition, never played"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  First pressing of a legendary album, mint condition, never
+                  played.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">3 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=4"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on rare vinyl record">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 6 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
+                  alt="Vintage camera from the 1950s"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Vintage Camera</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  A rare vintage camera from the 1950s in excellent condition.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $450
+                  </p>
+                  <p class="text-xs text-black/80">5 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=1"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on vintage camera">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 7 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/kjartan-einarsson-hxwvWHmCdBM-unsplash.webp"
+                  alt="18th century pocket watch"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    2h 33m left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Antique Pocket Watch</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  18th century gold-plated pocket watch with intricate
+                  engravings.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $1,200
+                  </p>
+                  <p class="text-xs text-black/80">8 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=2"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on antique pocket watch">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Auction Item 8 -->
+            <article
+              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+              role="listitem">
+              <div class="relative">
+                <img
+                  src="/assets/images/steve-johnson-RKRnPx9e4jQ-unsplash.webp"
+                  alt="Original abstract painting by emerging contemporary artist"
+                  class="h-48 w-full object-cover" />
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
+                    aria-label="Time left in auction">
+                    4d 2h left
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-grow flex-col p-4">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="text-lg font-bold">Modern Art Painting</h3>
+                </div>
+                <p class="mb-3 text-sm">
+                  Original abstract painting by emerging contemporary artist.
+                </p>
+                <div class="mb-4 flex-grow">
+                  <p class="text-sm">Current Bid:</p>
+                  <p
+                    class="text-dark-green text-xl font-bold"
+                    aria-label="Current bid amount">
+                    $750
+                  </p>
+                  <p class="text-xs text-black/80">12 bids</p>
+                </div>
+                <div class="flex w-full">
+                  <a
+                    href="/auctions/item.html?id=3"
+                    class="btn-primary w-full px-4 py-2 text-center text-sm"
+                    aria-label="Place bid on modern art painting">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white" role="contentinfo">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              About BidRally
+            </h3>
+            <nav aria-label="About BidRally links">
+              <a href="/about/" class="hover:text-gray transition-colors">
+                About Us
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Help & Support
+            </h3>
+            <nav aria-label="Help and support links">
+              <a href="/contact/" class="hover:text-gray transition-colors">
+                Contact Us
+              </a>
+            </nav>
+          </div>
+          <div class="flex flex-col lg:mx-auto lg:max-w-screen">
+            <h3 class="mb-2 text-lg font-light text-white/80">
+              Connect With Us
+            </h3>
+            <nav class="mb-2 flex gap-4" aria-label="Social media links">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Facebook"
+                class="hover:text-gray flex items-center transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5l0-170.3-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 175.9C413.8 494.8 512 386.9 512 256z" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/Torehirth/Bid-Rally"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally project on GitHub"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true">
+                  <path
+                    d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on Instagram"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/torehirth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit BidRally on LinkedIn"
+                class="hover:text-gray transition-colors">
+                <svg
+                  fill="currentColor"
+                  class="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  aria-hidden="true">
+                  <path
+                    d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="border-gray-base border-t py-4 text-center">
+          <p class="text-sm text-white/80">
+            © 2025 BidRally - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Avatar Update Modal -->
+    <div
+      id="avatar-modal"
+      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      <div class="mx-4 w-full max-w-md rounded-lg bg-white p-6">
+        <div class="mb-4 flex items-center justify-between">
+          <h3 class="text-lg font-semibold">Update Avatar</h3>
+          <button
+            id="close-modal-btn"
+            class="hover:text-dark-green text-gray-500 transition-colors"
+            aria-label="Close modal">
+            <svg
+              class="size-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <form id="avatar-form" class="space-y-4">
+          <div>
+            <label
+              for="avatar-url"
+              class="mb-2 block text-sm font-medium text-gray-700">
+              Avatar URL
+            </label>
+            <input
+              type="url"
+              id="avatar-url"
+              name="avatar-url"
+              placeholder="https://example.com/your-avatar.jpg"
+              class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none"
+              required />
+            <p class="mt-1 text-sm text-black/80">
+              Enter a valid URL for your new profile picture
+            </p>
+          </div>
+
+          <div class="flex gap-3">
+            <button
+              type="button"
+              id="cancel-avatar-btn"
+              class="border-gray/50 flex-1 rounded-lg border px-4 py-2 font-medium transition-colors hover:bg-gray-50">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="btn-primary flex-1 px-4 py-2 font-medium">
+              Update Avatar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
