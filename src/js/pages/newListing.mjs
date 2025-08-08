@@ -1,4 +1,4 @@
 export const initNewListingPage = () => {
-  console.log("init NewListingPage page");
+  console.log("init new listing page");
   
 }
