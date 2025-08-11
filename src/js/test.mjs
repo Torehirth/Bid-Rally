@@ -1,8 +1,11 @@
 const name = "John";
-let age = 25             ;
+
+
+
+
+
+
+let age = 25;
 function greet() {
-
-
-
-  console.log("Hello");
+  console.log("Hello")    ;
 }
