@@ -1,6 +1,2 @@
 node_modules/
 dist/
-# JavaScript folder/files that needs to be deleted
-src/js/delete/
-src/js/ui/common
-# ---------------------------
