@@ -40,10 +40,10 @@
     "tailwindcss": "^4.1.11"
   },
   "lint-staged": {
-    "*.{js,html,css}": [
+    "*.{js,mjs,html,css}": [
       "prettier --write"
     ],
-    "*.js": [
+    "*.{js,mjs}": [
       "eslint --fix"
     ]
   }
