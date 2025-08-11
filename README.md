@@ -180,5 +180,4 @@ This project is created for educational purposes as part of the Noroff Front-End
 
 ## Author
 
-Tore Hirth
-[Torehirth](https://github.com/Torehirth)
+[Tore Hirth](https://github.com/Torehirth)
