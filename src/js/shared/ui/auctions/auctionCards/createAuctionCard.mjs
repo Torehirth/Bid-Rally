@@ -88,7 +88,7 @@ export const createAuctionCard = (
 
   const bidCountNumber = document.createElement("p");
   bidCountNumber.className = "text-xs text-black/80";
-  bidCountNumber.textContent = bidCount;
+  bidCountNumber.textContent = bidCount === "1" ? "1 bid" : `${bidCount} bids`;
 
   bidInfoContainer.appendChild(currentBidLabel);
   bidInfoContainer.appendChild(bidAmount);
