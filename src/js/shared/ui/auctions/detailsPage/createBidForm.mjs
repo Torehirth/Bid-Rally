@@ -35,7 +35,7 @@ export const createBidForm = (auctionData) => {
   const currentHighestBid = getHighestBid(auctionData);
   input.min = currentHighestBid || "0";
   input.step = "1";
-  input.placeholder = currentHighestBid + 1 || "001";
+  input.placeholder = `(currentHighestBid + 1) || "001"`
   input.className =
     "focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 pl-8 focus:ring-2 focus:outline-none";
   input.setAttribute("aria-describedby", "bid-help");
