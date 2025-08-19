@@ -12,39 +12,39 @@ const router = () => {
   const pathname = window.location.pathname;
 
   switch (pathname) {
-    case "/":
+    case "/Bid-Rally/":
       initHomePage();
       break;
 
-    case "/login/":
+    case "/Bid-Rally/login/":
       initLoginPage();
       break;
 
-    case "/register/":
+    case "/Bid-Rally/register/":
       initRegisterPage();
       break;
 
-    case "/profile/":
+    case "/Bid-Rally/profile/":
       initProfilePage();
       break;
 
-    case "/auctions/":
+    case "/Bid-Rally/auctions/":
       initAuctionsPage();
       break;
 
-    case "/auctions/item.html":
+    case "/Bid-Rally/auctions/item.html":
       initAuctionDetailsPage();
       break;
 
-    case "/new-listing/":
+    case "/Bid-Rally/new-listing/":
       initNewListingPage();
       break;
 
-    case "/about/":
+    case "/Bid-Rally/about/":
       initAboutPage();
       break;
 
-    case "/contact/":
+    case "/Bid-Rally/contact/":
       initContactPage();
       break;
   }
