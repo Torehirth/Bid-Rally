@@ -3,7 +3,7 @@ import { initLoginPage } from "../js/pages/login.mjs";
 import { initRegisterPage } from "../js/pages/register.mjs";
 import { initProfilePage } from "../js/pages/profile.mjs";
 import { initAuctionsPage } from "../js/pages/auctions.mjs";
-import { initItemDetailPage } from "../js/pages/itemDetail.mjs";
+import { initAuctionDetailsPage } from "../js/pages/auctionDetails.mjs";
 import { initNewListingPage } from "../js/pages/newListing.mjs";
 import { initAboutPage } from "../js/pages/about.mjs";
 import { initContactPage } from "../js/pages/contact.mjs";
@@ -33,7 +33,7 @@ const router = () => {
       break;
 
     case "/auctions/item.html":
-      initItemDetailPage();
+      initAuctionDetailsPage();
       break;
 
     case "/new-listing/":
