@@ -1,4 +1,4 @@
-const fetchAPI = async (container, endpoint, parameter = "") => {
+export const fetchAPI = async (container, endpoint, parameter = "") => {
   const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
 
   try {
@@ -17,5 +17,3 @@ const fetchAPI = async (container, endpoint, parameter = "") => {
     console.error(err);
   }
 };
-
-export default fetchAPI;
