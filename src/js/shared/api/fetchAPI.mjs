@@ -4,11 +4,6 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);
 
-    if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Fetch failed");
-    }
-
-    const json = await response.json();
     const json = await response.json();
 
     if (!response.ok) {
