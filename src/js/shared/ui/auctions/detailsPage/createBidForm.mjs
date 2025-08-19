@@ -45,7 +45,7 @@ export const createBidForm = (auctionData) => {
   const helpText = document.createElement("p");
   helpText.id = "bid-help";
   helpText.className = "mt-1 text-sm text-black/80";
-  helpText.textContent = `Minimum bid: $${currentHighestBid + 1 || "0"} (current bid + $1)`;
+  helpText.textContent = `Minimum bid: $${(currentHighestBid + 1) || "0"} (current bid + $1)`;
 
   // Submit button
   const submitButton = document.createElement("button");
