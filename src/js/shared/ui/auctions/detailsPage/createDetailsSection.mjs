@@ -21,7 +21,7 @@ export const createDetailsSection = (auctionData) => {
     },
     {
       label: "Tags:",
-      value: auctionData.tags.join(", ") || "",
+      value: auctionData.tags?.join(", ") || "No tags",
     },
     {
       label: "Updated:",
