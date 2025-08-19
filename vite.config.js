@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: "index.html",
+        main: resolve(__dirname, "index.html"),
         auctions: resolve(__dirname, "auctions/index.html"),
         create: resolve(__dirname, "new-listing/index.html"),
         register: resolve(__dirname, "register/index.html"),
