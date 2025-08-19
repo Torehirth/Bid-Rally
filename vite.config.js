@@ -5,12 +5,12 @@ import { fileURLToPath, URL } from "node:url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
-  base: "/",
+  base: "./",
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
+        main: "index.html",
         auctions: resolve(__dirname, "auctions/index.html"),
         create: resolve(__dirname, "new-listing/index.html"),
         register: resolve(__dirname, "register/index.html"),
