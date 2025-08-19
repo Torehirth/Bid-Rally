@@ -25,7 +25,7 @@ export const renderAuctionCards = (allAuctions, containerID) => {
     const description = auction?.description || "No description available";
     const mediaURL =
       auction?.media?.[0]?.url ||
-      "/public/assets/images/listing-placeholder.webp";
+      "/Bid-Rally/public/assets/images/listing-placeholder.webp";
     const mediaAltText = auction?.media?.[0]?.alt || `image of ${title}`;
     const timeData = updateCountDown(auction?.endsAt);
 

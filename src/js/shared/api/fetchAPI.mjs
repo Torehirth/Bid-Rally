@@ -1,6 +1,6 @@
 export const fetchAPI = async (container, endpoint, parameter = "") => {
-  // const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
-  const baseAPIUrl = "https://v2.api.noroff.dev/auction/";
+  const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
+  // const baseAPIUrl = "https://v2.api.noroff.dev/auction/";
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);
