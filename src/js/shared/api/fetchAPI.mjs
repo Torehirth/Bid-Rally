@@ -9,6 +9,7 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Fetch failed");
     }
+
     return json;
   } catch (err) {
     container.innerHTML =
