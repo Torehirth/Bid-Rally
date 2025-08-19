@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/src/css/styles.css" />
-    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
-    <script type="module" src="/src/js/main.mjs"></script>
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    <script type="module" src="../src/js/main.mjs"></script>
     <title>All Auctions | BidRally</title>
     <!-- Meta tags for SEO -->
     <meta charset="UTF-8" />
@@ -32,7 +32,7 @@
           <!-- Logo -->
           <div class="flex items-center">
             <a
-              href="/"
+              href="../"
               class="hover:text-dark-green flex items-center gap-2 text-xl font-bold transition-colors"
               aria-label="BidRally home page">
               <svg
@@ -55,23 +55,23 @@
             role="navigation"
             aria-label="Main navigation">
             <a
-              href="/"
+              href="../"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Home
             </a>
             <a
-              href="/auctions/"
+              href="./"
               class="hover:text-dark-green hover:border-dark-green border-b border-black px-3 py-1 font-medium transition-colors"
               aria-current="page">
               All Auctions
             </a>
             <a
-              href="/about/"
+              href="../about/"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               About
             </a>
             <a
-              href="/contact/"
+              href="../contact/"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Contact
             </a>
@@ -84,7 +84,7 @@
               role="group"
               aria-label="Authentication actions">
               <a
-                href="/profile/"
+                href="../profile/"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
                 aria-label="View your user profile">
                 <svg
@@ -100,7 +100,7 @@
                 <span>Profile</span>
               </a>
               <a
-                href="/profile/"
+                href="../profile/"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
                 aria-label="Create a new auction listing">
                 <svg
@@ -122,11 +122,11 @@
               role="group"
               aria-label="Authentication actions">
               <a
-                href="/login/"
+                href="../login/"
                 class="hover:text-dark-green px-4 py-2 font-medium transition-colors">
                 Login
               </a>
-              <a href="/register/" class="btn-primary px-4 py-2 font-medium">
+              <a href="../register/" class="btn-primary px-4 py-2 font-medium">
                 Register
               </a>
             </div>
@@ -162,23 +162,23 @@
           aria-label="Mobile navigation">
           <div class="flex flex-col gap-3">
             <a
-              href="/"
+              href="../"
               class="hover:text-dark-green font-medium transition-colors">
               Home
             </a>
             <a
-              href="/auctions/"
+              href="./"
               class="hover:text-dark-green font-medium transition-colors"
               aria-current="page">
               All Auctions
             </a>
             <a
-              href="/about/"
+              href="../about/"
               class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
             <a
-              href="/contact/"
+              href="../contact/"
               class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
@@ -303,6 +303,7 @@
                     stroke-linejoin="round"
                     class="text-gray-900"></path>
                 </svg>
+
               </div>
             </div>
             <!-- / Loader -->
@@ -340,7 +341,7 @@
               About BidRally
             </h3>
             <nav aria-label="About BidRally links">
-              <a href="/about/" class="hover:text-gray transition-colors">
+              <a href="../about/" class="hover:text-gray transition-colors">
                 About Us
               </a>
             </nav>
@@ -351,7 +352,7 @@
               Help & Support
             </h3>
             <nav aria-label="Help and support links">
-              <a href="/contact/" class="hover:text-gray transition-colors">
+              <a href="../contact/" class="hover:text-gray transition-colors">
                 Contact Us
               </a>
             </nav>
