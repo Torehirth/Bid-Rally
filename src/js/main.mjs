@@ -14,6 +14,8 @@ const router = () => {
   switch (pathname) {
     case "/":
       initHomePage();
+      console.log("sdf");
+
       break;
 
     case "/login/":
