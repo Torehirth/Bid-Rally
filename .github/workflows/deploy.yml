@@ -28,6 +28,7 @@ concurrency:
 
 jobs:
   deploy:
+    timeout-minutes: 30
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -35,6 +36,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Deployment Status
+        run: |
+          echo "🚀 Starting deployment for commit: ${{ github.sha }}"
+          echo "📅 Deployment time: $(date)"
+          echo "🔗 Repository: ${{ github.repository }}"
+
       - name: Checkout code
         uses: actions/checkout@v4
 

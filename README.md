@@ -174,6 +174,10 @@ Once set up, every push to the `main` branch will:
 - Deploy to GitHub Pages
 - Make your site available at `https://[username].github.io/[repository-name]`
 
+### Troubleshooting Deployments
+
+If your deployment gets stuck in a "queued" state or encounters issues, see the [Deployment Troubleshooting Guide](./DEPLOYMENT_TROUBLESHOOTING.md) for solutions.
+
 ## License
 
 This project is created for educational purposes as part of the Noroff Front-End Development course.
