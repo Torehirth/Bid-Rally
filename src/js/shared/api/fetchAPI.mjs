@@ -12,11 +12,14 @@
  * const data = await fetchAPI(container, 'users', 'limit=10&sort=name');
  */
 export const fetchAPI = async (container, endpoint, parameter = "") => {
+  console.log(import.meta.env.VITE_API_BASE_URL);
+
   // const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
   const baseAPIUrl = "https://v2.api.noroff.dev/auction";
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);
+    console.log(response);
 
     const json = await response.json();
 

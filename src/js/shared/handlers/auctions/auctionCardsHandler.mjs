@@ -11,6 +11,7 @@ export const auctionCardsHandler = async () => {
       "listings",
       "_active=true&_seller=true&_bids=true&limit=10"
     );
+    console.log(json);
 
     const allAuctions = json?.data;
     renderAuctionCards(allAuctions, container);
