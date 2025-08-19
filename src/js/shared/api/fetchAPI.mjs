@@ -1,6 +1,8 @@
 export const fetchAPI = async (container, endpoint, parameter = "") => {
   const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
 
+  console.info("[env] VITE_API_BASE_URL =", import.meta.env.VITE_API_BASE_URL);
+
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);
 
@@ -9,6 +11,7 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Fetch failed");
     }
+    console.log(json);
 
     return json;
   } catch (err) {
