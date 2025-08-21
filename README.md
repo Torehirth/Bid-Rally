@@ -16,7 +16,7 @@ A modern auction platform where users can create listings, place bids, and manag
 - Create listings with title, description, deadline, and media gallery
 - Place bids on other users' listings
 - View all bids made on listings
-- Search through available listings (available to unregistered users)
+- Search through available listings (also available to unregistered users)
 
 ### Additional Features
 
@@ -93,23 +93,6 @@ VITE_API_KEY=your-api-key-here
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 - `npm run prepare` - Set up Husky git hooks
-
-## Project Structure
-
-```
-auction-website/
-├── src/
-│   ├── js/
-│   │   ├── api/          # API calls and endpoints
-│   │   ├── components/   # Reusable JavaScript components
-│   │   ├── pages/        # Page-specific JavaScript
-│   │   └── utils/        # Helper functions
-│   ├── styles/          # CSS files
-│   └── assets/          # Images and other static assets
-├── tests/               # Test files
-├── public/              # Static assets
-└── index.html           # Main HTML file
-```
 
 ## Technologies
 
