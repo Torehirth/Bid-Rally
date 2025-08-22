@@ -1,5 +1,5 @@
-import { getHighestBid } from "../../../utils/getHighestBid.mjs";
-import { updateCountDown } from "../../../utils/updateCountDown.mjs";
+import { getHighestBid } from "../../../utils/auctions/getHighestBid.mjs";
+import { updateCountDown } from "../../../utils/auctions/updateCountDown.mjs";
 import { createAuctionCard } from "./createAuctionCard.mjs";
 
 /**

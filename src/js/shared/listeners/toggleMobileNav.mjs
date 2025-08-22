@@ -5,7 +5,6 @@ import { openMobileMenu } from "../utils/navigation/openMobileMenu.mjs";
 export const toggleMobileNav = () => {
   document.addEventListener("click", (e) => {
     if (e.target.closest("#open-mobile-menu-button")) {
-
       openMobileMenu();
     } else if (
       !e.target.closest("#mobile-menu") ||

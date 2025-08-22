@@ -1,7 +1,7 @@
 import { fetchAPI } from "../../api/fetchAPI.mjs";
 import { renderCompleteDetailsPage } from "../../ui/auctions/detailsPage/renderCompleteDetailsPage.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
-import { getQueryParameter } from "../../utils/getQueryParameter.mjs";
+import { getQueryParameter } from "../../utils/common/getQueryParameter.mjs";
 
 export const auctionDetailsPageHandler = async () => {
   const container = document.querySelector("#item-details-section");

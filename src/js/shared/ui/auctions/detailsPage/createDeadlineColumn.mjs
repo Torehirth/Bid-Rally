@@ -1,4 +1,4 @@
-import { updateCountDown } from "../../../utils/updateCountDown.mjs";
+import { updateCountDown } from "../../../utils/auctions/updateCountDown.mjs";
 
 /**
  * Creates the deadline column

@@ -100,12 +100,8 @@ export const createAuctionCard = (
 
   const viewDetailsLink = document.createElement("a");
   viewDetailsLink.href = itemLink;
-  viewDetailsLink.className =
-    "btn-primary w-full px-4 py-2 text-center text-sm";
-  viewDetailsLink.setAttribute(
-    "aria-label",
-    `Place bid on ${title || "auction item"}`
-  );
+  viewDetailsLink.className = "btn-primary w-full px-4 py-2 text-center text-sm";
+  viewDetailsLink.setAttribute("aria-label", `Place bid on ${title || "auction item"}`);
   viewDetailsLink.textContent = "View Details";
 
   buttonContainer.appendChild(viewDetailsLink);

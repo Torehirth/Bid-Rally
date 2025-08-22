@@ -17,12 +17,8 @@
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
     <meta property="og:title" content="Create New Listing | BidRally" />
-    <meta
-      property="og:description"
-      content="Create a new auction listing on BidRally." />
-    <meta
-      property="og:image"
-      content="/assets/images/create-listing-banner.webp" />
+    <meta property="og:description" content="Create a new auction listing on BidRally." />
+    <meta property="og:image" content="/assets/images/create-listing-banner.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -164,9 +160,7 @@
           role="navigation"
           aria-label="Mobile navigation">
           <div class="flex flex-col gap-3">
-            <a
-              href="../"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green font-medium transition-colors">
               Home
             </a>
             <a
@@ -210,8 +204,8 @@
               Create New Auction Listing
             </h1>
             <p class="text-sm text-black/80">
-              Fill in the details below to create your auction listing and start
-              receiving bids.
+              Fill in the details below to create your auction listing and start receiving
+              bids.
             </p>
           </div>
         </div>
@@ -222,16 +216,12 @@
         class="container mx-auto px-4 pb-16"
         aria-labelledby="listing-form-heading">
         <div class="border-gray/50 rounded-lg border p-6">
-          <h2 id="listing-form-heading" class="sr-only">
-            Listing Details Form
-          </h2>
+          <h2 id="listing-form-heading" class="sr-only">Listing Details Form</h2>
 
           <form id="create-listing-form" class="space-y-6">
             <!-- Title Section -->
             <div>
-              <label
-                for="title"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="title" class="mb-2 block text-sm font-medium text-black">
                 Auction Title *
               </label>
               <input
@@ -246,9 +236,7 @@
 
             <!-- Description Section -->
             <div>
-              <label
-                for="description"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="description" class="mb-2 block text-sm font-medium text-black">
                 Description *
               </label>
               <textarea
@@ -259,15 +247,12 @@
                 maxlength="1000"
                 class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                 placeholder="Provide a detailed description of your item"></textarea>
-              <div
-                class="mt-1 flex justify-between text-xs text-black/80"></div>
+              <div class="mt-1 flex justify-between text-xs text-black/80"></div>
             </div>
 
             <!-- Deadline Section -->
             <div>
-              <label
-                for="deadline"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="deadline" class="mb-2 block text-sm font-medium text-black">
                 Auction End Date & Time *
               </label>
               <input
@@ -301,9 +286,7 @@
 
             <!-- Tags Section -->
             <div>
-              <label
-                for="tags"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="tags" class="mb-2 block text-sm font-medium text-black">
                 Tags (Optional)
               </label>
               <input
@@ -340,20 +323,14 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              About BidRally
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">About BidRally</h3>
             <nav aria-label="About BidRally links">
-              <a href="../about/" class="hover:text-gray transition-colors">
-                About Us
-              </a>
+              <a href="../about/" class="hover:text-gray transition-colors">About Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Help & Support
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Help & Support</h3>
             <nav aria-label="Help and support links">
               <a href="../contact/" class="hover:text-gray transition-colors">
                 Contact Us
@@ -361,9 +338,7 @@
             </nav>
           </div>
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Connect With Us
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Connect With Us</h3>
             <nav class="mb-2 flex gap-4" aria-label="Social media links">
               <a
                 href="https://www.facebook.com"
@@ -434,9 +409,7 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">
-            © 2025 BidRally - All rights reserved
-          </p>
+          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
         </div>
       </div>
     </footer>
@@ -473,16 +446,10 @@
               d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 class="mb-2 text-xl font-bold text-black">
-          Auction Created Successfully!
-        </h3>
-        <p class="mb-6 text-black/80">
-          Your auction is now live and accepting bids.
-        </p>
+        <h3 class="mb-2 text-xl font-bold text-black">Auction Created Successfully!</h3>
+        <p class="mb-6 text-black/80">Your auction is now live and accepting bids.</p>
         <div class="flex gap-3">
-          <button
-            onclick="goToListings()"
-            class="btn-primary flex-1 px-4 py-2 text-sm">
+          <button onclick="goToListings()" class="btn-primary flex-1 px-4 py-2 text-sm">
             View All Listings
           </button>
           <button

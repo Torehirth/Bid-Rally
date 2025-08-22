@@ -10,8 +10,7 @@ import { createTitleSection } from "./createTitleSection.mjs";
 export const createAuctionPageInfoSection = (auctionData) => {
   // Main item info container
   const itemInfoContainer = document.createElement("div");
-  itemInfoContainer.className =
-    "border-gray/50 space-y-6 rounded-lg border bg-white p-6";
+  itemInfoContainer.className = "border-gray/50 space-y-6 rounded-lg border bg-white p-6";
 
   // Create all subsections
   const titleSection = createTitleSection(auctionData);
