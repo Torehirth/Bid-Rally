@@ -11,7 +11,7 @@ export const toggleMobileNav = () => {
       !e.target.closest("#mobile-menu") ||
       e.target.closest("#close-mobile-menu-button")
     ) {
-      closeMobileMenu(e);
+      closeMobileMenu();
       closeMenuButton.classList.add("hidden");
       openMenuButton.classList.remove("hidden");
     }
