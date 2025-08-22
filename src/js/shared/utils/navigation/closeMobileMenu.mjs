@@ -7,6 +7,6 @@ import {
 export const closeMobileMenu = () => {
   mobileMenu.classList.add("hidden", "lg:hidden");
 
-  closeMenuButton.classList.remove("hidden");
+  closeMenuButton.classList.add("hidden");
   openMenuButton.classList.remove("hidden");
 };
