@@ -122,15 +122,17 @@
             </div>
             <!-- Login and register buttons -->
             <div
-              class="flex items-center gap-2"
+              class="flex items-center gap-3"
               role="group"
               aria-label="Authentication actions">
               <a
                 href="./login/"
-                class="hover:text-dark-green px-4 py-2 font-medium transition-colors">
+                class="hover:text-dark-green px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Login
               </a>
-              <a href="./register/" class="btn-primary px-4 py-2 font-medium">
+              <a
+                href="./register/"
+                class="btn-primary px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Register
               </a>
             </div>
@@ -186,7 +188,7 @@
           <div class="flex flex-col gap-3">
             <a
               href="./"
-              class="hover:text-dark-green font-medium transition-colors"
+              class="hover:text-dark-green text-dark-green font-medium transition-colors"
               aria-current="page">
               Home
             </a>
@@ -214,7 +216,9 @@
     <main class="flex-grow" role="main">
       <!-- Hero Section -->
 
-      <section class="relative h-[40vh]" aria-labelledby="hero-heading">
+      <section
+        class="relative h-[60vh] lg:h-[40vh]"
+        aria-labelledby="hero-heading">
         <img
           src="/assets/images/john-2FPjlAyMQTA-unsplash.webp"
           alt="Vintage auction items displayed on a wooden table"
@@ -223,7 +227,7 @@
         <!-- Dark overlay on top of image -->
         <div class="absolute inset-0 bg-black/80" aria-hidden="true"></div>
         <div
-          class="relative flex min-h-[45vh] items-center justify-center px-4">
+          class="relative flex min-h-[60vh] items-center justify-center px-4 lg:min-h-[40vh]">
           <div class="flex max-w-[65ch] flex-col gap-4 text-center text-white">
             <h1 id="hero-heading" class="text-5xl font-bold tracking-wide">
               Discover Unique Treasures
