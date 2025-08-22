@@ -1,3 +1,5 @@
+import { displayMessage } from "../utils/common/displayMessage.mjs";
+
 /**
  * Fetches data from an API endpoint and handles errors by updating the container element
  * @async
@@ -12,26 +14,23 @@
  * const data = await fetchAPI(container, 'users', 'limit=10&sort=name');
  */
 export const fetchAPI = async (container, endpoint, parameter = "") => {
-  console.log(import.meta.env.VITE_API_BASE_URL);
-
-  // const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
-  const baseAPIUrl = "https://v2.api.noroff.dev/auction";
+  const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);
-    console.log(response);
-
     const json = await response.json();
 
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Fetch failed");
     }
-    console.log(json);
 
     return json;
   } catch (err) {
-    container.innerHTML =
-      "OOOps! Error when fetching the API! Try again later..";
-    console.error(err);
+    displayMessage(
+      container,
+      "error",
+      "Something went wrong fetching the listings. Try again later."
+    );
+    console.error(err.message);
   }
 };

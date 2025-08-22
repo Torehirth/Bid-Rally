@@ -1,5 +1,6 @@
 import { fetchAPI } from "../../api/fetchAPI.mjs";
 import { renderCompleteDetailsPage } from "../../ui/auctions/detailsPage/renderCompleteDetailsPage.mjs";
+import { displayMessage } from "../../utils/common/displayMessage.mjs";
 import { getQueryParameter } from "../../utils/getQueryParameter.mjs";
 
 export const auctionDetailsPageHandler = async () => {
@@ -7,7 +8,7 @@ export const auctionDetailsPageHandler = async () => {
   const auctionId = getQueryParameter("id");
 
   if (!auctionId) {
-    window.location.href = "../";
+    window.location.href = "../auctions/";
   }
 
   const endpoint = `listings/${auctionId}`;
@@ -15,7 +16,12 @@ export const auctionDetailsPageHandler = async () => {
 
   try {
     const json = await fetchAPI(container, endpoint, queryParam);
-    const singleAuctionData = json?.data || {};
+
+    if (!json) {
+      throw new Error("json couldn't be fetched");
+    }
+
+    const singleAuctionData = json?.data;
 
     if (!singleAuctionData) {
       window.location.href = "../auctions";
@@ -23,7 +29,11 @@ export const auctionDetailsPageHandler = async () => {
 
     renderCompleteDetailsPage(singleAuctionData, container);
   } catch (err) {
-    container.innerHTML = "Could not retrieve the item, try again later..";
-    console.error(err);
+    displayMessage(
+      container,
+      "error",
+      "Could not display the item right now. Try again later.."
+    );
+    console.error(err.message);
   }
 };
