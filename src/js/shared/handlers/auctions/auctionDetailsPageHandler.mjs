@@ -11,17 +11,17 @@ export const auctionDetailsPageHandler = async () => {
     window.location.href = "../auctions/";
   }
 
-  const endpoint = `listings/${auctionId}`;
+  const endpoint = `auction/listings/${auctionId}`;
   const queryParam = `_active=true&_seller=true&_bids=true&limit=10`;
 
   try {
-    const json = await fetchAPI(container, endpoint, queryParam);
+    const data = await fetchAPI(container, endpoint, queryParam);
 
-    if (!json) {
-      throw new Error("json couldn't be fetched");
+    if (!data) {
+      throw new Error("Data couldn't be fetched");
     }
 
-    const singleAuctionData = json?.data;
+    const singleAuctionData = data?.data;
 
     if (!singleAuctionData) {
       window.location.href = "../auctions";

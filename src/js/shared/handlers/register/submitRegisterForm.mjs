@@ -1,8 +1,18 @@
+import { registerUser } from "../../api/auth/registerUser.mjs";
 import { validateRegisterInputFields } from "../../ui/common/validateRegisterInputFields.mjs";
+import { getUserData } from "../../utils/common/getUserData.mjs";
 
 export const submitRegisterForm = () => {
-  document.querySelector("#register-form").addEventListener("submit", (e) => {
+  const form = document.querySelector("#register-form");
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    validateRegisterInputFields();
+
+    const valid = validateRegisterInputFields();
+    if (!valid) return;
+
+    const userData = getUserData(form);
+
+    registerUser(userData);
   });
 };
