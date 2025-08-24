@@ -25,8 +25,7 @@ export const createAuctionCard = (
   isUrgent = false
 ) => {
   const article = document.createElement("article");
-  article.className =
-    "flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl";
+  article.className = "flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl";
   article.setAttribute("role", "listitem");
 
   // image
