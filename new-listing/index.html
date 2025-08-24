@@ -17,12 +17,8 @@
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
     <meta property="og:title" content="Create New Listing | BidRally" />
-    <meta
-      property="og:description"
-      content="Create a new auction listing on BidRally." />
-    <meta
-      property="og:image"
-      content="/assets/images/create-listing-banner.webp" />
+    <meta property="og:description" content="Create a new auction listing on BidRally." />
+    <meta property="og:image" content="/assets/images/create-listing-banner.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -49,10 +45,7 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <nav
-            class="hidden gap-1 lg:flex"
-            role="navigation"
-            aria-label="Main navigation">
+          <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
             <a
               href="../"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
@@ -119,19 +112,39 @@
           <!-- Mobile menu button -->
           <div class="lg:hidden">
             <button
-              id="mobile-menu-button"
+              id="open-mobile-menu-button"
               class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
               aria-expanded="false"
               aria-controls="mobile-menu"
-              aria-label="Toggle mobile navigation menu">
+              aria-label="open mobile navigation menu">
               <svg
+                id="hamburger-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 fill="currentColor"
                 class="size-5"
                 aria-hidden="true">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                 <path
                   d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+            <button
+              id="close-mobile-menu-button"
+              class="hover:text-dark-green hidden cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="close mobile navigation menu">
+              <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true"
+                viewBox="0 0 384 512">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z" />
               </svg>
             </button>
           </div>
@@ -144,24 +157,14 @@
           role="navigation"
           aria-label="Mobile navigation">
           <div class="flex flex-col gap-3">
-            <a
-              href="../"
-              class="hover:text-dark-green font-medium transition-colors">
-              Home
-            </a>
-            <a
-              href="../auctions/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green font-medium transition-colors">Home</a>
+            <a href="../auctions/" class="hover:text-dark-green font-medium transition-colors">
               All Auctions
             </a>
-            <a
-              href="../about/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../about/" class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
-            <a
-              href="../contact/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../contact/" class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
           </div>
@@ -190,28 +193,22 @@
               Create New Auction Listing
             </h1>
             <p class="text-sm text-black/80">
-              Fill in the details below to create your auction listing and start
-              receiving bids.
+              Fill in the details below to create your auction listing and start receiving
+              bids.
             </p>
           </div>
         </div>
       </section>
 
       <!-- Create Listing Form -->
-      <section
-        class="container mx-auto px-4 pb-16"
-        aria-labelledby="listing-form-heading">
+      <section class="container mx-auto px-4 pb-16" aria-labelledby="listing-form-heading">
         <div class="border-gray/50 rounded-lg border p-6">
-          <h2 id="listing-form-heading" class="sr-only">
-            Listing Details Form
-          </h2>
+          <h2 id="listing-form-heading" class="sr-only">Listing Details Form</h2>
 
           <form id="create-listing-form" class="space-y-6">
             <!-- Title Section -->
             <div>
-              <label
-                for="title"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="title" class="mb-2 block text-sm font-medium text-black">
                 Auction Title *
               </label>
               <input
@@ -226,9 +223,7 @@
 
             <!-- Description Section -->
             <div>
-              <label
-                for="description"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="description" class="mb-2 block text-sm font-medium text-black">
                 Description *
               </label>
               <textarea
@@ -239,15 +234,12 @@
                 maxlength="1000"
                 class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                 placeholder="Provide a detailed description of your item"></textarea>
-              <div
-                class="mt-1 flex justify-between text-xs text-black/80"></div>
+              <div class="mt-1 flex justify-between text-xs text-black/80"></div>
             </div>
 
             <!-- Deadline Section -->
             <div>
-              <label
-                for="deadline"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="deadline" class="mb-2 block text-sm font-medium text-black">
                 Auction End Date & Time *
               </label>
               <input
@@ -263,9 +255,7 @@
               <label class="mb-2 block text-sm font-medium text-black">
                 Images (optional)
               </label>
-              <p class="mb-4 text-xs text-black/80">
-                Add image URL to showcase your item
-              </p>
+              <p class="mb-4 text-xs text-black/80">Add image URL to showcase your item</p>
 
               <div id="media-container" class="space-y-3">
                 <!-- Initial media input -->
@@ -281,9 +271,7 @@
 
             <!-- Tags Section -->
             <div>
-              <label
-                for="tags"
-                class="mb-2 block text-sm font-medium text-black">
+              <label for="tags" class="mb-2 block text-sm font-medium text-black">
                 Tags (Optional)
               </label>
               <input
@@ -299,11 +287,7 @@
               <button
                 type="submit"
                 class="btn-primary flex flex-1 items-center justify-center gap-2 px-6 py-3 font-medium md:max-w-sm">
-                <svg
-                  class="size-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true">
+                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
                 </svg>
@@ -320,30 +304,20 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              About BidRally
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">About BidRally</h3>
             <nav aria-label="About BidRally links">
-              <a href="../about/" class="hover:text-gray transition-colors">
-                About Us
-              </a>
+              <a href="../about/" class="hover:text-gray transition-colors">About Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Help & Support
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Help & Support</h3>
             <nav aria-label="Help and support links">
-              <a href="../contact/" class="hover:text-gray transition-colors">
-                Contact Us
-              </a>
+              <a href="../contact/" class="hover:text-gray transition-colors">Contact Us</a>
             </nav>
           </div>
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Connect With Us
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Connect With Us</h3>
             <nav class="mb-2 flex gap-4" aria-label="Social media links">
               <a
                 href="https://www.facebook.com"
@@ -414,9 +388,7 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">
-            © 2025 BidRally - All rights reserved
-          </p>
+          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
         </div>
       </div>
     </footer>
@@ -436,8 +408,7 @@
     <div
       id="success-modal"
       class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
-      <div
-        class="border-gray/50 mx-4 max-w-md rounded-lg border bg-white p-8 text-center">
+      <div class="border-gray/50 mx-4 max-w-md rounded-lg border bg-white p-8 text-center">
         <div
           class="bg-mint-green mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
           <svg
@@ -453,16 +424,10 @@
               d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 class="mb-2 text-xl font-bold text-black">
-          Auction Created Successfully!
-        </h3>
-        <p class="mb-6 text-black/80">
-          Your auction is now live and accepting bids.
-        </p>
+        <h3 class="mb-2 text-xl font-bold text-black">Auction Created Successfully!</h3>
+        <p class="mb-6 text-black/80">Your auction is now live and accepting bids.</p>
         <div class="flex gap-3">
-          <button
-            onclick="goToListings()"
-            class="btn-primary flex-1 px-4 py-2 text-sm">
+          <button onclick="goToListings()" class="btn-primary flex-1 px-4 py-2 text-sm">
             View All Listings
           </button>
           <button

@@ -16,15 +16,11 @@
       content="login BidRally, auction account login, signin bidding platform, noroff auction login, access auction account" />
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
-    <meta
-      property="og:title"
-      content="Login to BidRally | Access Your Auction Account" />
+    <meta property="og:title" content="Login to BidRally | Access Your Auction Account" />
     <meta
       property="og:description"
       content="Login to your BidRally account to access your profile, view your bids, create listings, and manage your auction activities." />
-    <meta
-      property="og:image"
-      content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
+    <meta property="og:image" content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -51,10 +47,7 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <nav
-            class="hidden gap-1 lg:flex"
-            role="navigation"
-            aria-label="Main navigation">
+          <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
             <a
               href="../"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
@@ -80,18 +73,17 @@
           <div class="lg:flex">
             <!-- login and register buttons -->
             <div
-              class="flex items-center gap-2"
+              class="flex items-center gap-3"
               role="group"
-              aria-label="login and register buttons">
+              aria-label="Authentication actions">
               <a
                 href="../login/"
-                class="hover:text-dark-green hover:border-dark-green border-b border-black px-3 py-1 font-medium transition-colors"
-                aria-current="page">
+                class="hover:text-dark-green border-dark-green border-b px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Login
               </a>
               <a
                 href="../register/"
-                class="hover:text-dark-green btn-primary px-5.5 py-2 font-medium transition-colors">
+                class="btn-primary px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Register
               </a>
             </div>
@@ -100,19 +92,39 @@
           <!-- Mobile menu button -->
           <div class="lg:hidden">
             <button
-              id="mobile-menu-button"
+              id="open-mobile-menu-button"
               class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
               aria-expanded="false"
               aria-controls="mobile-menu"
-              aria-label="Toggle mobile navigation menu">
+              aria-label="open mobile navigation menu">
               <svg
+                id="hamburger-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 fill="currentColor"
                 class="size-5"
                 aria-hidden="true">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                 <path
                   d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+            <button
+              id="close-mobile-menu-button"
+              class="hover:text-dark-green hidden cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="close mobile navigation menu">
+              <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true"
+                viewBox="0 0 384 512">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z" />
               </svg>
             </button>
           </div>
@@ -125,39 +137,16 @@
           role="navigation"
           aria-label="Mobile navigation">
           <div class="flex flex-col gap-3">
-            <a
-              href="../"
-              class="hover:text-dark-green font-medium transition-colors">
-              Home
-            </a>
-            <a
-              href="../auctions/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green font-medium transition-colors">Home</a>
+            <a href="../auctions/" class="hover:text-dark-green font-medium transition-colors">
               All Items
             </a>
-            <a
-              href="../about/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../about/" class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
-            <a
-              href="../contact/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../contact/" class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
-            <div class="border-gray-base border-t pt-3">
-              <a
-                href="../login/"
-                class="hover:text-dark-green block font-medium transition-colors"
-                aria-current="page">
-                Login
-              </a>
-              <a
-                href="../register/"
-                class="btn-primary mt-2 inline-block px-4 py-2 font-medium">
-                Register
-              </a>
-            </div>
           </div>
         </nav>
       </div>
@@ -183,15 +172,9 @@
                     d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
                 </svg>
               </div>
-              <h1 id="login-heading" class="mb-2 text-3xl font-bold">
-                Welcome Back
-              </h1>
-              <p class="text-lg font-medium">
-                Sign in to your BidRally account
-              </p>
-              <p class="mt-2 text-sm text-black/70">
-                Access your profile and start bidding
-              </p>
+              <h1 id="login-heading" class="mb-2 text-3xl font-bold">Welcome Back</h1>
+              <p class="text-lg font-medium">Sign in to your BidRally account</p>
+              <p class="mt-2 text-sm text-black/70">Access your profile and start bidding</p>
             </div>
 
             <!-- Login Form -->
@@ -209,9 +192,7 @@
                     required
                     class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                     placeholder="your.name@stud.noroff.no" />
-                  <div
-                    id="emailError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
+                  <div id="emailError" class="mt-1 hidden text-sm text-red-600"></div>
                 </div>
 
                 <!-- Password Field -->
@@ -228,9 +209,7 @@
                       class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 pr-12 transition-colors focus:ring-2 focus:outline-none"
                       placeholder="Enter your password" />
                   </div>
-                  <div
-                    id="passwordError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
+                  <div id="passwordError" class="mt-1 hidden text-sm text-red-600"></div>
                 </div>
 
                 <!-- Submit Button -->
@@ -295,31 +274,21 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              About BidRally
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">About BidRally</h3>
             <nav aria-label="About BidRally links">
-              <a href="../about/" class="hover:text-gray transition-colors">
-                About Us
-              </a>
+              <a href="../about/" class="hover:text-gray transition-colors">About Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Help & Support
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Help & Support</h3>
             <nav aria-label="Help and support links">
-              <a href="../contact/" class="hover:text-gray transition-colors">
-                Contact Us
-              </a>
+              <a href="../contact/" class="hover:text-gray transition-colors">Contact Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Connect With Us
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Connect With Us</h3>
             <nav class="mb-2 flex gap-4" aria-label="Social media links">
               <a
                 href="https://www.facebook.com"
@@ -390,9 +359,7 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">
-            © 2025 BidRally - All rights reserved
-          </p>
+          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
         </div>
       </div>
     </footer>

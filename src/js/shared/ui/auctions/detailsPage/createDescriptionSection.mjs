@@ -16,8 +16,7 @@ export const createDescriptionSection = (auctionData) => {
 
   // Description paragraph
   const descParagraph = document.createElement("p");
-  descParagraph.textContent =
-    auctionData.description || "Description not available";
+  descParagraph.textContent = auctionData.description || "Description not available";
 
   descWrapper.appendChild(descParagraph);
   descContainer.appendChild(descTitle);

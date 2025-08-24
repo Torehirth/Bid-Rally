@@ -1,8 +1,5 @@
-import { getHighestBid } from "../../../utils/getHighestBid.mjs";
+import { getHighestBid } from "../../../utils/auctions/getHighestBid.mjs";
 
-/**
- * Creates the current bid column
- */
 export const createCurrentBidColumn = (auctionData) => {
   const bidCol = document.createElement("div");
 

@@ -20,9 +20,7 @@
     <meta
       property="og:description"
       content="Join BidRally to discover and bid on unique items, collectibles, and more. Your go-to online auction platform." />
-    <meta
-      property="og:image"
-      content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
+    <meta property="og:image" content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -51,10 +49,7 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <nav
-            class="hidden gap-1 lg:flex"
-            role="navigation"
-            aria-label="Main navigation">
+          <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
             <a
               href="./"
               data-link
@@ -122,15 +117,17 @@
             </div>
             <!-- Login and register buttons -->
             <div
-              class="flex items-center gap-2"
+              class="flex items-center gap-3"
               role="group"
               aria-label="Authentication actions">
               <a
                 href="./login/"
-                class="hover:text-dark-green px-4 py-2 font-medium transition-colors">
+                class="hover:text-dark-green px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Login
               </a>
-              <a href="./register/" class="btn-primary px-4 py-2 font-medium">
+              <a
+                href="./register/"
+                class="btn-primary px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
                 Register
               </a>
             </div>
@@ -139,12 +136,13 @@
           <!-- Mobile menu button -->
           <div class="lg:hidden">
             <button
-              id="mobile-menu-button"
+              id="open-mobile-menu-button"
               class="hover:text-dark-green cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
               aria-expanded="false"
               aria-controls="mobile-menu"
-              aria-label="Toggle mobile navigation menu">
+              aria-label="open mobile navigation menu">
               <svg
+                id="hamburger-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 fill="currentColor"
@@ -153,6 +151,24 @@
                 <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                 <path
                   d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+            <button
+              id="close-mobile-menu-button"
+              class="hover:text-dark-green hidden cursor-pointer rounded-md p-2 focus:ring-2 focus:outline-none"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="close mobile navigation menu">
+              <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="size-5"
+                aria-hidden="true"
+                viewBox="0 0 384 512">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z" />
               </svg>
             </button>
           </div>
@@ -167,23 +183,17 @@
           <div class="flex flex-col gap-3">
             <a
               href="./"
-              class="hover:text-dark-green font-medium transition-colors"
+              class="hover:text-dark-green text-dark-green font-medium transition-colors"
               aria-current="page">
               Home
             </a>
-            <a
-              href="./auctions/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="./auctions/" class="hover:text-dark-green font-medium transition-colors">
               All Auctions
             </a>
-            <a
-              href="./about/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="./about/" class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
-            <a
-              href="./contact/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="./contact/" class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
           </div>
@@ -195,7 +205,7 @@
     <main class="flex-grow" role="main">
       <!-- Hero Section -->
 
-      <section class="relative h-[40vh]" aria-labelledby="hero-heading">
+      <section class="relative h-[60vh] lg:h-[40vh]" aria-labelledby="hero-heading">
         <img
           src="/assets/images/john-2FPjlAyMQTA-unsplash.webp"
           alt="Vintage auction items displayed on a wooden table"
@@ -204,19 +214,17 @@
         <!-- Dark overlay on top of image -->
         <div class="absolute inset-0 bg-black/80" aria-hidden="true"></div>
         <div
-          class="relative flex min-h-[45vh] items-center justify-center px-4">
+          class="relative flex min-h-[60vh] items-center justify-center px-4 lg:min-h-[40vh]">
           <div class="flex max-w-[65ch] flex-col gap-4 text-center text-white">
             <h1 id="hero-heading" class="text-5xl font-bold tracking-wide">
               Discover Unique Treasures
             </h1>
             <p class="text-lg font-medium tracking-wide">
-              Bid on exclusive items from around the world. Find rare
-              collectibles, art, electronics, and more at competitive prices.
+              Bid on exclusive items from around the world. Find rare collectibles, art,
+              electronics, and more at competitive prices.
             </p>
             <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <a href="./auctions/" class="btn-primary mx-auto text-lg">
-                Browse Auctions
-              </a>
+              <a href="./auctions/" class="btn-primary mx-auto text-lg">Browse Auctions</a>
             </div>
           </div>
         </div>
@@ -225,9 +233,7 @@
       <!-- How It Works Section -->
       <section class="py-16" aria-labelledby="how-it-works-heading">
         <div class="container mx-auto px-4">
-          <h2
-            id="how-it-works-heading"
-            class="mb-12 text-center text-3xl font-bold">
+          <h2 id="how-it-works-heading" class="mb-12 text-center text-3xl font-bold">
             How BidRally Works
           </h2>
 
@@ -241,8 +247,8 @@
                 </div>
                 <h3 class="mb-4 text-xl font-bold">Register & Browse</h3>
                 <p class="leading-relaxed">
-                  Create your account with a valid stud.noroff.no email address
-                  and start exploring our wide variety of auction listings.
+                  Create your account with a valid stud.noroff.no email address and start
+                  exploring our wide variety of auction listings.
                 </p>
               </div>
 
@@ -254,8 +260,8 @@
                 </div>
                 <h3 class="mb-4 text-xl font-bold">Bid & Create</h3>
                 <p class="leading-relaxed">
-                  Place bids on items you love or create your own listings with
-                  detailed descriptions, images, and deadlines.
+                  Place bids on items you love or create your own listings with detailed
+                  descriptions, images, and deadlines.
                 </p>
               </div>
 
@@ -267,9 +273,8 @@
                 </div>
                 <h3 class="mb-4 text-xl font-bold">Win & Connect</h3>
                 <p class="leading-relaxed">
-                  Win exciting auctions, connect with other users, and build
-                  your reputation in our growing community of auction
-                  enthusiasts.
+                  Win exciting auctions, connect with other users, and build your reputation in
+                  our growing community of auction enthusiasts.
                 </p>
               </div>
             </div>
@@ -278,9 +283,7 @@
       </section>
 
       <!-- Featured Auctions -->
-      <section
-        class="bg-gray-base py-16"
-        aria-labelledby="featured-auctions-heading">
+      <section class="bg-gray-base py-16" aria-labelledby="featured-auctions-heading">
         <div class="container mx-auto px-4">
           <div class="mb-8 flex items-center justify-between">
             <h2 id="featured-auctions-heading" class="text-3xl font-bold">
@@ -319,14 +322,11 @@
                   <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
                 </div>
                 <p class="mb-3 text-sm">
-                  First pressing of a legendary album, mint condition, never
-                  played.
+                  First pressing of a legendary album, mint condition, never played.
                 </p>
                 <div class="mb-4 flex-grow">
                   <p class="text-sm">Current Bid:</p>
-                  <p
-                    class="text-dark-green text-xl font-bold"
-                    aria-label="Current bid amount">
+                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
                     $750
                   </p>
                   <p class="text-xs text-black/80">3 bids</p>
@@ -368,9 +368,7 @@
                 </p>
                 <div class="mb-4 flex-grow">
                   <p class="text-sm">Current Bid:</p>
-                  <p
-                    class="text-dark-green text-xl font-bold"
-                    aria-label="Current bid amount">
+                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
                     $450
                   </p>
                   <p class="text-xs text-black/80">5 bids</p>
@@ -408,14 +406,11 @@
                   <h3 class="text-lg font-bold">Antique Pocket Watch</h3>
                 </div>
                 <p class="mb-3 text-sm">
-                  18th century gold-plated pocket watch with intricate
-                  engravings.
+                  18th century gold-plated pocket watch with intricate engravings.
                 </p>
                 <div class="mb-4 flex-grow">
                   <p class="text-sm">Current Bid:</p>
-                  <p
-                    class="text-dark-green text-xl font-bold"
-                    aria-label="Current bid amount">
+                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
                     $1,200
                   </p>
                   <p class="text-xs text-black/80">8 bids</p>
@@ -457,9 +452,7 @@
                 </p>
                 <div class="mb-4 flex-grow">
                   <p class="text-sm">Current Bid:</p>
-                  <p
-                    class="text-dark-green text-xl font-bold"
-                    aria-label="Current bid amount">
+                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
                     $750
                   </p>
                   <p class="text-xs text-black/80">12 bids</p>
@@ -484,30 +477,20 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              About BidRally
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">About BidRally</h3>
             <nav aria-label="About BidRally links">
-              <a href="./about/" class="hover:text-gray transition-colors">
-                About Us
-              </a>
+              <a href="./about/" class="hover:text-gray transition-colors">About Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Help & Support
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Help & Support</h3>
             <nav aria-label="Help and support links">
-              <a href="./contact/" class="hover:text-gray transition-colors">
-                Contact Us
-              </a>
+              <a href="./contact/" class="hover:text-gray transition-colors">Contact Us</a>
             </nav>
           </div>
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Connect With Us
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Connect With Us</h3>
             <nav class="mb-2 flex gap-4" aria-label="Social media links">
               <a
                 href="https://www.facebook.com"
@@ -582,9 +565,7 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">
-            © 2025 BidRally - All rights reserved
-          </p>
+          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
         </div>
       </div>
     </footer>
