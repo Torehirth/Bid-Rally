@@ -1,24 +1,31 @@
 import { renderAuctionCards } from "../../ui/auctions/auctionCards/renderAuctionCards.mjs";
 import { fetchAPI } from "../../api/fetchAPI.mjs";
 import { renderLoadMoreButton } from "../../ui/auctions/auctionCards/renderLoadMoreButton.mjs";
+import { displayMessage } from "../../utils/common/displayMessage.mjs";
 
 export const auctionCardsHandler = async () => {
   const container = document.querySelector("#auctions-grid");
 
   try {
-    const json = await fetchAPI(
+    const data = await fetchAPI(
       container,
-      "listings",
+      "auction/listings",
       "_active=true&_seller=true&_bids=true&limit=10"
     );
-    console.log(json);
 
-    const allAuctions = json?.data;
+    if (!data) {
+      throw new Error("Data couldn't be fetched");
+    }
+
+    const allAuctions = data?.data;
     renderAuctionCards(allAuctions, container);
     renderLoadMoreButton();
   } catch (err) {
-    container.innerHTML =
-      "Could not get the auction items at the moment. Try again later..";
-    console.error(err);
+    displayMessage(
+      container,
+      "error",
+      "Could not get the auction listings at the moment. Try again later.."
+    );
+    console.error(err.message);
   }
 };

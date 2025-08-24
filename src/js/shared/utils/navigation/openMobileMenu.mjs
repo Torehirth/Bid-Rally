@@ -1,8 +1,4 @@
-import {
-  closeMenuButton,
-  mobileMenu,
-  openMenuButton,
-} from "../../constants.mjs";
+import { closeMenuButton, mobileMenu, openMenuButton } from "../../constants.mjs";
 
 export const openMobileMenu = () => {
   mobileMenu.classList.remove("hidden", "lg:hidden");

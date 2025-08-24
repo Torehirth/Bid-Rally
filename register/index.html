@@ -16,15 +16,11 @@
       content="register bidRally, create auction account, join online auction, signup bidding platform, free auction registration, noroff auction" />
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
-    <meta
-      property="og:title"
-      content="Join BidRally | Create Your Auction Account" />
+    <meta property="og:title" content="Join BidRally | Create Your Auction Account" />
     <meta
       property="og:description"
       content="Create your free BidRally account today and start bidding on unique items, collectibles, and exclusive treasures. Join our online auction community now!" />
-    <meta
-      property="og:image"
-      content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
+    <meta property="og:image" content="/assets/images/john-2FPjlAyMQTA-unsplash.webp" />
   </head>
   <body class="flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
@@ -51,10 +47,7 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <nav
-            class="hidden gap-1 lg:flex"
-            role="navigation"
-            aria-label="Main navigation">
+          <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
             <a
               href="../"
               class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
@@ -144,24 +137,14 @@
           role="navigation"
           aria-label="Mobile navigation">
           <div class="flex flex-col gap-3">
-            <a
-              href="../"
-              class="hover:text-dark-green font-medium transition-colors">
-              Home
-            </a>
-            <a
-              href="../auctions/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green font-medium transition-colors">Home</a>
+            <a href="../auctions/" class="hover:text-dark-green font-medium transition-colors">
               All Auctions
             </a>
-            <a
-              href="../about/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../about/" class="hover:text-dark-green font-medium transition-colors">
               About
             </a>
-            <a
-              href="../contact/"
-              class="hover:text-dark-green font-medium transition-colors">
+            <a href="../contact/" class="hover:text-dark-green font-medium transition-colors">
               Contact
             </a>
           </div>
@@ -189,115 +172,116 @@
                     d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
                 </svg>
               </div>
-              <h1 id="register-heading" class="mb-2 text-3xl font-bold">
-                Join BidRally
-              </h1>
-              <p class="text-lg font-medium">
-                Create your account and start bidding today!
-              </p>
+              <h1 id="register-heading" class="mb-2 text-3xl font-bold">Join BidRally</h1>
+              <p class="text-lg font-medium">Create your account and start bidding today!</p>
               <p class="mt-2 text-sm text-black/70">
                 Only @stud.noroff.no email addresses are accepted
               </p>
             </div>
 
             <!-- Registration Form -->
-            <div class="rounded-lg bg-white p-8 shadow-xl">
-              <form id="registerForm" class="space-y-6">
-                <!-- Name Field -->
-                <div>
-                  <label for="name" class="mb-2 block text-sm font-medium">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                    placeholder="Enter your full name" />
-                  <div
-                    id="nameError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
-
-                <!-- Email Field -->
-                <div>
-                  <label for="email" class="mb-2 block text-sm font-medium">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                    placeholder="your.name@stud.noroff.no" />
-                  <div
-                    id="emailError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
-
-                <!-- Password Field -->
-                <div>
-                  <label for="password" class="mb-2 block text-sm font-medium">
-                    Password *
-                  </label>
-                  <div class="relative">
+            <section class="rounded-lg bg-white p-8 shadow-xl">
+              <form id="register-form" class="space-y-6" novalidate>
+                <fieldset class="flex flex-col gap-4">
+                  <legend class="mb-4 text-lg font-semibold">Create your account</legend>
+                  <!-- Name Field -->
+                  <div>
+                    <label for="name" class="mb-2 block text-sm font-medium">
+                      Full Name *
+                    </label>
                     <input
-                      type="password"
-                      id="password"
-                      name="password"
+                      type="text"
+                      autocomplete="on"
+                      id="name"
+                      name="name"
                       required
-                      minlength="8"
-                      class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 pr-12 transition-colors focus:ring-2 focus:outline-none"
-                      placeholder="Create a strong password" />
+                      class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                      placeholder="Enter your full name" />
+                    <div id="name-info" class="mt-1 text-xs text-black/60">
+                      Your name must not contain punctuation symbols apart from underscore (_)
+                    </div>
+                    <div id="name-error" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
-                  <div class="mt-1 text-xs text-black/60">
-                    Password must be at least 8 characters long
+
+                  <!-- Email Field -->
+                  <div>
+                    <label for="email" class="mb-2 block text-sm font-medium">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      autocomplete="on"
+                      id="email"
+                      name="email"
+                      required
+                      class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                      placeholder="your.name@stud.noroff.no" />
+                    <div id="email-info" class="mt-1 text-xs text-black/60">
+                      Email must be a valid email address (stud.noroff.no)
+                    </div>
+                    <div id="email-error" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
+
+                  <!-- Password Field -->
+                  <div>
+                    <label for="password" class="mb-2 block text-sm font-medium">
+                      Password *
+                    </label>
+                    <div class="relative">
+                      <input
+                        type="password"
+                        autocomplete="off"
+                        id="password"
+                        name="password"
+                        required
+                        minlength="8"
+                        class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 pr-12 transition-colors focus:ring-2 focus:outline-none"
+                        placeholder="Create a strong password" />
+                    </div>
+                    <div id="password-info" class="mt-1 text-xs text-black/60">
+                      Password must be at least 8 characters long
+                    </div>
+                    <div id="password-error" class="mt-1 hidden text-sm text-red-600"></div>
+                  </div>
+
+                  <!-- Avatar URL Field (Optional) -->
+                  <div>
+                    <label for="avatar" class="mb-2 block text-sm font-medium">
+                      Avatar URL (Optional)
+                    </label>
+                    <input
+                      type="url"
+                      autocomplete="off"
+                      id="avatar"
+                      name="avatar"
+                      class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                      placeholder="https://example.com/your-avatar.jpg" />
+                    <div id="avatar-info" class="mt-1 text-xs text-black/60">
+                      Add a profile picture URL (optional)
+                    </div>
+                    <div id="avatar-error" class="mt-1 hidden text-sm text-red-600"></div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div>
+                    <button
+                      type="submit"
+                      id="submitButton"
+                      class="btn-primary flex w-full items-center justify-center py-3 text-lg font-medium">
+                      <span id="submitText">Create Account</span>
+                    </button>
+                  </div>
+
+                  <!-- Error Message Display -->
                   <div
-                    id="passwordError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
+                    id="generalError"
+                    class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
 
-                <!-- Avatar URL Field (Optional) -->
-                <div>
-                  <label for="avatar" class="mb-2 block text-sm font-medium">
-                    Avatar URL (Optional)
-                  </label>
-                  <input
-                    type="url"
-                    id="avatar"
-                    name="avatar"
-                    class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                    placeholder="https://example.com/your-avatar.jpg" />
-                  <div class="mt-1 text-xs text-black/60">
-                    Add a profile picture URL (optional)
-                  </div>
+                  <!-- Success Message Display -->
                   <div
-                    id="avatarError"
-                    class="mt-1 hidden text-sm text-red-600"></div>
-                </div>
-
-                <!-- Submit Button -->
-                <div>
-                  <button
-                    type="submit"
-                    id="submitButton"
-                    class="btn-primary flex w-full items-center justify-center py-3 text-lg font-medium">
-                    <span id="submitText">Create Account</span>
-                  </button>
-                </div>
-
-                <!-- Error Message Display -->
-                <div
-                  id="generalError"
-                  class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
-
-                <!-- Success Message Display -->
-                <div
-                  id="successMessage"
-                  class="hidden rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"></div>
+                    id="successMessage"
+                    class="hidden rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"></div>
+                </fieldset>
               </form>
 
               <!-- Login Link -->
@@ -311,7 +295,7 @@
                   </a>
                 </p>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </section>
@@ -322,31 +306,21 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 gap-8 py-10 md:grid-cols-3">
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              About BidRally
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">About BidRally</h3>
             <nav aria-label="About BidRally links">
-              <a href="../about/" class="hover:text-gray transition-colors">
-                About Us
-              </a>
+              <a href="../about/" class="hover:text-gray transition-colors">About Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Help & Support
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Help & Support</h3>
             <nav aria-label="Help and support links">
-              <a href="../contact/" class="hover:text-gray transition-colors">
-                Contact Us
-              </a>
+              <a href="../contact/" class="hover:text-gray transition-colors">Contact Us</a>
             </nav>
           </div>
 
           <div class="flex flex-col lg:mx-auto lg:max-w-screen">
-            <h3 class="mb-2 text-lg font-light text-white/80">
-              Connect With Us
-            </h3>
+            <h3 class="mb-2 text-lg font-light text-white/80">Connect With Us</h3>
             <nav class="mb-2 flex gap-4" aria-label="Social media links">
               <a
                 href="https://www.facebook.com"
@@ -417,9 +391,7 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">
-            © 2025 BidRally - All rights reserved
-          </p>
+          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
         </div>
       </div>
     </footer>

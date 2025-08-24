@@ -1,4 +1,4 @@
-import { getHighestBid } from "../../../utils/getHighestBid.mjs";
+import { getHighestBid } from "../../../utils/auctions/getHighestBid.mjs";
 
 /**
  * Creates the bid form on the details page

@@ -15,10 +15,8 @@ export const createImageSection = (auctionData) => {
   mainImage.id = "main-image";
 
   mainImage.src =
-    auctionData?.media?.[0]?.url ||
-    "/Bid-Rally/public/assets/images/listing-placeholder.webp";
-  mainImage.alt =
-    auctionData?.media?.[0]?.alt || `image of ${auctionData?.title}`;
+    auctionData?.media?.[0]?.url || "/Bid-Rally/public/assets/images/listing-placeholder.webp";
+  mainImage.alt = auctionData?.media?.[0]?.alt || `image of ${auctionData?.title}`;
   mainImage.className = "h-96 w-full rounded-lg object-cover";
 
   imageWrapper.appendChild(mainImage);

@@ -25,8 +25,7 @@ export const createAuctionCard = (
   isUrgent = false
 ) => {
   const article = document.createElement("article");
-  article.className =
-    "flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl";
+  article.className = "flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl";
   article.setAttribute("role", "listitem");
 
   // image
@@ -100,12 +99,8 @@ export const createAuctionCard = (
 
   const viewDetailsLink = document.createElement("a");
   viewDetailsLink.href = itemLink;
-  viewDetailsLink.className =
-    "btn-primary w-full px-4 py-2 text-center text-sm";
-  viewDetailsLink.setAttribute(
-    "aria-label",
-    `Place bid on ${title || "auction item"}`
-  );
+  viewDetailsLink.className = "btn-primary w-full px-4 py-2 text-center text-sm";
+  viewDetailsLink.setAttribute("aria-label", `Place bid on ${title || "auction item"}`);
   viewDetailsLink.textContent = "View Details";
 
   buttonContainer.appendChild(viewDetailsLink);

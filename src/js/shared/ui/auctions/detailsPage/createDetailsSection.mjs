@@ -25,13 +25,11 @@ export const createDetailsSection = (auctionData) => {
     },
     {
       label: "Updated:",
-      value:
-        new Date(auctionData.updated).toLocaleString() || "No date available",
+      value: new Date(auctionData.updated).toLocaleString() || "No date available",
     },
     {
       label: "Date listed:",
-      value:
-        new Date(auctionData.created).toLocaleString() || "No date available",
+      value: new Date(auctionData.created).toLocaleString() || "No date available",
     },
   ];
 
