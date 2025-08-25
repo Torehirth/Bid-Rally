@@ -21,7 +21,8 @@ export const displayMessage = (container, messageType, message) => {
     messageContainer = document.querySelector(container);
   }
 
-  messageContainer.classList.remove("error", "warning", "success");
   messageContainer.classList.add(messageType);
   messageContainer.innerText = message;
+  messageContainer.setAttribute("role", "alert");
+  messageContainer.setAttribute("aria-live", "polite");
 };
