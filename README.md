@@ -7,7 +7,7 @@ A modern auction platform where users can create listings, place bids, and manag
 ### User Authentication
 
 - User registration (stud.noroff.no email required)
-- User login and logout
+- User login (with JWT) and logout
 - Profile avatar updates
 - Credit balance viewing
 
