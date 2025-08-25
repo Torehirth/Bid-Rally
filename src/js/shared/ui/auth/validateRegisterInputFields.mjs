@@ -1,7 +1,7 @@
 import { isEmailValid } from "../../utils/common/isEmailValid.mjs";
 import { isImageUrlValid } from "../../utils/common/isImageUrlValid.mjs";
-import { setError } from "../../utils/common/setError.mjs";
-import { setSuccess } from "../../utils/common/setSuccess.mjs";
+import { removeMessage } from "../../utils/common/removeMessage.mjs";
+import { setMessage } from "../../utils/common/setMessage.mjs";
 
 export const validateRegisterInputFields = () => {
   const nameValue = document.querySelector("#name").value.trim().replace(/ /g, "");
@@ -13,47 +13,42 @@ export const validateRegisterInputFields = () => {
 
   if (nameValue === "") {
     isValid = false;
-    setError("#name-error", "#name-info", "Your name is required");
+    setMessage("#name-message", "Your name is required");
   } else if (nameValue.length < 2) {
     isValid = false;
-    setError("#name-error", "#name-info", "Your name must be at least 2 characters long");
+    setMessage("#name-message", "Your name must be at least 2 characters long");
   } else {
-    setSuccess("#name-error", "#name-info");
+    removeMessage("#name-message");
   }
 
   if (emailValue.length === 0 || emailValue === "") {
     isValid = false;
-    setError("#email-error", "#email-info", "Your email address is required");
+    setMessage("#email-message", "Your email address is required");
   } else if (!isEmailValid(emailValue)) {
     isValid = false;
-    setError(
-      "#email-error",
-      "#email-info",
-      `Provide a valid email address ending with ....@stud.noroff.no`
+    setMessage(
+      "#email-message",
+      "Provide a valid email address ending with ....@stud.noroff.no"
     );
   } else {
-    setSuccess("#email-error", "#email-info");
+    removeMessage("#email-message", "#email-info");
   }
 
   if (passwordValue === "") {
     isValid = false;
-    setError("#password-error", "#password-info", "A password is required");
-  } else if (passwordValue.length <= 8) {
+    setMessage("#password-message", "A password is required");
+  } else if (passwordValue.length < 8) {
     isValid = false;
-    setError(
-      "#password-error",
-      "#password-info",
-      "password must be at least 8 characters long"
-    );
+    setMessage("#password-message", "password must be at least 8 characters long");
   } else {
-    setSuccess("#password-error", "#password-info");
+    removeMessage("#password-message");
   }
 
   if (!avatarValue) {
-    setSuccess("#avatar-error", "#avatar-info");
+    removeMessage("#avatar-message");
   } else if (!isImageUrlValid(avatarValue)) {
     isValid = false;
-    setError("#avatar-error", "#avatar-info", "avatar must be a complete URL to an image");
+    setMessage("#avatar-message", "avatar must be a complete URL to an image");
   }
 
   return isValid;

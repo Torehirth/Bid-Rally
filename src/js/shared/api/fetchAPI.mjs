@@ -15,6 +15,9 @@ import { displayMessage } from "../utils/common/displayMessage.mjs";
  */
 export const fetchAPI = async (container, endpoint, parameter = "") => {
   const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
+  console.log(baseAPIUrl);
+
+  console.log(`${baseAPIUrl}/${endpoint}?${parameter}`);
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`);

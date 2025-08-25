@@ -1,5 +1,7 @@
+import { getFromStorage } from "../../utils/common/getFromStorage.mjs";
+
 export const requestOptions = (method = "GET", formData) => {
-  const accessToken = "get from local storage";
+  const accessToken = getFromStorage("user");
   const options = {
     method: method,
     headers: {
