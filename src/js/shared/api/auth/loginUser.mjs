@@ -6,7 +6,9 @@ export const loginUser = async (formData) => {
   const messageContainer = document.querySelector("#message");
   const fieldset = document.querySelector("fieldset");
   const options = requestOptions("POST", formData);
-  const URL = `${import.meta.env.VITE_API_BASE_URL}/auth/login`;
+  const URL = import.meta.env.VITE_API_BASE_URL
+    ? `${import.meta.env.VITE_API_BASE_URL}/auth/login`
+    : "https://v2.api.noroff.dev/auth/login";
 
   fieldset.classList.add("opacity-50");
 

@@ -14,7 +14,7 @@ import { displayMessage } from "../utils/common/displayMessage.mjs";
  * const data = await fetchAPI(container, 'users', 'limit=10&sort=name');
  */
 export const fetchAPI = async (container, endpoint, parameter = "") => {
-  const baseAPIUrl = import.meta.env.VITE_API_BASE_URL;
+  const baseAPIUrl = import.meta.env.VITE_API_BASE_URL || "https://v2.api.noroff.dev";
   console.log(baseAPIUrl);
 
   console.log(`${baseAPIUrl}/${endpoint}?${parameter}`);
