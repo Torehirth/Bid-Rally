@@ -1,7 +1,7 @@
 # This workflow will:
 # 1. Check out code
 # 2. Set up Node.js and install dependencies
-# 3. Build Vite project (creating the dist folder)
+# 3. Build Vite project with Github variables and secrets (creating the dist folder)
 # 4. Upload the built files to GitHub Pages
 # 5. Deploy them
 
@@ -52,6 +52,7 @@ jobs:
 
       - name: Build project
         env:
+          # Use the environment variables in the build
           VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
         run: npm run build
