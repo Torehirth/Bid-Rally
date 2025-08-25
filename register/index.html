@@ -181,6 +181,8 @@
 
             <!-- Registration Form -->
             <section class="rounded-lg bg-white p-8 shadow-xl">
+              <div id="message" class=""></div>
+
               <form id="register-form" class="space-y-6" novalidate>
                 <fieldset class="flex flex-col gap-4">
                   <legend class="mb-4 text-lg font-semibold">Create your account</legend>
@@ -197,10 +199,7 @@
                       required
                       class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                       placeholder="Enter your full name" />
-                    <div id="name-info" class="mt-1 text-xs text-black/60">
-                      Your name must not contain punctuation symbols apart from underscore (_)
-                    </div>
-                    <div id="name-error" class="mt-1 hidden text-sm text-red-600"></div>
+                    <div id="name-message" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
 
                   <!-- Email Field -->
@@ -216,10 +215,7 @@
                       required
                       class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                       placeholder="your.name@stud.noroff.no" />
-                    <div id="email-info" class="mt-1 text-xs text-black/60">
-                      Email must be a valid email address (stud.noroff.no)
-                    </div>
-                    <div id="email-error" class="mt-1 hidden text-sm text-red-600"></div>
+                    <div id="email-message" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
 
                   <!-- Password Field -->
@@ -238,10 +234,8 @@
                         class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 pr-12 transition-colors focus:ring-2 focus:outline-none"
                         placeholder="Create a strong password" />
                     </div>
-                    <div id="password-info" class="mt-1 text-xs text-black/60">
-                      Password must be at least 8 characters long
-                    </div>
-                    <div id="password-error" class="mt-1 hidden text-sm text-red-600"></div>
+
+                    <div id="password-message" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
 
                   <!-- Avatar URL Field (Optional) -->
@@ -256,10 +250,8 @@
                       name="avatar"
                       class="border-gray-base focus:border-dark-green focus:ring-dark-green/20 block w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
                       placeholder="https://example.com/your-avatar.jpg" />
-                    <div id="avatar-info" class="mt-1 text-xs text-black/60">
-                      Add a profile picture URL (optional)
-                    </div>
-                    <div id="avatar-error" class="mt-1 hidden text-sm text-red-600"></div>
+
+                    <div id="avatar-message" class="mt-1 hidden text-sm text-red-600"></div>
                   </div>
 
                   <!-- Submit Button -->
@@ -271,16 +263,6 @@
                       <span id="submitText">Create Account</span>
                     </button>
                   </div>
-
-                  <!-- Error Message Display -->
-                  <div
-                    id="generalError"
-                    class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
-
-                  <!-- Success Message Display -->
-                  <div
-                    id="successMessage"
-                    class="hidden rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"></div>
                 </fieldset>
               </form>
 
