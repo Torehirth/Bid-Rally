@@ -29,7 +29,6 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`, requestOptions());
-
     const json = await response.json();
 
     if (!response.ok) {
