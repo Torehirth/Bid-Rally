@@ -11,9 +11,7 @@
     <meta
       name="description"
       content="Manage your BidRally profile, view your credit balance, update avatar, and manage your listings and bids." />
-    <meta
-      name="keywords"
-      content="profile, account, auction, bidding, listings, credit balance" />
+    <meta name="keywords" content="profile, account, auction, bidding, listings, credit balance" />
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
     <meta property="og:title" content="My Profile | BidRally" />
@@ -48,9 +46,7 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
-            <a
-              href="../"
-              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Home
             </a>
             <a
@@ -72,10 +68,7 @@
 
           <div class="hidden lg:flex">
             <!-- User profile and New listing buttons -->
-            <div
-              class="flex items-center gap-4"
-              role="group"
-              aria-label="Authentication actions">
+            <div class="flex items-center gap-4" role="group" aria-label="Authentication actions">
               <a
                 href="../profile/"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
@@ -186,66 +179,85 @@
       </section>
 
       <!-- Profile Header Section -->
-      <section class="py-8" aria-labelledby="profile-heading">
+      <section id="user-info" class="py-8" aria-labelledby="profile-heading">
         <div class="container mx-auto px-4">
-          <div class="border-gray/50 rounded-lg border bg-white p-6">
-            <div class="flex flex-col items-center gap-6 md:flex-row md:items-start">
-              <!-- Avatar Section -->
-              <div class="flex flex-col items-center">
-                <div class="relative">
-                  <img
-                    id="user-avatar"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                    alt="User profile avatar"
-                    class="h-32 w-32 rounded-full border-4 border-gray-200 object-cover" />
-                  <button
-                    id="edit-avatar-btn"
-                    class="hover:bg-dark-green absolute right-0 bottom-0 cursor-pointer rounded-full bg-black p-2 text-white transition-colors"
-                    aria-label="Edit profile picture">
-                    <svg
-                      class="size-4"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      aria-hidden="true">
-                      <path
-                        d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+          <div
+            class="relative overflow-hidden rounded-lg border border-gray-300 bg-white shadow-lg">
+            <!-- Banner Image Section -->
+            <div class="relative h-48 overflow-hidden md:h-64">
+              <img
+                id="user-banner"
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="User profile banner"
+                class="h-full w-full object-cover" />
+              <!-- Dark overlay for aesthetic -->
+              <div class="absolute inset-0 bg-black/20"></div>
+            </div>
 
-              <!-- User Info Section -->
-              <div class="flex-grow text-center md:text-left">
-                <h1 id="profile-heading" class="mb-2 text-3xl font-bold capitalize">
-                  <span id="user-name">john photographer</span>
-                </h1>
-                <p class="text-black80 mb-4 text-sm">
-                  Member since:
-                  <span id="member-since">June 2024</span>
-                </p>
-
-                <!-- Credit Balance -->
-                <div class="mb-6 flex items-center gap-4">
-                  <div class="border-gray/50 mb-4 inline-block rounded-lg border bg-white p-4">
-                    <p class="mb-1 text-sm text-black">Available Credit</p>
-                    <p class="text-dark-green text-2xl font-bold" id="user-credit">$2,500</p>
-                  </div>
-                  <div class="inline-block">
-                    <a href="../new-listing/" class="btn-primary inline-block text-center">
-                      Create Listing
-                    </a>
+            <!-- Profile Content Below Banner -->
+            <div class="p-6">
+              <div class="flex flex-col items-center gap-2 md:flex-row md:items-start md:gap-6">
+                <!-- Avatar Section with overlap effect -->
+                <div class="-mt-22 flex flex-col items-center md:-mt-26 md:mr-6 xl:-mt-28">
+                  <div class="relative">
+                    <img
+                      id="user-avatar"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                      alt="User profile avatar"
+                      class="h-32 max-h-32 w-32 max-w-32 rounded-full border-4 border-white object-cover shadow-lg lg:h-44 lg:max-h-44 lg:w-44 lg:max-w-44" />
+                    <button
+                      id="edit-avatar-btn"
+                      class="absolute -right-2 -bottom-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow-lg transition-colors hover:bg-gray-50"
+                      aria-label="Edit profile picture"
+                      title="Edit profile picture">
+                      <svg
+                        class="h-5 w-5 text-gray-600"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path
+                          d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
-                <!-- User Stats -->
-                <div class="flex justify-center gap-8 text-center md:justify-start">
-                  <div>
-                    <p class="text-2xl font-bold" id="total-listings">12</p>
-                    <p class="text-sm text-black/80">Total Listings</p>
+
+                <!-- User Information Section -->
+                <div
+                  class="mt-4 flex max-w-fit flex-grow flex-col items-center gap-4 text-center md:mt-0 md:text-left xl:flex-row xl:items-center">
+                  <div class="flex flex-col gap-3">
+                    <h1 id="profile-heading" class="text-3xl font-bold text-gray-900 capitalize">
+                      <span id="user-name">john photographer</span>
+                    </h1>
+                    <p id="bio" class="-mt-2 max-w-lg text-lg text-gray-600">
+                      photographer based in NYC
+                    </p>
                   </div>
-                  <div>
-                    <p class="text-2xl font-bold" id="total-wins">8</p>
-                    <p class="text-sm text-black/80">Bids won</p>
+
+                  <!-- Credit Balance and Create Listing Button -->
+                  <div class="flex flex-col items-center gap-4 sm:flex-row">
+                    <div
+                      class="border-dark-green rounded-lg border px-6 py-4 text-center shadow-md">
+                      <p class="mb-1 text-sm">Available Credit</p>
+                      <p class="text-center text-2xl font-bold" id="user-credit">$2,500</p>
+                    </div>
+                  </div>
+
+                  <!-- User Statistics -->
+                  <div class="flex justify-center gap-4 md:justify-start">
+                    <div
+                      class="border-dark-green rounded-lg border px-6 py-4 text-center shadow-md">
+                      <p class="text-sm">Total Listings</p>
+                      <p class="text-2xl font-bold" id="total-listings">12</p>
+                    </div>
+                    <div
+                      class="border-dark-green rounded-lg border px-6 py-4 text-center shadow-md">
+                      <p class="text-sm">Bids Won</p>
+                      <p class="text-2xl font-bold" id="total-wins">8</p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <a href="../new-listing/" class="btn-primary text-center">+ Create Listing</a>
                   </div>
                 </div>
               </div>
@@ -695,7 +707,11 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
+          <p class="text-sm text-white/80">
+            ©
+            <span id="copyright-year">2025</span>
+            BidRally - All rights reserved
+          </p>
         </div>
       </div>
     </footer>
@@ -738,9 +754,7 @@
               placeholder="https://example.com/your-avatar.jpg"
               class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none"
               required />
-            <p class="mt-1 text-sm text-black/80">
-              Enter a valid URL for your new profile picture
-            </p>
+            <p class="mt-1 text-sm text-black/80">Enter a valid URL for your new profile picture</p>
           </div>
 
           <div class="flex gap-3">

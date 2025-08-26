@@ -6,10 +6,7 @@ export const toggleMobileNav = () => {
   document.addEventListener("click", (e) => {
     if (e.target.closest("#open-mobile-menu-button")) {
       openMobileMenu();
-    } else if (
-      !e.target.closest("#mobile-menu") ||
-      e.target.closest("#close-mobile-menu-button")
-    ) {
+    } else if (!e.target.closest("#mobile-menu") || e.target.closest("#close-mobile-menu-button")) {
       closeMobileMenu();
       closeMenuButton.classList.add("hidden");
       openMenuButton.classList.remove("hidden");

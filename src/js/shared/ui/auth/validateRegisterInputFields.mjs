@@ -26,10 +26,7 @@ export const validateRegisterInputFields = () => {
     setMessage("#email-message", "Your email address is required");
   } else if (!isEmailValid(emailValue)) {
     isValid = false;
-    setMessage(
-      "#email-message",
-      "Provide a valid email address ending with ....@stud.noroff.no"
-    );
+    setMessage("#email-message", "Provide a valid email address ending with ....@stud.noroff.no");
   } else {
     removeMessage("#email-message", "#email-info");
   }
