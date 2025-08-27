@@ -53,7 +53,7 @@ export const validateNewListingForm = () => {
     setMessage("#media-message", "Please provide a complete and active image URL");
   }
 
-  if (!tags) {
+  if (!tags || tags.length === 0) {
     isValid = false;
     setMessage("#tags-message", "Please provide a tag with more than 2 characters");
   } else {
