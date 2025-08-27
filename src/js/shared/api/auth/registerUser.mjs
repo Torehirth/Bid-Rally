@@ -14,12 +14,15 @@ export const registerUser = async (userData) => {
   try {
     const response = await fetch(URL, options);
     const data = await response.json();
-    console.log(data);
 
     if (!response.ok) {
       throw new Error(data?.errors?.[0]?.message || "Bad data from registration");
     }
 
+    displayMessage(messageContainer, "success", "Successfully registered your user!🎉");
+    setTimeout(() => {
+      window.location.href = "../";
+    }, 2000);
     return data;
   } catch (err) {
     displayMessage(
