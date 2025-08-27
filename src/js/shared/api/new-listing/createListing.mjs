@@ -11,7 +11,13 @@ export const createListing = async (container, formData) => {
     if (!response.ok) {
       throw new Error(data?.errors?.[0]?.message || "Something wrong with the response");
     }
-    console.log(data);
+
+    displayMessage(container, "success", "Successfully listed your item!🎉");
+
+    setTimeout(() => {
+      window.location.href = "../profile/";
+    }, 2000);
+
     return data;
   } catch (err) {
     displayMessage(container, "error", err.message || "Something went wrong creating the listing");
