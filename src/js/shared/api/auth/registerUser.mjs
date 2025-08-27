@@ -1,3 +1,4 @@
+import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
 import { requestOptions } from "./requestOptions.mjs";
 
@@ -9,9 +10,9 @@ export const registerUser = async (userData) => {
     ? `${import.meta.env.VITE_API_BASE_URL}/auth/register`
     : "https://v2.api.noroff.dev/auth/register";
 
-  fieldset.classList.add("opacity-50");
-
   try {
+    disableFieldset(true, "Registering..", ".5");
+
     const response = await fetch(URL, options);
     const data = await response.json();
 
@@ -19,7 +20,7 @@ export const registerUser = async (userData) => {
       throw new Error(data?.errors?.[0]?.message || "Bad data from registration");
     }
 
-    displayMessage(messageContainer, "success", "Successfully registered your user!🎉");
+    displayMessage(messageContainer, "success", "Successfully registered!🎉");
     setTimeout(() => {
       window.location.href = "../";
     }, 2000);
@@ -33,6 +34,6 @@ export const registerUser = async (userData) => {
     console.error(err.message);
     document.querySelector("form").reset();
   } finally {
-    fieldset.classList.remove("opacity-50");
+    disableFieldset(false, "Create account", "1");
   }
 };

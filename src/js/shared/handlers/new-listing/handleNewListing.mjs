@@ -10,7 +10,5 @@ export const handleNewListing = async () => {
   if (!isValid) return;
 
   const newListing = await createListing(form, formData);
-  console.log(newListing);
-
   return newListing;
 };
