@@ -22,11 +22,6 @@ export const createBidForm = (auctionData) => {
   const inputWrapper = document.createElement("div");
   inputWrapper.className = "relative";
 
-  // Dollar sign span
-  const dollarSign = document.createElement("span");
-  dollarSign.className = "absolute top-2.5 left-3 text-gray-500";
-  dollarSign.textContent = "$";
-
   // Input field
   const input = document.createElement("input");
   input.type = "number";
@@ -37,7 +32,7 @@ export const createBidForm = (auctionData) => {
   input.step = "1";
   input.placeholder = `$${currentHighestBid + 1 || "1"}`;
   input.className =
-    "focus:border-dark-green focus:ring-dark-green focus:ring-2 focus:outline-none border-gray/80 w-full rounded-lg border px-4 py-2 pl-8";
+    "focus:border-dark-green focus:ring-dark-green focus:ring-2 focus:outline-none border-gray/80 w-full rounded-lg border px-4 py-2";
   input.setAttribute("aria-describedby", "bid-help");
   input.required = true;
 
@@ -55,7 +50,6 @@ export const createBidForm = (auctionData) => {
   submitButton.textContent = "Place Bid";
 
   // Assemble input wrapper
-  inputWrapper.appendChild(dollarSign);
   inputWrapper.appendChild(input);
 
   // Assemble form group
