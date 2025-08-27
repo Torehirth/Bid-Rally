@@ -1,6 +1,5 @@
 /**
- * Updates the copyright year element with the current month number.
- * Note: This function currently sets the month (0-11) instead of the full year.
+ * Updates the copyright year element with the current year.
  * The querySelector is also incorrect - should use querySelector instead of createElement.
  *
  * @function updateCopyright
