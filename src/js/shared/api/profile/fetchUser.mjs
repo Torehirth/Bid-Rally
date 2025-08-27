@@ -26,7 +26,7 @@ export const fetchUser = async () => {
   try {
     const userData = await fetchAPI(userInfoContainer, `auction/profiles/${name}`);
 
-    return userData.data;
+    return userData?.data;
   } catch (err) {
     console.error(err.message || "Could not fetch user");
   }

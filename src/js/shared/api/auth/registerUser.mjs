@@ -1,11 +1,13 @@
 import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
+import { getUserData } from "../../utils/common/getUserData.mjs";
+import { loginUser } from "./loginUser.mjs";
 import { requestOptions } from "./requestOptions.mjs";
 
 export const registerUser = async (userData) => {
+  const form = document.querySelector("form");
   const messageContainer = document.querySelector("#message");
-  const fieldset = document.querySelector("fieldset");
-  const options = requestOptions("POST", userData);
+
   const URL = import.meta.env.VITE_API_BASE_URL
     ? `${import.meta.env.VITE_API_BASE_URL}/auth/register`
     : "https://v2.api.noroff.dev/auth/register";
@@ -13,6 +15,7 @@ export const registerUser = async (userData) => {
   try {
     disableFieldset(true, "Registering..", ".5");
 
+    const options = requestOptions("POST", userData);
     const response = await fetch(URL, options);
     const data = await response.json();
 
@@ -21,9 +24,12 @@ export const registerUser = async (userData) => {
     }
 
     displayMessage(messageContainer, "success", "Successfully registered!🎉");
+
     setTimeout(() => {
-      window.location.href = "../";
+      const userData = getUserData(form);
+      loginUser(userData);
     }, 2000);
+
     return data;
   } catch (err) {
     displayMessage(

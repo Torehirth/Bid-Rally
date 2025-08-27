@@ -2,8 +2,7 @@ import { getFromStorage } from "../../utils/common/getFromStorage.mjs";
 
 export const requestOptions = (method = "GET", formData) => {
   const user = getFromStorage("user");
-  const accessToken = user.accessToken;
-
+  const accessToken = user?.accessToken;
   const options = {
     method: method,
     headers: {
