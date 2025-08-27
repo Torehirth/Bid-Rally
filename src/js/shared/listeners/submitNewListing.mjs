@@ -5,7 +5,6 @@ export const submitNewListing = () => {
     e.preventDefault();
     const newListing = await handleNewListing();
 
-    console.log(newListing);
     return newListing;
   });
 };
