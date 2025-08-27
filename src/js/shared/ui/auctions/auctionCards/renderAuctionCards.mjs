@@ -19,8 +19,6 @@ import { createAuctionCard } from "./createAuctionCard.mjs";
  */
 export const renderAuctionCards = (allAuctions, containerID) => {
   containerID.innerHTML = "";
-  console.log(allAuctions);
-
   allAuctions.forEach((auction) => {
     const id = auction?.id;
     const title = auction?.title || "Untitled Auction";

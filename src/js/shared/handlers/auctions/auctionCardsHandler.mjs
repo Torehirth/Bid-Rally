@@ -18,7 +18,6 @@ export const auctionCardsHandler = async () => {
     }
 
     const allAuctions = data?.data;
-    console.log(allAuctions);
 
     renderAuctionCards(allAuctions, container);
     renderLoadMoreButton();

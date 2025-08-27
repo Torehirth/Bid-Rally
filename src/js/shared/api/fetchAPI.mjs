@@ -37,7 +37,11 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
 
     return json;
   } catch (err) {
-    displayMessage(container, "error", "Something went wrong fetching the API. Try again later.");
+    displayMessage(
+      container,
+      "error",
+      err.message || "Something went wrong fetching the API. Try again later."
+    );
     console.error(err.message);
   }
 };
