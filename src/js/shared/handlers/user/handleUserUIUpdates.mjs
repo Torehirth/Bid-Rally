@@ -1,6 +1,6 @@
 import { fetchUser } from "../../api/profile/fetchUser.mjs";
-import { updateUserImgElements } from "../../ui/helper/updateUserImgElements.mjs";
-import { updateUserTextElements } from "../../ui/helper/updateUserTextElements.mjs";
+import { updateUserImgElements } from "../../helper/updateUserImgElements.mjs";
+import { updateUserTextElements } from "../../helper/updateUserTextElements.mjs";
 
 export const handleUserUIUpdates = async () => {
   const userData = await fetchUser();
@@ -12,6 +12,7 @@ export const handleUserUIUpdates = async () => {
     _count: { wins, listings },
     bio,
   } = userData;
+  console.log(userData);
 
   updateUserImgElements("#user-avatar", avatar?.url, avatar?.alt);
   updateUserImgElements("#user-banner", banner?.url, banner?.alt);
