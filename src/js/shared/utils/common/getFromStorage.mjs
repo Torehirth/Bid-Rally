@@ -14,5 +14,12 @@
  */
 export const getFromStorage = (key) => {
   const data = localStorage.getItem(key);
-  return JSON.parse(data);
+  if (data === null) {
+    return null;
+  }
+  try {
+    return JSON.parse(data);
+  } catch (e) {
+    return null;
+  }
 };
