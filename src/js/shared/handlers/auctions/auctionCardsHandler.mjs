@@ -18,6 +18,7 @@ export const auctionCardsHandler = async () => {
     }
 
     const allAuctions = data?.data;
+
     renderAuctionCards(allAuctions, container);
     renderLoadMoreButton();
   } catch (err) {

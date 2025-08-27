@@ -21,9 +21,7 @@ export const createDeadlineColumn = (auctionData) => {
   // Time remaining
   const countDownObj = updateCountDown(auctionData?.endsAt);
 
-  const isTimeUrgentClasses = countDownObj.isUrgent
-    ? "text-error"
-    : "text-dark-green font-bold";
+  const isTimeUrgentClasses = countDownObj.isUrgent ? "text-error" : "text-dark-green font-bold";
 
   const timeRemaining = document.createElement("p");
   timeRemaining.id = "time-remaining";

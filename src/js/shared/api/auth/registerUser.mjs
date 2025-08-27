@@ -5,7 +5,9 @@ export const registerUser = async (userData) => {
   const messageContainer = document.querySelector("#message");
   const fieldset = document.querySelector("fieldset");
   const options = requestOptions("POST", userData);
-  const URL = `${import.meta.env.VITE_API_BASE_URL}/auth/register`;
+  const URL = import.meta.env.VITE_API_BASE_URL
+    ? `${import.meta.env.VITE_API_BASE_URL}/auth/register`
+    : "https://v2.api.noroff.dev/auth/register";
 
   fieldset.classList.add("opacity-50");
 

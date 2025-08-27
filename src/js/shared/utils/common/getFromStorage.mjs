@@ -13,5 +13,13 @@
  * const token = getFromStorage('authToken');
  */
 export const getFromStorage = (key) => {
-  return localStorage.getItem(key);
+  const data = localStorage.getItem(key);
+  if (data === null) {
+    return null;
+  }
+  try {
+    return JSON.parse(data);
+  } catch (e) {
+    return null;
+  }
 };

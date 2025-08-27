@@ -11,9 +11,7 @@
     <meta
       name="description"
       content="Create a new auction listing on BidRally. Add title, description, images, and set your auction deadline." />
-    <meta
-      name="keywords"
-      content="create listing, auction, new item, sell, bidding, marketplace" />
+    <meta name="keywords" content="create listing, auction, new item, sell, bidding, marketplace" />
     <meta name="author" content="BidRally Team" />
     <!-- Meta tags for Social Media platforms -->
     <meta property="og:title" content="Create New Listing | BidRally" />
@@ -46,9 +44,7 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
-            <a
-              href="../"
-              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Home
             </a>
             <a
@@ -70,10 +66,7 @@
 
           <div class="hidden lg:flex">
             <!-- User profile and New listing buttons -->
-            <div
-              class="flex items-center gap-4"
-              role="group"
-              aria-label="Authentication actions">
+            <div class="flex items-center gap-4" role="group" aria-label="Authentication actions">
               <a
                 href="../profile/"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
@@ -192,9 +185,8 @@
             <h1 id="create-listing-heading" class="mb-2 text-3xl font-bold">
               Create New Auction Listing
             </h1>
-            <p class="text-sm text-black/80">
-              Fill in the details below to create your auction listing and start receiving
-              bids.
+            <p class="text-sm text-black/80 md:text-base">
+              Fill in the details below to create your auction listing and start receiving bids.
             </p>
           </div>
         </div>
@@ -204,96 +196,100 @@
       <section class="container mx-auto px-4 pb-16" aria-labelledby="listing-form-heading">
         <div class="border-gray/50 rounded-lg border p-6">
           <h2 id="listing-form-heading" class="sr-only">Listing Details Form</h2>
+          <form id="create-listing-form" class="space-y-6" novalidate>
+            <fieldset class="flex flex-col gap-4">
+              <legend class="mb-4 block text-sm text-black">Enter listing Details</legend>
+              <div>
+                <label for="title" class="mb-2 block text-base font-medium text-black">
+                  Auction Title *
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  required
+                  maxlength="100"
+                  class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                  placeholder="Enter a descriptive title" />
+                <div id="title-message" class="mt-1 hidden text-sm text-red-600"></div>
+              </div>
 
-          <form id="create-listing-form" class="space-y-6">
-            <!-- Title Section -->
-            <div>
-              <label for="title" class="mb-2 block text-sm font-medium text-black">
-                Auction Title *
-              </label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                required
-                maxlength="100"
-                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                placeholder="Enter a descriptive title for your auction item" />
-            </div>
+              <!-- Description Section -->
+              <div>
+                <label for="description" class="mb-2 block text-base font-medium text-black">
+                  Description (optional)
+                </label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="6"
+                  maxlength="1000"
+                  class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                  placeholder="Provide a detailed description of your item"></textarea>
+                <div id="description-message" class="mt-1 hidden text-sm text-red-600"></div>
+              </div>
 
-            <!-- Description Section -->
-            <div>
-              <label for="description" class="mb-2 block text-sm font-medium text-black">
-                Description *
-              </label>
-              <textarea
-                id="description"
-                name="description"
-                required
-                rows="6"
-                maxlength="1000"
-                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full resize-none rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                placeholder="Provide a detailed description of your item"></textarea>
-              <div class="mt-1 flex justify-between text-xs text-black/80"></div>
-            </div>
+              <!-- endsAt Section -->
+              <div>
+                <label for="endsAt" class="-mt-2 mb-2 block text-base font-medium text-black">
+                  Auction End Date & Time *
+                </label>
+                <input
+                  type="datetime-local"
+                  id="endsAt"
+                  name="endsAt"
+                  required
+                  class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+                <div id="deadline-message" class="mt-1 hidden text-sm text-red-600"></div>
+              </div>
 
-            <!-- Deadline Section -->
-            <div>
-              <label for="deadline" class="mb-2 block text-sm font-medium text-black">
-                Auction End Date & Time *
-              </label>
-              <input
-                type="datetime-local"
-                id="deadline"
-                name="deadline"
-                required
-                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
-            </div>
-
-            <!-- Image Section -->
-            <div>
-              <label class="mb-2 block text-sm font-medium text-black">
-                Images (optional)
-              </label>
-              <p class="mb-4 text-xs text-black/80">Add image URL to showcase your item</p>
-
-              <div id="media-container" class="space-y-3">
-                <!-- Initial media input -->
+              <!-- Image Section -->
+              <div>
+                <label class="mb-1 block text-base font-medium text-black" for="media">
+                  Images (optional)
+                </label>
+                <p class="mb-2 text-xs text-black/80">
+                  Add a complete image URL to showcase your item
+                </p>
                 <div class="media-input-group flex items-center gap-3">
                   <input
                     type="url"
                     name="media"
+                    id="media"
                     placeholder="https://example.com/image.jpg"
-                    class="border-gray/50 focus:border-dark-green focus:ring-dark-green flex-1 rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
+                    class="focus:border-dark-green focus:ring-dark-green border-gray/80 flex-1 rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none" />
                 </div>
+                <div id="media-message" class="mt-1 hidden text-sm text-red-600"></div>
               </div>
-            </div>
 
-            <!-- Tags Section -->
-            <div>
-              <label for="tags" class="mb-2 block text-sm font-medium text-black">
-                Tags (Optional)
-              </label>
-              <input
-                type="text"
-                id="tags"
-                name="tags"
-                class="border-gray/50 focus:border-dark-green focus:ring-dark-green w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
-                placeholder="electronics, vintage, collectible (separate with commas)" />
-            </div>
+              <!-- Tags Section -->
+              <div>
+                <label for="tags" class="mb-1 block text-base font-medium text-black">
+                  Tags (Optional)
+                </label>
+                <p class="mb-2 text-xs text-black/80">Enter tags separated with commas</p>
+                <input
+                  type="text"
+                  id="tags"
+                  name="tags"
+                  class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full rounded-lg border px-4 py-3 transition-colors focus:ring-2 focus:outline-none"
+                  placeholder="electronics, vintage " />
+                <div id="tags-message" class="mt-1 hidden text-sm text-red-600"></div>
+              </div>
 
-            <!-- Form Actions -->
-            <div class="flex flex-col justify-end gap-4 pt-6 sm:flex-row">
-              <button
-                type="submit"
-                class="btn-primary flex flex-1 items-center justify-center gap-2 px-6 py-3 font-medium md:max-w-sm">
-                <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
-                </svg>
-                Create Auction
-              </button>
-            </div>
+              <!-- Form Actions -->
+              <div class="flex flex-col justify-end gap-4 pt-6 sm:flex-row">
+                <button
+                  type="submit"
+                  class="btn-primary flex flex-1 items-center justify-center gap-2 px-6 py-3 font-medium md:max-w-sm">
+                  <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  </svg>
+                  Create Auction
+                </button>
+              </div>
+            </fieldset>
           </form>
         </div>
       </section>
@@ -388,7 +384,11 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
+          <p class="text-sm text-white/80">
+            ©
+            <span id="copyright-year">2025</span>
+            BidRally - All rights reserved
+          </p>
         </div>
       </div>
     </footer>

@@ -29,11 +29,7 @@ export const auctionDetailsPageHandler = async () => {
 
     renderCompleteDetailsPage(singleAuctionData, container);
   } catch (err) {
-    displayMessage(
-      container,
-      "error",
-      "Could not display the item right now. Try again later.."
-    );
+    displayMessage(container, "error", "Could not display the item right now. Try again later..");
     console.error(err.message);
   }
 };
