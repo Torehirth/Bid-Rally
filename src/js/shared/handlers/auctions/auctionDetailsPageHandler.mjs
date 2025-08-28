@@ -8,7 +8,7 @@ export const auctionDetailsPageHandler = async () => {
   const auctionId = getQueryParameter("id");
 
   if (!auctionId) {
-    window.location.href = "../auctions/";
+    // window.location.href = "../auctions/";
   }
 
   const endpoint = `auction/listings/${auctionId}`;
@@ -24,10 +24,11 @@ export const auctionDetailsPageHandler = async () => {
     const singleAuctionData = data?.data;
 
     if (!singleAuctionData) {
-      window.location.href = "../auctions";
+      // window.location.href = "../auctions";
     }
 
     renderCompleteDetailsPage(singleAuctionData, container);
+    return singleAuctionData;
   } catch (err) {
     displayMessage(container, "error", "Could not display the item right now. Try again later..");
     console.error(err.message);

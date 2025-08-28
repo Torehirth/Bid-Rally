@@ -8,13 +8,14 @@ export const createBidForm = (auctionData) => {
   const form = document.createElement("form");
   form.id = "bid-form";
   form.className = "space-y-4";
+  form.noValidate = true;
 
   // Form group div
   const formGroup = document.createElement("div");
 
   // Label
   const label = document.createElement("label");
-  label.setAttribute("for", "bid-amount");
+  label.setAttribute("for", "amount");
   label.className = "mb-2 block text-sm font-medium text-gray-700";
   label.textContent = "Your Bid Amount";
 
@@ -25,8 +26,8 @@ export const createBidForm = (auctionData) => {
   // Input field
   const input = document.createElement("input");
   input.type = "number";
-  input.id = "bid-amount";
-  input.name = "bid-amount";
+  input.id = "amount";
+  input.name = "amount";
   const currentHighestBid = getHighestBid(auctionData);
   input.min = currentHighestBid || "0";
   input.step = "1";
@@ -42,6 +43,12 @@ export const createBidForm = (auctionData) => {
   helpText.className = "mt-1 text-sm text-black/80";
   helpText.textContent = `Minimum bid: $${currentHighestBid + 1 || "0"} (current bid + $1)`;
 
+  // Error message
+  const errorMessage = document.createElement("p");
+  errorMessage.id = "error-message";
+  errorMessage.className = "mt-1 text-sm text-red-600";
+  errorMessage.textContent = "";
+
   // Submit button
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
@@ -56,6 +63,7 @@ export const createBidForm = (auctionData) => {
   formGroup.appendChild(label);
   formGroup.appendChild(inputWrapper);
   formGroup.appendChild(helpText);
+  formGroup.appendChild(errorMessage);
 
   // Assemble form
   form.appendChild(formGroup);

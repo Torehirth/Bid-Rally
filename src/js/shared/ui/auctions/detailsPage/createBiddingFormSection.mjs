@@ -1,5 +1,4 @@
 import { createBidForm } from "./createBidForm.mjs";
-import { createLoginMessage } from "./createLoginMessage.mjs";
 
 /**
  * Creates the bidding form section in the details page
@@ -14,15 +13,18 @@ export const createBiddingFormSection = (auctionData) => {
   biddingTitle.className = "mb-4 text-xl font-semibold";
   biddingTitle.textContent = "Place Your Bid";
 
+  // Message container
+  const messageContainer = document.createElement("div");
+  messageContainer.id = "message";
+
   // Bidding form
   const bidForm = createBidForm(auctionData);
 
   // Login required message
-  const loginMessage = createLoginMessage();
 
   biddingContainer.appendChild(biddingTitle);
+  biddingContainer.appendChild(messageContainer);
   biddingContainer.appendChild(bidForm);
-  biddingContainer.appendChild(loginMessage);
 
   return biddingContainer;
 };
