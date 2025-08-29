@@ -10,6 +10,9 @@ export const createBidForm = (auctionData) => {
   form.className = "space-y-4";
   form.noValidate = true;
 
+  // Fieldset element
+  const fieldset = document.createElement("fieldset");
+
   // Form group div
   const formGroup = document.createElement("div");
 
@@ -66,8 +69,9 @@ export const createBidForm = (auctionData) => {
   formGroup.appendChild(errorMessage);
 
   // Assemble form
-  form.appendChild(formGroup);
-  form.appendChild(submitButton);
+  form.appendChild(fieldset);
+  fieldset.appendChild(formGroup);
+  fieldset.appendChild(submitButton);
 
   return form;
 };
