@@ -1,6 +1,6 @@
 import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
-import { requestOptions } from "../auth/requestOptions.mjs";
+import { requestOptions } from "../../utils/common/requestOptions.mjs";
 
 export const createListing = async (container, formData) => {
   const URL = `${import.meta.env.VITE_API_BASE_URL}/auction/listings`;

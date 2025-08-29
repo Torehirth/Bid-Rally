@@ -1,8 +1,8 @@
 import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
 import { getUserData } from "../../utils/common/getUserData.mjs";
+import { requestOptions } from "../../utils/common/requestOptions.mjs";
 import { loginUser } from "./loginUser.mjs";
-import { requestOptions } from "./requestOptions.mjs";
 
 export const registerUser = async (userData) => {
   const form = document.querySelector("form");

@@ -1,5 +1,5 @@
 import { displayMessage } from "../utils/common/displayMessage.mjs";
-import { requestOptions } from "./auth/requestOptions.mjs";
+import { requestOptions } from "../utils/common/requestOptions.mjs";
 
 /**
  * Fetches data from the API and handles errors gracefully

@@ -1,8 +1,8 @@
 import { navigateTo } from "../../helper/navigateTo.mjs";
 import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
+import { requestOptions } from "../../utils/common/requestOptions.mjs";
 import { saveToStorage } from "../../utils/common/saveToStorage.mjs";
-import { requestOptions } from "./requestOptions.mjs";
 
 export const loginUser = async (formData) => {
   const messageContainer = document.querySelector("#message");

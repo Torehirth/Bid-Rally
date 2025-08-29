@@ -1,7 +1,7 @@
 import { toggleMobileNav } from "../shared/listeners/toggleMobileNav.mjs";
 import { updateCopyright } from "../shared/utils/common/updateCopyright.mjs";
-import { submitNewListing } from "../shared/listeners/submitNewListing.mjs";
 import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
+import { submitNewListing } from "../shared/listeners/auctions/submitNewListing.mjs";
 
 export const initNewListingPage = () => {
   toggleMobileNav();

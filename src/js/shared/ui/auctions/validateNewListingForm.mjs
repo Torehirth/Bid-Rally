@@ -1,8 +1,8 @@
-import { filterTags } from "../../../helper/filterTags.mjs";
-import { isDeadlineValid } from "../../../helper/isDeadLineValid.mjs";
-import { isImageUrlValid } from "../../../utils/common/isImageUrlValid.mjs";
-import { removeMessage } from "../../../utils/common/removeMessage.mjs";
-import { setMessage } from "../../../utils/common/setMessage.mjs";
+import { filterTags } from "../../helper/filterTags.mjs";
+import { isDeadlineValid } from "../../helper/isDeadLineValid.mjs";
+import { isImageUrlValid } from "../../utils/common/isImageUrlValid.mjs";
+import { removeMessage } from "../../utils/common/removeMessage.mjs";
+import { setMessage } from "../../utils/common/setMessage.mjs";
 
 export const validateNewListingForm = () => {
   const title = document.querySelector("#title").value.trim().toLowerCase().replace(/ /g, "");
