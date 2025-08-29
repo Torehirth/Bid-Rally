@@ -1,18 +1,21 @@
+import { navigateTo } from "../../helper/navigateTo.mjs";
+import { disableFieldset } from "../../ui/common/disableFieldset.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
+import { requestOptions } from "../../utils/common/requestOptions.mjs";
 import { saveToStorage } from "../../utils/common/saveToStorage.mjs";
-import { requestOptions } from "./requestOptions.mjs";
 
 export const loginUser = async (formData) => {
   const messageContainer = document.querySelector("#message");
-  const fieldset = document.querySelector("fieldset");
-  const options = requestOptions("POST", formData);
+
   const URL = import.meta.env.VITE_API_BASE_URL
     ? `${import.meta.env.VITE_API_BASE_URL}/auth/login`
     : "https://v2.api.noroff.dev/auth/login";
 
-  fieldset.classList.add("opacity-50");
-
   try {
+    const options = requestOptions("POST", formData);
+
+    disableFieldset(true, "Signing in..", ".5");
+
     const response = await fetch(URL, options);
     const data = await response.json();
 
@@ -21,8 +24,10 @@ export const loginUser = async (formData) => {
     }
 
     saveToStorage("user", data?.data);
-    window.location.href = "../";
-    return data;
+
+    navigateTo("../");
+
+    return data?.data;
   } catch (err) {
     displayMessage(
       messageContainer,
@@ -32,6 +37,6 @@ export const loginUser = async (formData) => {
     console.error(err.message || "Something went wrong signing in");
     document.querySelector("form").reset();
   } finally {
-    fieldset.classList.remove("opacity-50");
+    disableFieldset(false, "Sign in", "1");
   }
 };

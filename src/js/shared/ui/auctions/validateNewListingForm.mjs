@@ -1,8 +1,8 @@
-import { filterTags } from "../../../helper/filterTags.mjs";
-import { isDeadlineValid } from "../../../helper/isDeadLineValid.mjs";
-import { isImageUrlValid } from "../../../utils/common/isImageUrlValid.mjs";
-import { removeMessage } from "../../../utils/common/removeMessage.mjs";
-import { setMessage } from "../../../utils/common/setMessage.mjs";
+import { filterTags } from "../../helper/filterTags.mjs";
+import { isDeadlineValid } from "../../helper/isDeadLineValid.mjs";
+import { isImageUrlValid } from "../../utils/common/isImageUrlValid.mjs";
+import { removeMessage } from "../../utils/common/removeMessage.mjs";
+import { setMessage } from "../../utils/common/setMessage.mjs";
 
 export const validateNewListingForm = () => {
   const title = document.querySelector("#title").value.trim().toLowerCase().replace(/ /g, "");
@@ -53,7 +53,7 @@ export const validateNewListingForm = () => {
     setMessage("#media-message", "Please provide a complete and active image URL");
   }
 
-  if (!tags || tags.length === 0) {
+  if (!tags) {
     isValid = false;
     setMessage("#tags-message", "Please provide a tag with more than 2 characters");
   } else {

@@ -1,3 +1,19 @@
+/**
+ * Calculates and formats the remaining time until a specified end date
+ * @param {string|Date} time - The end date/time to countdown to
+ * @returns {{timeLeft: string, isUrgent: boolean}} Object containing formatted time remaining and urgency flag
+ * @returns {string} returns.timeLeft - Formatted string showing remaining time or "Expired"
+ * @returns {boolean} returns.isUrgent - True if less than 1 day remaining, false otherwise
+ * @example
+ * // Returns time in days, hours, minutes format when more than 1 day left
+ * updateCountDown('2024-12-25T00:00:00Z')
+ * // { timeLeft: "5d 10h 30m", isUrgent: false }
+ *
+ * @example
+ * // Returns time in hours, minutes, seconds format when less than 1 day left
+ * updateCountDown('2024-12-20T02:30:15Z')
+ * // { timeLeft: "2h 30m 15s", isUrgent: true }
+ */
 export const updateCountDown = (time) => {
   let today = new Date();
   let endDate = new Date(time);

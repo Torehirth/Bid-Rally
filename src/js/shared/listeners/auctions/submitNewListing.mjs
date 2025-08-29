@@ -1,4 +1,4 @@
-import { handleNewListing } from "../handlers/new-listing/handleNewListing.mjs";
+import { handleNewListing } from "../../handlers/auctions/handleNewListing.mjs";
 
 export const submitNewListing = () => {
   document.addEventListener("submit", async (e) => {

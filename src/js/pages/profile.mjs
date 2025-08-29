@@ -1,3 +1,4 @@
+import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
 import { fetchUser } from "../shared/api/profile/fetchUser.mjs";
 import { handleUsersAuctionCards } from "../shared/handlers/user/handleUserAuctionCards.mjs";
 import { handleUserUIUpdates } from "../shared/handlers/user/handleUserUIUpdates.mjs";
@@ -10,5 +11,6 @@ export const initProfilePage = () => {
   handleUserUIUpdates();
   updateCopyright();
   handleUsersAuctionCards();
+  logoutUser();
   console.log("init profile page");
 };

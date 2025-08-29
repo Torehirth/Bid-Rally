@@ -88,7 +88,7 @@
                 <span>Profile</span>
               </a>
               <a
-                href="../"
+                href="#"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
                 aria-label="Log out of account"
                 id="logout-btn">
@@ -243,17 +243,18 @@
               <!-- Bidding Section -->
               <div class="border-gray/80 rounded-lg border bg-white p-6">
                 <h2 class="mb-4 text-xl font-semibold">Place Your Bid</h2>
+                <div id="message" class=""></div>
                 <form id="bid-form" class="space-y-4">
                   <div>
-                    <label for="bid-amount" class="mb-2 block text-sm font-medium text-gray-700">
+                    <label for="amount" class="mb-2 block text-sm font-medium text-gray-700">
                       Your Bid Amount
                     </label>
                     <div class="relative">
-                      <span class="absolute top-2.5 left-3 text-gray-500">$</span>
+                      <!-- <span class="absolute top-2.5 left-3 text-gray-500">$</span> -->
                       <input
                         type="number"
-                        id="bid-amount"
-                        name="bid-amount"
+                        id="amount"
+                        name="amount"
                         min="1851"
                         step="1"
                         placeholder="1851"
@@ -264,6 +265,7 @@
                     <p id="bid-help" class="mt-1 text-sm text-black/80">
                       Minimum bid: $1,851 (current bid + $1)
                     </p>
+                    <p id="bid-error" class="mt-1 text-sm text-black/80"></p>
                   </div>
                   <button
                     type="submit"
