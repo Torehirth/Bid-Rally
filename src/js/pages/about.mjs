@@ -1,6 +1,8 @@
 import { toggleMobileNav } from "../shared/listeners/toggleMobileNav.mjs";
+import { updateCopyright } from "../shared/utils/common/updateCopyright.mjs";
 
 export const initAboutPage = () => {
-  console.log("init about page");
   toggleMobileNav();
+  updateCopyright();
+  console.log("init about page");
 };

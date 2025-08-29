@@ -12,7 +12,6 @@ export const handleUserLogin = () => {
     if (!isValid) return;
 
     const userData = getUserData(form);
-
     loginUser(userData);
   });
 };

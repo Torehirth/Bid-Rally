@@ -48,9 +48,7 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden gap-1 lg:flex" role="navigation" aria-label="Main navigation">
-            <a
-              href="../"
-              class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
+            <a href="../" class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
               Home
             </a>
             <a href="./" class="hover:text-dark-green px-3 py-1 font-medium transition-colors">
@@ -90,7 +88,7 @@
                 <span>Profile</span>
               </a>
               <a
-                href="../"
+                href="#"
                 class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
                 aria-label="Log out of account"
                 id="logout-btn">
@@ -107,10 +105,7 @@
               </a>
             </div>
             <!-- login and register buttons -->
-            <div
-              class="flex items-center gap-3"
-              role="group"
-              aria-label="Authentication actions">
+            <div class="flex items-center gap-3" role="group" aria-label="Authentication actions">
               <a
                 href="../login/"
                 class="hover:text-dark-green px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
@@ -237,9 +232,7 @@
                   </div>
                   <div>
                     <p class="mb-1 text-sm text-black/80">Auction Ends</p>
-                    <p class="text-lg font-semibold" id="deadline">
-                      August 1, 2025 at 6:33 PM
-                    </p>
+                    <p class="text-lg font-semibold" id="deadline">August 1, 2025 at 6:33 PM</p>
                     <p class="text-error text-sm font-medium" id="time-remaining">
                       2 hours 33 minutes remaining
                     </p>
@@ -248,31 +241,31 @@
               </div>
 
               <!-- Bidding Section -->
-              <div class="border-gray/50 rounded-lg border bg-white p-6">
+              <div class="border-gray/80 rounded-lg border bg-white p-6">
                 <h2 class="mb-4 text-xl font-semibold">Place Your Bid</h2>
+                <div id="message" class=""></div>
                 <form id="bid-form" class="space-y-4">
                   <div>
-                    <label
-                      for="bid-amount"
-                      class="mb-2 block text-sm font-medium text-gray-700">
+                    <label for="amount" class="mb-2 block text-sm font-medium text-gray-700">
                       Your Bid Amount
                     </label>
                     <div class="relative">
-                      <span class="absolute top-2.5 left-3 text-gray-500">$</span>
+                      <!-- <span class="absolute top-2.5 left-3 text-gray-500">$</span> -->
                       <input
                         type="number"
-                        id="bid-amount"
-                        name="bid-amount"
+                        id="amount"
+                        name="amount"
                         min="1851"
                         step="1"
                         placeholder="1851"
-                        class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 pl-8 focus:ring-2 focus:outline-none"
+                        class="focus:border-dark-green focus:ring-dark-green w-full rounded-lg border border-black/80 px-4 py-2 pl-8 focus:ring-2 focus:outline-none"
                         aria-describedby="bid-help"
                         required />
                     </div>
                     <p id="bid-help" class="mt-1 text-sm text-black/80">
                       Minimum bid: $1,851 (current bid + $1)
                     </p>
+                    <p id="bid-error" class="mt-1 text-sm text-black/80"></p>
                   </div>
                   <button
                     type="submit"
@@ -293,10 +286,10 @@
                 <h2 class="mb-4 text-xl font-semibold">Description</h2>
                 <div class="flex max-w-[65ch] flex-col gap-3">
                   <p>
-                    This exceptional vintage camera from the 1950s represents a remarkable
-                    piece of photographic history. Manufactured during the golden age of film
-                    photography, this camera has been meticulously maintained and remains in
-                    excellent working condition.
+                    This exceptional vintage camera from the 1950s represents a remarkable piece of
+                    photographic history. Manufactured during the golden age of film photography,
+                    this camera has been meticulously maintained and remains in excellent working
+                    condition.
                   </p>
                 </div>
               </div>
@@ -360,8 +353,7 @@
               <div class="flex items-center justify-between px-6 py-4">
                 <div class="flex items-center space-x-4">
                   <div class="flex-shrink-0">
-                    <div
-                      class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
                       <span class="text-xs font-semibold text-black/80">2</span>
                     </div>
                   </div>
@@ -379,8 +371,7 @@
               <div class="flex items-center justify-between px-6 py-4">
                 <div class="flex items-center space-x-4">
                   <div class="flex-shrink-0">
-                    <div
-                      class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
+                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
                       <span class="text-xs font-semibold text-black/80">3</span>
                     </div>
                   </div>
@@ -419,9 +410,7 @@
       <section class="bg-gray-base py-16" aria-labelledby="featured-auctions-heading">
         <div class="container mx-auto px-4">
           <div class="mb-8 flex items-center justify-between">
-            <h2 id="featured-auctions-heading" class="text-3xl font-bold">
-              Featured Auctions
-            </h2>
+            <h2 id="featured-auctions-heading" class="text-3xl font-bold">Featured Auctions</h2>
             <a
               href="./"
               class="border-dark-green text-dark-green hover:bg-dark-green rounded-md border-2 px-4 py-2 font-medium transition-colors hover:text-white"
@@ -694,7 +683,11 @@
         </div>
 
         <div class="border-gray-base border-t py-4 text-center">
-          <p class="text-sm text-white/80">© 2025 BidRally - All rights reserved</p>
+          <p class="text-sm text-white/80">
+            ©
+            <span id="copyright-year">2025</span>
+            BidRally - All rights reserved
+          </p>
         </div>
       </div>
     </footer>
