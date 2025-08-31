@@ -237,6 +237,8 @@
               </p>
             </div>
 
+            <div id="message"></div>
+
             <!-- Sort Controls -->
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
               <!-- Sort Dropdown -->
@@ -245,11 +247,8 @@
                 <select
                   id="sort-select"
                   class="focus:border-dark-green focus:ring-dark-green border-gray/80 rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none">
-                  <option value="ending-soon">Ending Soon</option>
-                  <option value="newest">Newest First</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="alphabetical">A-Z</option>
+                  <option value="endsAt" data-sort-order="asc" id="ending-soon">Ending Soon</option>
+                  <option value="created" data-sort-order="desc" id="newest">Published</option>
                 </select>
               </div>
             </div>
@@ -260,12 +259,19 @@
       <!-- Results Summary -->
       <section class="py-4" aria-live="polite">
         <div class="container mx-auto px-4">
-          <p class="text-sm text-gray-600" id="results-summary">Showing 24 of 156 auction items</p>
+          <p class="text-sm text-gray-600">
+            Displaying
+            <span id="current-listings-number"></span>
+            of
+            <span id="total-listings"></span>
+            auction items
+          </p>
         </div>
       </section>
 
       <!-- Auction Items Grid -->
       <section class="pb-16" aria-labelledby="auctions-heading">
+        <div id="message" class=""></div>
         <div class="container mx-auto px-4">
           <h2 id="auctions-heading" class="sr-only">Auction items</h2>
           <div
@@ -304,7 +310,7 @@
             <!-- / Loader -->
           </div>
           <div id="btn-wrapper" class="mt-12 flex justify-center text-center">
-            <!-- <button
+            <button
               aria-label="Load more auction items"
               id="load-more-btn"
               class="btn-secondary flex cursor-pointer items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium transition-colors">
@@ -321,7 +327,7 @@
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               Load More Auctions
-            </button> -->
+            </button>
           </div>
         </div>
       </section>

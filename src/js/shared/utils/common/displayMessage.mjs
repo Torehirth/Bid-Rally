@@ -22,6 +22,7 @@ export const displayMessage = (container, messageType, message) => {
   }
 
   messageContainer.classList.add(messageType);
+  messageContainer.classList.add("text-center");
   messageContainer.innerText = message;
   messageContainer.setAttribute("role", "alert");
   messageContainer.setAttribute("aria-live", "polite");
