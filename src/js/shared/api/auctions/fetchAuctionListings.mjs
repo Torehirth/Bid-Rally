@@ -27,7 +27,7 @@ export const fetchAuctionListings = async (
     displayListingData(currentLengthOfListings, "#current-listings-number");
     displayListingData(data.meta.totalCount, "#total-listings");
 
-    const listings = data?.data || [];
+    const listings = data || [];
     return listings;
   } catch (err) {
     displayMessage(

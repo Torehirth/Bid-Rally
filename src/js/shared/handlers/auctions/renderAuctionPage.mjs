@@ -1,10 +1,10 @@
+// import { searchInputListener } from "../../../pages/auctions.mjs";
 import { fetchAuctionListings } from "../../api/auctions/fetchAuctionListings.mjs";
 import { renderAuctionCards } from "../../ui/auctions/auctionCards/renderAuctionCards.mjs";
-import { displayListingData } from "../../ui/auctions/displayListingData.mjs";
 import { displayMessage } from "../../utils/common/displayMessage.mjs";
 
 /**
- * Render a page of auction listings into the auctions grid.
+ * Render all the auction listings into the auction cotainer grid.
  *
  * This async function:
  * - Selects DOM elements (#auctions-grid, #load-more-btn).
@@ -25,10 +25,10 @@ import { displayMessage } from "../../utils/common/displayMessage.mjs";
  * @see fetchAuctionListings
  * @see renderAuctionCards
  */
+
 export const renderAuctionPage = async (page, sort, sortOrder) => {
   const listingsContainer = document.querySelector("#auctions-grid");
   const loadMoreBtn = document.querySelector("#load-more-btn");
-  const gridContainer = document.querySelector("#auctions-grid");
 
   if (page === 1) {
     listingsContainer.innerHTML = "";
@@ -38,18 +38,18 @@ export const renderAuctionPage = async (page, sort, sortOrder) => {
     const perPage = 15;
     loadMoreBtn.disabled = true;
 
-    const newListings = await fetchAuctionListings(perPage, page, sort, sortOrder);
+    const data = await fetchAuctionListings(perPage, page, sort, sortOrder);
+    const newListings = data?.data || [];
 
-    renderAuctionCards(newListings, gridContainer);
+    renderAuctionCards(newListings, listingsContainer);
 
     if (newListings.length < perPage) {
       loadMoreBtn.classList.add("hidden"); // last page
     } else {
       loadMoreBtn.disabled = false;
     }
-  } catch (err) {
+  } catch {
     loadMoreBtn.disabled = false;
-    console.error(err);
     displayMessage("#message", "error", "Could not fetch the listings");
   }
 };

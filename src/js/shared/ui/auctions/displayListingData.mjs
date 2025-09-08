@@ -15,5 +15,7 @@ export const displayListingData = (data, container) => {
     return;
   }
   const listingData = data;
-  document.querySelector(container).textContent = listingData;
+  const element = document.querySelector(container);
+  element.innerHTML = "";
+  element.textContent = listingData;
 };
