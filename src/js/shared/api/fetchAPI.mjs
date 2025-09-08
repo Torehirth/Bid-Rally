@@ -29,13 +29,13 @@ export const fetchAPI = async (container, endpoint, parameter = "") => {
 
   try {
     const response = await fetch(`${baseAPIUrl}/${endpoint}?${parameter}`, requestOptions());
-    const json = await response.json();
+    const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Fetch failed");
+      throw new Error(data.errors?.[0]?.message || "Fetch failed");
     }
 
-    return json;
+    return data;
   } catch (err) {
     displayMessage(
       container,
