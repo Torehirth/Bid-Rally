@@ -1,7 +1,10 @@
 import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
 import { fetchUser } from "../shared/api/profile/fetchUser.mjs";
-import { handleUsersAuctionCards } from "../shared/handlers/user/handleUserAuctionCards.mjs";
-import { handleUserUIUpdates } from "../shared/handlers/user/handleUserUIUpdates.mjs";
+import { handleAvatarSubmit } from "../shared/handlers/profile/handleAvatarSubmit.mjs";
+import { handleUsersAuctionCards } from "../shared/handlers/profile/handleUserAuctionCards.mjs";
+import { handleUserUIUpdates } from "../shared/handlers/profile/handleUserUIUpdates.mjs";
+import { closeModalListener } from "../shared/listeners/profile/closeModalListener.mjs";
+import { openModalListener } from "../shared/listeners/profile/openModalListener.mjs";
 import { toggleMobileNav } from "../shared/listeners/toggleMobileNav.mjs";
 import { updateCopyright } from "../shared/utils/common/updateCopyright.mjs";
 
@@ -12,5 +15,9 @@ export const initProfilePage = () => {
   updateCopyright();
   handleUsersAuctionCards();
   logoutUser();
+  closeModalListener();
+  openModalListener();
+  handleAvatarSubmit();
+
   console.log("init profile page");
 };
