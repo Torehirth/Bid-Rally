@@ -27,7 +27,6 @@ export const disableFieldset = (state, buttonText, opacity) => {
 
   if (submitButton && fieldset) {
     fieldset.disabled = state;
-    console.log(state);
 
     fieldset.style.opacity = opacity;
     submitButton.textContent = buttonText;

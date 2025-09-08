@@ -20,7 +20,7 @@
       content="Manage your BidRally profile and auction activities." />
     <meta property="og:image" content="/assets/images/profile-banner.webp" />
   </head>
-  <body class="flex min-h-screen flex-col bg-white text-black">
+  <body class="relative flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
     <header class="relative shadow-md" role="banner">
       <div class="container mx-auto px-4">
@@ -719,13 +719,13 @@
     <!-- Avatar Update Modal -->
     <div
       id="avatar-modal"
-      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      class="absolute inset-0 z-50 flex hidden items-start justify-center bg-black/80 pt-44">
       <div class="mx-4 w-full max-w-md rounded-lg bg-white p-6">
         <div class="mb-4 flex items-center justify-between">
           <h3 class="text-lg font-semibold">Update Avatar</h3>
           <button
             id="close-modal-btn"
-            class="hover:text-dark-green text-gray-500 transition-colors"
+            class="hover:text-dark-green cursor-pointer text-gray-500 transition-colors"
             aria-label="Close modal">
             <svg
               class="size-6"
@@ -741,32 +741,33 @@
             </svg>
           </button>
         </div>
-
-        <form id="avatar-form" class="space-y-4">
-          <div>
+        <div id="message"></div>
+        <form id="avatar-form" class="space-y-4" novalidate>
+          <div class="flex-col gap-3">
             <label for="avatar-url" class="mb-2 block text-sm font-medium text-gray-700">
               Avatar URL
             </label>
-            <input
-              type="url"
-              id="avatar-url"
-              name="avatar-url"
-              placeholder="https://example.com/your-avatar.jpg"
-              class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none"
-              required />
-            <p class="mt-1 text-sm text-black/80">Enter a valid URL for your new profile picture</p>
-          </div>
-
-          <div class="flex gap-3">
-            <button
-              type="button"
-              id="cancel-avatar-btn"
-              class="border-gray/50 flex-1 rounded-lg border px-4 py-2 font-medium transition-colors hover:bg-gray-50">
-              Cancel
-            </button>
-            <button type="submit" class="btn-primary flex-1 px-4 py-2 font-medium">
-              Update Avatar
-            </button>
+            <fieldset class="relative">
+              <input
+                type="url"
+                id="avatar"
+                name="avatar"
+                placeholder="https://example.com/your-avatar.jpg"
+                class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full rounded-lg border px-4 py-2 pl-10 focus:ring-2 focus:outline-none"
+                required />
+              <div class="mt-2 flex flex-wrap-reverse gap-3">
+                <button type="button" id="cancel-avatar-btn" class="btn-secondary flex-1 px-4 py-2">
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary flex-2 px-4 py-2 font-medium">
+                  Update Avatar
+                </button>
+              </div>
+            </fieldset>
+            <p id="info-message" class="mt-1 text-sm text-black/80">
+              Enter a valid URL for your new profile picture
+            </p>
+            <div id="avatar-message" class="mt-1 hidden text-sm text-red-600"></div>
           </div>
         </form>
       </div>
