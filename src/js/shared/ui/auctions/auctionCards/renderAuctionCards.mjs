@@ -17,7 +17,7 @@ import { createAuctionCard } from "./createAuctionCard.mjs";
  * @param {number} [allAuctions[]._count.bids] - Number of bids placed on the auction
  * @returns {void}
  */
-export const renderAuctionCards = (allAuctions, containerID) => {
+export const renderAuctionCards = (allAuctions, containerID, pathname) => {
   allAuctions.forEach((auction) => {
     const id = auction?.id;
     const title = auction?.title || "Untitled Auction";
@@ -29,7 +29,7 @@ export const renderAuctionCards = (allAuctions, containerID) => {
 
     const currentBid = getHighestBid(auction);
     const bidCount = auction?._count?.bids || "0";
-    const itemLink = `../auctions/item.html?id=${id || "#"}`;
+    const itemLink = `${pathname}?id=${id || "#"}`;
 
     createAuctionCard(
       title,

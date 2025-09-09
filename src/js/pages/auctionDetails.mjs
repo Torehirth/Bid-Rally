@@ -1,3 +1,4 @@
+import { displayListingsEndingSoon } from "../shared/api/auctions/displayListingsEndingSoon.mjs";
 import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
 import { auctionDetailsPageHandler } from "../shared/handlers/auctions/auctionDetailsPageHandler.mjs";
 import { submitBid } from "../shared/listeners/auctions/submitBid.mjs";
@@ -14,5 +15,6 @@ export const initAuctionDetailsPage = () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
+  displayListingsEndingSoon();
   console.log("init Item detail page");
 };

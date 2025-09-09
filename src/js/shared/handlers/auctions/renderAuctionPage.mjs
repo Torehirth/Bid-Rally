@@ -41,7 +41,7 @@ export const renderAuctionPage = async (page, sort, sortOrder) => {
     const data = await fetchAuctionListings(perPage, page, sort, sortOrder);
     const newListings = data?.data || [];
 
-    renderAuctionCards(newListings, listingsContainer);
+    renderAuctionCards(newListings, listingsContainer, "../auctions/item.html");
 
     if (newListings.length < perPage) {
       loadMoreBtn.classList.add("hidden"); // last page
