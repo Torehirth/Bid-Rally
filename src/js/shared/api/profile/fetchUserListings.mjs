@@ -9,7 +9,7 @@ export const fetchUserListings = async (container) => {
     const data = await fetchAPI(
       container,
       `auction/profiles/${name}/listings`,
-      "_active=true&_seller=true&_bids=true&limit=10"
+      "_active=true&_seller=true&_bids=true&sort=endsAt&sortOrder=asc"
     );
 
     if (!data) {

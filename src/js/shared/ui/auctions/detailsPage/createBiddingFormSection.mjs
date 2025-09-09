@@ -1,3 +1,4 @@
+import { isLoggedIn } from "../../../helper/auth/isLoggedIn.mjs";
 import { createBidForm } from "./createBidForm.mjs";
 
 /**
@@ -20,11 +21,27 @@ export const createBiddingFormSection = (auctionData) => {
   // Bidding form
   const bidForm = createBidForm(auctionData);
 
-  // Login required message
+  // If not logged in
+  const loginTitle = document.createElement("h2");
+  loginTitle.textContent = "Log in to place a bid";
+  loginTitle.classList.add("mb-4", "text-xl", "font-semibold");
 
-  biddingContainer.appendChild(biddingTitle);
-  biddingContainer.appendChild(messageContainer);
-  biddingContainer.appendChild(bidForm);
+  const loginButton = document.createElement("a");
+  loginButton.href = "../login/";
+  loginButton.classList.add("btn-primary", "flex", "justify-center");
+  loginButton.textContent = "Log In";
+  loginButton.setAttribute("aria-label", "navigate to login page");
+
+  const loggedIn = isLoggedIn();
+  // If logged in
+  if (loggedIn) {
+    biddingContainer.appendChild(biddingTitle);
+    biddingContainer.appendChild(messageContainer);
+    biddingContainer.appendChild(bidForm);
+  } else {
+    biddingContainer.appendChild(loginTitle);
+    biddingContainer.appendChild(loginButton);
+  }
 
   return biddingContainer;
 };

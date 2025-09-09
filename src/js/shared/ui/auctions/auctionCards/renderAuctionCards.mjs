@@ -3,7 +3,7 @@ import { updateCountDown } from "../../../utils/auctions/updateCountDown.mjs";
 import { createAuctionCard } from "./createAuctionCard.mjs";
 
 /**
- * Renders auction cards for a collection of auctions by clearing the container and creating individual auction cards
+ * Creates individual auction cards
  * @param {Array<Object>} allAuctions - Array of auction objects containing auction data
  * @param {HTMLElement} containerID - The DOM element container where auction cards will be rendered
  * @param {string} allAuctions[].id - Unique identifier for the auction
@@ -18,7 +18,6 @@ import { createAuctionCard } from "./createAuctionCard.mjs";
  * @returns {void}
  */
 export const renderAuctionCards = (allAuctions, containerID) => {
-  containerID.innerHTML = "";
   allAuctions.forEach((auction) => {
     const id = auction?.id;
     const title = auction?.title || "Untitled Auction";

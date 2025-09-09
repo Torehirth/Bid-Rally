@@ -20,7 +20,7 @@
       content="Manage your BidRally profile and auction activities." />
     <meta property="og:image" content="/assets/images/profile-banner.webp" />
   </head>
-  <body class="flex min-h-screen flex-col bg-white text-black">
+  <body class="relative flex min-h-screen flex-col bg-white text-black">
     <!-- Header -->
     <header class="relative shadow-md" role="banner">
       <div class="container mx-auto px-4">
@@ -66,42 +66,8 @@
             </a>
           </nav>
 
-          <div class="hidden lg:flex">
-            <!-- User profile and New listing buttons -->
-            <div class="flex items-center gap-4" role="group" aria-label="Authentication actions">
-              <a
-                href="../profile/"
-                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
-                aria-label="View your user profile">
-                <svg
-                  class="size-5"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  aria-hidden="true">
-                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                  <path
-                    d="M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z" />
-                </svg>
-                <span>Profile</span>
-              </a>
-              <a
-                href="#"
-                class="hover:text-dark-green flex flex-col items-center justify-center gap-1 text-sm font-medium transition-colors"
-                aria-label="Log out of account"
-                id="logout-btn">
-                <svg
-                  class="size-5"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  aria-hidden="true">
-                  <path
-                    d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0zM502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
-                </svg>
-                <span>log out</span>
-              </a>
-            </div>
+          <div id="user-menu" class="lg:flex">
+            <!-- User navigation rendered dynamically -->
           </div>
 
           <!-- Mobile menu button -->
@@ -719,13 +685,13 @@
     <!-- Avatar Update Modal -->
     <div
       id="avatar-modal"
-      class="bg-opacity-50 fixed inset-0 z-50 hidden items-center justify-center bg-black">
+      class="absolute inset-0 z-50 flex hidden items-start justify-center bg-black/80 pt-44">
       <div class="mx-4 w-full max-w-md rounded-lg bg-white p-6">
         <div class="mb-4 flex items-center justify-between">
           <h3 class="text-lg font-semibold">Update Avatar</h3>
           <button
             id="close-modal-btn"
-            class="hover:text-dark-green text-gray-500 transition-colors"
+            class="hover:text-dark-green cursor-pointer text-gray-500 transition-colors"
             aria-label="Close modal">
             <svg
               class="size-6"
@@ -741,32 +707,33 @@
             </svg>
           </button>
         </div>
-
-        <form id="avatar-form" class="space-y-4">
-          <div>
+        <div id="message"></div>
+        <form id="avatar-form" class="space-y-4" novalidate>
+          <div class="flex-col gap-3">
             <label for="avatar-url" class="mb-2 block text-sm font-medium text-gray-700">
               Avatar URL
             </label>
-            <input
-              type="url"
-              id="avatar-url"
-              name="avatar-url"
-              placeholder="https://example.com/your-avatar.jpg"
-              class="focus:border-mint-green focus:ring-mint-green border-gray/50 w-full rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none"
-              required />
-            <p class="mt-1 text-sm text-black/80">Enter a valid URL for your new profile picture</p>
-          </div>
-
-          <div class="flex gap-3">
-            <button
-              type="button"
-              id="cancel-avatar-btn"
-              class="border-gray/50 flex-1 rounded-lg border px-4 py-2 font-medium transition-colors hover:bg-gray-50">
-              Cancel
-            </button>
-            <button type="submit" class="btn-primary flex-1 px-4 py-2 font-medium">
-              Update Avatar
-            </button>
+            <fieldset class="relative">
+              <input
+                type="url"
+                id="avatar"
+                name="avatar"
+                placeholder="https://example.com/your-avatar.jpg"
+                class="focus:border-dark-green focus:ring-dark-green border-gray/80 w-full rounded-lg border px-4 py-2 pl-10 focus:ring-2 focus:outline-none"
+                required />
+              <div class="mt-2 flex flex-wrap-reverse gap-3">
+                <button type="button" id="cancel-avatar-btn" class="btn-secondary flex-1 px-4 py-2">
+                  Cancel
+                </button>
+                <button type="submit" class="btn-primary flex-2 px-4 py-2 font-medium">
+                  Update Avatar
+                </button>
+              </div>
+            </fieldset>
+            <p id="info-message" class="mt-1 text-sm text-black/80">
+              Enter a valid URL for your new profile picture
+            </p>
+            <div id="avatar-message" class="mt-1 hidden text-sm text-red-600"></div>
           </div>
         </form>
       </div>

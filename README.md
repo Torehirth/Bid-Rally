@@ -1,3 +1,5 @@
+# THIS NEEDS TO BE UPDATED!!
+
 # Auction Website
 
 A modern auction platform where users can create listings, place bids, and manage their profiles. Built with Vite and vanilla JavaScript using the Noroff API for backend functionality.

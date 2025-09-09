@@ -1,26 +1,19 @@
-import { auctionCardsHandler } from "../shared/handlers/auctions/auctionCardsHandler.mjs";
 import { toggleMobileNav } from "../shared/listeners/toggleMobileNav.mjs";
 import { updateCopyright } from "../shared/utils/common/updateCopyright.mjs";
+import { initAuctionPagination } from "../shared/listeners/auctions/initAuctionPagination.mjs";
+import { searchInputListener } from "../shared/listeners/auctions/searchInputListener.mjs";
+import { initAuthStates } from "../shared/ui/auth/initAuthStates.mjs";
+import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
+import { renderAuctionCards } from "../shared/ui/auctions/auctionCards/renderAuctionCards.mjs";
+import { renderUserButtonsInNav } from "../shared/ui/common/renderUserButtonsInNav.mjs";
 
-/**
- * Initialize the Auctions page.
- *
- * Performs the setup required when the auctions page is loaded:
- * - Enables mobile navigation toggling by calling `toggleMobileNav`
- * - Sets up auction cards and related handlers via `auctionCardsHandler`
- * - Updates copyright information via `updateCopyright`
- * - Logs an initialization message to the console
- *
- * This function is asynchronous to allow for any future asynchronous initialization
- * steps; currently it starts the setup tasks and returns a resolved promise.
- *
- * @async
- * @function initAuctionsPage
- * @returns {Promise<void>} Resolves when initialization tasks have been initiated/completed.
- */
 export const initAuctionsPage = async () => {
   toggleMobileNav();
-  auctionCardsHandler();
   updateCopyright();
+  initAuctionPagination();
+  searchInputListener();
+  initAuthStates();
+  logoutUser();
+  renderUserButtonsInNav("../login/", "../register/", "../profile/");
   console.log("init Auctions page");
 };
