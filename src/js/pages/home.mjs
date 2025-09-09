@@ -9,6 +9,6 @@ export const initHomePage = () => {
   updateCopyright();
   initAuthStates();
   logoutUser();
-  renderUserButtonsInNav();
+  renderUserButtonsInNav("./login/", "./register/", "./profile/");
   console.log("init Home page");
 };

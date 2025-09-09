@@ -15,11 +15,11 @@ import { createLoggedOutUserNav } from "./createLoggedOutUserNav.mjs";
  *
  * @function
  */
-export const renderUserButtonsInNav = () => {
+export const renderUserButtonsInNav = (loginLink, registerLink, profileLink) => {
   const outerContainer = document.querySelector("#user-menu");
 
-  const loggedInUserNav = createLoggedInUserNav();
-  const loggedOutUserNav = createLoggedOutUserNav();
+  const loggedInUserNav = createLoggedInUserNav(profileLink);
+  const loggedOutUserNav = createLoggedOutUserNav(loginLink, registerLink);
 
   const loggedIn = isLoggedIn();
 
