@@ -41,7 +41,7 @@ export const updateAvatar = async (formData) => {
 
     setTimeout(() => {
       window.location.reload();
-    }, 3000);
+    }, 2500);
   } catch (err) {
     console.error(err.message);
     displayMessage("#message", "error", err.message || "Something went wrong changing the avatar");

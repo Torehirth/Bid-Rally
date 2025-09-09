@@ -28,7 +28,7 @@ export const initAuthStates = () => {
       element.classList.toggle("hidden", !loggedIn);
     }
     if (rule === "logged-out") {
-      element.classList.toggle("hidden", loggedIn);
+      element.classList.remove("hidden", loggedIn);
     }
   });
 };
