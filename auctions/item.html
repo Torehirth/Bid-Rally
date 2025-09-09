@@ -69,7 +69,8 @@
           <div class="lg:flex">
             <!-- User profile and logout buttons -->
             <div
-              class="flex items-center gap-8 pl-13"
+              data-visible-when="logged-in"
+              class="flex items-center gap-3 md:gap-8"
               role="group"
               aria-label="User account actions">
               <a
@@ -104,8 +105,12 @@
                 <span>log out</span>
               </a>
             </div>
-            <!-- login and register buttons -->
-            <div class="flex items-center gap-3" role="group" aria-label="Authentication actions">
+            <!-- Login and register buttons -->
+            <div
+              data-visible-when="logged-out"
+              class="flex items-center gap-3"
+              role="group"
+              aria-label="Authentication actions">
               <a
                 href="../login/"
                 class="hover:text-dark-green px-1 py-1 text-sm font-medium md:px-4 md:py-2 md:text-base">
@@ -191,8 +196,7 @@
           <li><a href="./">Auctions</a></li>
           <li>&gt;</li>
           <li>
-            <a href="#"></a>
-            Vintage Camera
+            <a href="#" id="item-title"></a>
           </li>
         </ul>
       </section>
@@ -240,8 +244,17 @@
                 </div>
               </div>
 
+              <div
+                data-visible-when="logged-in"
+                class="border-gray/80 rounded-lg border bg-white p-6">
+                <h2 class="mb-4 text-xl font-semibold">Log in to place a bid</h2>
+                <a href="../login/" class="btn-primary">Log In</a>
+              </div>
+
               <!-- Bidding Section -->
-              <div class="border-gray/80 rounded-lg border bg-white p-6">
+              <div
+                data-visible-when="logged-out"
+                class="border-gray/80 rounded-lg border bg-white p-6">
                 <h2 class="mb-4 text-xl font-semibold">Place Your Bid</h2>
                 <div id="message" class=""></div>
                 <form id="bid-form" class="space-y-4">
