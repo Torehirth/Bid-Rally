@@ -11,6 +11,6 @@ export const initHomePage = () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("./login/", "./register/", "./profile/");
-  displayListingsEndingSoon();
+  displayListingsEndingSoon("./auctions/item.html");
   console.log("init Home page");
 };

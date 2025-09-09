@@ -21,6 +21,8 @@ import { displayMessage } from "../../utils/common/displayMessage.mjs";
  *
  * @async
  * @param {number} page - 1-based page index to load.
+ * @param {string} sort - sort by object data like "endsAt".
+ * @param {string} sortOrder - sort in ascending or descending order with "asc" or "desc".
  * @returns {Promise<void>} Resolves when rendering (or error handling) completes.
  * @see fetchAuctionListings
  * @see renderAuctionCards

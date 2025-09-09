@@ -7,14 +7,24 @@ import { fetchAPI } from "../fetchAPI.mjs";
  *
  * @async
  * @function displayListingsEndingSoon
+ * @param {string} [pathname] - The endpoint to generate and navigate to the specific listing.
  * @param {string} [sort="endsAt"] - The field by which to sort the listings.
  * @param {string} [sortOrder="asc"] - The order in which to sort the listings ("asc" for ascending, "desc" for descending).
  * @param {number} [limit=4] - The maximum number of listings to fetch per page.
  * @param {number} [page=1] - The page number to fetch.
  * @returns {Promise<void>} - A promise that resolves when the listings are fetched and displayed.
  * @throws {Error} - Throws an error if the data cannot be fetched or displayed.
+ * @example
+ * displayListingsEndingSoon( 
+ * "../auctions/item.html",
+  sort = "endsAt",
+  sortOrder = "asc",
+  limit = 4,
+  page = 1)
  */
+
 export const displayListingsEndingSoon = async (
+  pathname,
   sort = "endsAt",
   sortOrder = "asc",
   limit = 4,
@@ -32,7 +42,7 @@ export const displayListingsEndingSoon = async (
     if (!data) {
       throw new Error("Data couldn't be fetched");
     }
-    renderAuctionCards(listings, listingsContainer, "./auctions/item.html");
+    renderAuctionCards(listings, listingsContainer, pathname);
   } catch (err) {
     console.error(err.message);
     displayMessage(

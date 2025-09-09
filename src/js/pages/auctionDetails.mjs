@@ -15,6 +15,6 @@ export const initAuctionDetailsPage = () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  displayListingsEndingSoon();
+  displayListingsEndingSoon("../auctions/item.html");
   console.log("init Item detail page");
 };
