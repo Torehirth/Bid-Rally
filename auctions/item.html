@@ -147,407 +147,59 @@
         </ul>
       </section>
       <!-- Item Details Section -->
-      <section id="item-details-section" class="py-8" aria-labelledby="item-heading">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <!-- Image -->
-            <div class="space-y-4">
-              <div class="relative">
-                <img
-                  id="main-image"
-                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
-                  alt="Vintage camera from the 1950s"
-                  class="h-96 w-full rounded-lg object-cover" />
-              </div>
-            </div>
-
-            <!-- Item Information -->
-            <div class="border-gray/50 space-y-6 rounded-lg border bg-white p-6">
-              <!-- Title and Seller Info -->
-              <div>
-                <h1 id="item-heading" class="mb-2 text-3xl font-bold">Vintage Camera</h1>
-                <p class="text-gray-600">
-                  Listed by:
-                  <span class="font-medium text-black">john_photographer</span>
-                </p>
-              </div>
-
-              <!-- Current Bid and Deadline -->
-              <div class="border-gray/50 rounded-lg border bg-white p-6">
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <p class="mb-1 text-sm text-black/80">Current Highest Bid</p>
-                    <p class="text-dark-green text-3xl font-bold" id="current-bid">$1,850</p>
-                    <p class="text-sm text-black/80" id="bid-count">3 bids placed</p>
-                  </div>
-                  <div>
-                    <p class="mb-1 text-sm text-black/80">Auction Ends</p>
-                    <p class="text-lg font-semibold" id="deadline">August 1, 2025 at 6:33 PM</p>
-                    <p class="text-error text-sm font-medium" id="time-remaining">
-                      2 hours 33 minutes remaining
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-visible-when="logged-in"
-                class="border-gray/80 rounded-lg border bg-white p-6">
-                <h2 class="mb-4 text-xl font-semibold">Log in to place a bid</h2>
-                <a href="../login/" class="btn-primary">Log In</a>
-              </div>
-
-              <!-- Bidding Section -->
-              <div
-                data-visible-when="logged-out"
-                class="border-gray/80 rounded-lg border bg-white p-6">
-                <h2 class="mb-4 text-xl font-semibold">Place Your Bid</h2>
-                <div id="message" class=""></div>
-                <form id="bid-form" class="space-y-4">
-                  <div>
-                    <label for="amount" class="mb-2 block text-sm font-medium text-gray-700">
-                      Your Bid Amount
-                    </label>
-                    <div class="relative">
-                      <!-- <span class="absolute top-2.5 left-3 text-gray-500">$</span> -->
-                      <input
-                        type="number"
-                        id="amount"
-                        name="amount"
-                        min="1851"
-                        step="1"
-                        placeholder="1851"
-                        class="focus:border-dark-green focus:ring-dark-green w-full rounded-lg border border-black/80 px-4 py-2 pl-8 focus:ring-2 focus:outline-none"
-                        aria-describedby="bid-help"
-                        required />
-                    </div>
-                    <p id="bid-help" class="mt-1 text-sm text-black/80">
-                      Minimum bid: $1,851 (current bid + $1)
-                    </p>
-                    <p id="bid-error" class="mt-1 text-sm text-black/80"></p>
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn-primary w-full py-3 text-lg font-semibold"
-                    id="place-bid-btn">
-                    Place Bid
-                  </button>
-                </form>
-
-                <!-- Login Message (shown when not logged in) -->
-                <div id="login-required" class="text-center">
-                  <p class="mt-1 text-black/80">You must be logged in to place a bid</p>
-                </div>
-              </div>
-
-              <!-- Item Description -->
-              <div>
-                <h2 class="mb-4 text-xl font-semibold">Description</h2>
-                <div class="flex max-w-[65ch] flex-col gap-3">
-                  <p>
-                    This exceptional vintage camera from the 1950s represents a remarkable piece of
-                    photographic history. Manufactured during the golden age of film photography,
-                    this camera has been meticulously maintained and remains in excellent working
-                    condition.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Item Details -->
-              <div class="border-gray/50 rounded-lg border bg-white p-6">
-                <h2 class="mb-4 text-xl font-semibold">Item Details</h2>
-                <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <dt class="text-sm font-medium text-black/80">Id:</dt>
-                    <dd class="text-sm text-black">19</dd>
-                  </div>
-                  <div>
-                    <dt class="text-sm font-medium text-black/80">Date listed:</dt>
-                    <dd class="text-sm text-black">05.06.2025</dd>
-                  </div>
-                  <div>
-                    <dt class="text-sm font-medium text-black/80">Tags:</dt>
-                    <dd class="text-sm text-black">Camera</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="item-details-section" class="py-8" aria-labelledby="item-heading"></section>
 
       <!-- Bid History Section -->
-      <section id="bid-history" class="pt-8 pb-16" aria-labelledby="bid-history-heading">
-        <div class="container mx-auto px-4">
-          <h2 id="bid-history-heading" class="mb-6 text-2xl font-semibold">Bid History</h2>
-          <div class="border-gray/50 overflow-hidden rounded-lg border">
-            <div class="border-gray/30 border-b px-6 py-4">
-              <div class="flex items-center justify-between">
-                <p class="text-sm text-black" id="total-bids">3 bids placed</p>
-              </div>
-            </div>
+      <section id="bid-history" class="pt-8 pb-16" aria-labelledby="bid-history-heading"></section>
 
-            <div id="bid-list" class="divide-gray/30 divide-y">
-              <!-- Bid Entry 1 -->
-              <div class="flex items-center justify-between px-6 py-4">
-                <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
-                    <div
-                      class="bg-mint-green flex h-8 w-8 items-center justify-center rounded-full">
-                      <span class="text-xs font-semibold text-black">1</span>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium">camera_collector_42</p>
-                    <p class="text-xs text-black/80">2 hours ago</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="text-dark-green text-lg font-semibold">$1,850</p>
-                  <p class="text-xs text-black/80">Highest bid</p>
-                </div>
-              </div>
-
-              <!-- Bid Entry 2 -->
-              <div class="flex items-center justify-between px-6 py-4">
-                <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
-                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
-                      <span class="text-xs font-semibold text-black/80">2</span>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium">vintage_lover_88</p>
-                    <p class="text-xs text-black/80">5 hours ago</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="text-lg font-semibold">$1,200</p>
-                </div>
-              </div>
-
-              <!-- Bid Entry 3 -->
-              <div class="flex items-center justify-between px-6 py-4">
-                <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
-                    <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
-                      <span class="text-xs font-semibold text-black/80">3</span>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium">photo_enthusiast</p>
-                    <p class="text-xs text-black/80">1 day ago</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="text-lg font-semibold">$800</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Empty State (when no bids) -->
-            <div id="no-bids" class="hidden px-6 py-8 text-center">
-              <svg
-                class="mx-auto mb-4 h-12 w-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <p class="text-black/80">No bids have been placed yet.</p>
-              <p class="mt-2 text-sm text-gray-400">Be the first to bid on this item!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Featured Auctions -->
-      <section class="bg-gray-base py-16" aria-labelledby="featured-auctions-heading">
+      <!-- Auctions ending soon -->
+      <section class="bg-gray-base py-16" aria-labelledby="auctions-ending-soon-heading">
         <div class="container mx-auto px-4">
           <div class="mb-8 flex items-center justify-between">
-            <h2 id="featured-auctions-heading" class="text-3xl font-bold">Featured Auctions</h2>
+            <h2 id="auctions-ending-soon-heading" class="text-3xl font-bold">
+              Auctions Ending Soon
+            </h2>
             <a
-              href="./"
+              href="../auctions/"
               class="border-dark-green text-dark-green hover:bg-dark-green rounded-md border-2 px-4 py-2 font-medium transition-colors hover:text-white"
               aria-label="View all auction items">
               View All
             </a>
           </div>
           <div
-            class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+            id="auctions-ending-soon-container"
+            class="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
             role="list"
-            aria-label="Featured auction items">
-            <!-- Auction Item 1 -->
-            <article
-              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
-              role="listitem">
-              <div class="relative">
-                <img
-                  src="/assets/images/jon-tyson-H1QqPZ-WZdQ-unsplash.webp"
-                  alt="First pressing rare vinyl record in mint condition, never played"
-                  class="h-48 w-full object-cover" />
-                <div class="absolute top-2 right-2">
-                  <span
-                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
-                    aria-label="Time left in auction">
-                    4d 2h left
-                  </span>
-                </div>
+            aria-label="auctions-items-ending-soon">
+            <!-- Loader -->
+            <div
+              id="loader"
+              class="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-white/70">
+              <div>
+                <svg
+                  class="h-12 w-12 animate-spin text-gray-300"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24">
+                  <path
+                    d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path
+                    d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-gray-900"></path>
+                </svg>
               </div>
-              <div class="flex flex-grow flex-col p-4">
-                <div class="mb-2 flex items-center justify-between">
-                  <h3 class="text-lg font-bold">Rare Vinyl Record</h3>
-                </div>
-                <p class="mb-3 text-sm">
-                  First pressing of a legendary album, mint condition, never played.
-                </p>
-                <div class="mb-4 flex-grow">
-                  <p class="text-sm">Current Bid:</p>
-                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
-                    $750
-                  </p>
-                  <p class="text-xs text-black/80">3 bids</p>
-                </div>
-                <div class="flex w-full">
-                  <a
-                    href="./item.html?id=4"
-                    class="btn-primary w-full px-4 py-2 text-center text-sm"
-                    aria-label="Place bid on rare vinyl record">
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Auction Item 2 -->
-            <article
-              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
-              role="listitem">
-              <div class="relative">
-                <img
-                  src="/assets/images/nik-qw3TwCZ_jXg-unsplash.webp"
-                  alt="Vintage camera from the 1950s"
-                  class="h-48 w-full object-cover" />
-                <div class="absolute top-2 right-2">
-                  <span
-                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
-                    aria-label="Time left in auction">
-                    2h 33m left
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-grow flex-col p-4">
-                <div class="mb-2 flex items-center justify-between">
-                  <h3 class="text-lg font-bold">Vintage Camera</h3>
-                </div>
-                <p class="mb-3 text-sm">
-                  A rare vintage camera from the 1950s in excellent condition.
-                </p>
-                <div class="mb-4 flex-grow">
-                  <p class="text-sm">Current Bid:</p>
-                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
-                    $450
-                  </p>
-                  <p class="text-xs text-black/80">5 bids</p>
-                </div>
-                <div class="flex w-full">
-                  <a
-                    href="./item.html?id=1"
-                    class="btn-primary w-full px-4 py-2 text-center text-sm"
-                    aria-label="Place bid on vintage camera">
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Auction Item 3 -->
-            <article
-              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
-              role="listitem">
-              <div class="relative">
-                <img
-                  src="/assets/images/kjartan-einarsson-hxwvWHmCdBM-unsplash.webp"
-                  alt="18th century pocket watch"
-                  class="h-48 w-full object-cover" />
-                <div class="absolute top-2 right-2">
-                  <span
-                    class="bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
-                    aria-label="Time left in auction">
-                    2h 33m left
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-grow flex-col p-4">
-                <div class="mb-2 flex items-center justify-between">
-                  <h3 class="text-lg font-bold">Antique Pocket Watch</h3>
-                </div>
-                <p class="mb-3 text-sm">
-                  18th century gold-plated pocket watch with intricate engravings.
-                </p>
-                <div class="mb-4 flex-grow">
-                  <p class="text-sm">Current Bid:</p>
-                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
-                    $1,200
-                  </p>
-                  <p class="text-xs text-black/80">8 bids</p>
-                </div>
-                <div class="flex w-full">
-                  <a
-                    href="./item.html?id=2"
-                    class="btn-primary w-full px-4 py-2 text-center text-sm"
-                    aria-label="Place bid on antique pocket watch">
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Auction Item 4 -->
-            <article
-              class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-xl"
-              role="listitem">
-              <div class="relative">
-                <img
-                  src="/assets/images/steve-johnson-RKRnPx9e4jQ-unsplash.webp"
-                  alt="Original abstract painting by emerging contemporary artist"
-                  class="h-48 w-full object-cover" />
-                <div class="absolute top-2 right-2">
-                  <span
-                    class="bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black"
-                    aria-label="Time left in auction">
-                    4d 2h left
-                  </span>
-                </div>
-              </div>
-              <div class="flex flex-grow flex-col p-4">
-                <div class="mb-2 flex items-center justify-between">
-                  <h3 class="text-lg font-bold">Modern Art Painting</h3>
-                </div>
-                <p class="mb-3 text-sm">
-                  Original abstract painting by emerging contemporary artist.
-                </p>
-                <div class="mb-4 flex-grow">
-                  <p class="text-sm">Current Bid:</p>
-                  <p class="text-dark-green text-xl font-bold" aria-label="Current bid amount">
-                    $750
-                  </p>
-                  <p class="text-xs text-black/80">12 bids</p>
-                </div>
-                <div class="flex w-full">
-                  <a
-                    href="./item.html?id=3"
-                    class="btn-primary w-full px-4 py-2 text-center text-sm"
-                    aria-label="Place bid on modern art painting">
-                    View Details
-                  </a>
-                </div>
-              </div>
-            </article>
+            </div>
+            <!-- / Loader -->
           </div>
         </div>
       </section>

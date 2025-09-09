@@ -4,7 +4,6 @@ import { initAuctionPagination } from "../shared/listeners/auctions/initAuctionP
 import { searchInputListener } from "../shared/listeners/auctions/searchInputListener.mjs";
 import { initAuthStates } from "../shared/ui/auth/initAuthStates.mjs";
 import { logoutUser } from "../shared/api/auth/logoutUser.mjs";
-import { renderAuctionCards } from "../shared/ui/auctions/auctionCards/renderAuctionCards.mjs";
 import { renderUserButtonsInNav } from "../shared/ui/common/renderUserButtonsInNav.mjs";
 
 export const initAuctionsPage = async () => {

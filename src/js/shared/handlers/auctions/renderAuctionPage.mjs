@@ -21,6 +21,8 @@ import { displayMessage } from "../../utils/common/displayMessage.mjs";
  *
  * @async
  * @param {number} page - 1-based page index to load.
+ * @param {string} sort - sort by object data like "endsAt".
+ * @param {string} sortOrder - sort in ascending or descending order with "asc" or "desc".
  * @returns {Promise<void>} Resolves when rendering (or error handling) completes.
  * @see fetchAuctionListings
  * @see renderAuctionCards
@@ -41,7 +43,7 @@ export const renderAuctionPage = async (page, sort, sortOrder) => {
     const data = await fetchAuctionListings(perPage, page, sort, sortOrder);
     const newListings = data?.data || [];
 
-    renderAuctionCards(newListings, listingsContainer);
+    renderAuctionCards(newListings, listingsContainer, "../auctions/item.html");
 
     if (newListings.length < perPage) {
       loadMoreBtn.classList.add("hidden"); // last page
