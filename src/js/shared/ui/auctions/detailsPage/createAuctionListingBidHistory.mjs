@@ -1,3 +1,4 @@
+import { isLoggedIn } from "../../../helper/auth/isLoggedIn.mjs";
 import { createEmptyBidsHistory } from "./createEmptyBidsHistory.mjs";
 import { renderBidsHistory } from "./renderBidsHistory.mjs";
 
@@ -33,7 +34,7 @@ export function createAuctionListingBidHistory(auctionData = { bids: [] }) {
 
   const totalBids = document.createElement("p");
   totalBids.id = "total-bids";
-  totalBids.className = "text-sm text-black";
+  totalBids.className = "text-sm";
   const count = bids.length;
   totalBids.textContent = `${count} ${count === 1 ? "bid" : "bids"} placed`;
 
@@ -45,12 +46,12 @@ export function createAuctionListingBidHistory(auctionData = { bids: [] }) {
   bidList.id = "bid-list";
   bidList.className = "divide-gray/30 divide-y";
 
-  // A simple "no bids yet" view (hidden by default)
+  // A simple "no bids" message (hidden by default)
   const emptyState = createEmptyBidsHistory();
 
   // If we have bids, sort and render them. If not, show the empty state.
   if (count > 0) {
-    renderBidsHistory(bids, bidList); // this will sort highest → lowest and then add rows
+    renderBidsHistory(bids, bidList);
     emptyState.classList.add("hidden");
     bidList.classList.remove("hidden");
   } else {
@@ -58,11 +59,38 @@ export function createAuctionListingBidHistory(auctionData = { bids: [] }) {
     bidList.classList.add("hidden");
   }
 
-  // Put everything together
-  wrapper.appendChild(header);
-  wrapper.appendChild(bidList);
-  wrapper.appendChild(emptyState);
+  // If not logged in
+  const loginLink = document.createElement("a");
+  loginLink.href = "../login/";
+  loginLink.textContent = "here";
+  loginLink.classList.add(
+    "text-dark-green",
+    "hover:text-gray",
+    "font-medium",
+    "underline",
+    "transition-colors"
+  );
+  loginLink.setAttribute("aria-label", "Click here to login and see the bid history");
 
+  const notLoggedInInfoText = document.createElement("p");
+  notLoggedInInfoText.classList.add("text-sm", "text-center", "py-4");
+
+  notLoggedInInfoText.append("Click ");
+  notLoggedInInfoText.appendChild(loginLink);
+  notLoggedInInfoText.append(" to log in and see the bid history");
+
+  // ---
+
+  wrapper.appendChild(header);
+
+  const loggedIn = isLoggedIn();
+  if (loggedIn) {
+    wrapper.appendChild(bidList);
+  } else {
+    wrapper.appendChild(notLoggedInInfoText);
+  }
+
+  wrapper.appendChild(emptyState);
   container.appendChild(heading);
   container.appendChild(wrapper);
 

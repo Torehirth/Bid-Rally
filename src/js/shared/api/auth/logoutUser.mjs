@@ -24,7 +24,7 @@ export const logoutUser = () => {
   document.addEventListener("click", (e) => {
     if (e.target.closest("#logout-btn")) {
       removeFromLocalStorage("user");
-      navigateTo("../login/");
+      navigateTo("../");
     } else return;
   });
 };

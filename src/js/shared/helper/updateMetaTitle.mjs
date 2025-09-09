@@ -14,6 +14,6 @@
 export const updateMetaTitle = (listingTitle) => {
   const titleEl = document.querySelector("title");
   if (titleEl && typeof listingTitle === "string") {
-    titleEl.textContent = `${listingTitle} || BidRally`;
+    titleEl.textContent = `${listingTitle} | BidRally`;
   }
 };

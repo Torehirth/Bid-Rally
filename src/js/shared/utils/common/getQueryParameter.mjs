@@ -12,7 +12,6 @@
  * // For URL https://example.com/?auction=123
  * // getQueryParameter('auction') -> '123'
  *
- * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams|URLSearchParams}
  */
 export const getQueryParameter = (id) => {
   const queryParam = window.location.search;
