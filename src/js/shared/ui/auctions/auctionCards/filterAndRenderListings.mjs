@@ -69,5 +69,5 @@ export const filterAndRenderListings = async (allListings, searchTerm) => {
     document.querySelector("#message").textContent = "";
   }
 
-  renderAuctionCards(searchedListings, listingsContainer);
+  renderAuctionCards(searchedListings, listingsContainer, "../auctions/item.html");
 };
