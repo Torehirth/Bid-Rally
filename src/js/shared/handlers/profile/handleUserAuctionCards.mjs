@@ -23,5 +23,5 @@ export const handleUsersAuctionCards = async () => {
   const listingsContainer = document.querySelector("#auctions-grid");
   const listings = await fetchUserListings(listingsContainer);
   document.querySelector("#auctions-grid").innerHTML = "";
-  renderAuctionCards(listings, listingsContainer);
+  renderAuctionCards(listings, listingsContainer, "../auctions/item.html");
 };
