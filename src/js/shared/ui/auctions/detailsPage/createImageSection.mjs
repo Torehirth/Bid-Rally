@@ -14,10 +14,17 @@ export const createImageSection = (auctionData) => {
   const mainImage = document.createElement("img");
   mainImage.id = "main-image";
 
-  mainImage.src =
-    auctionData?.media?.[0]?.url || "/Bid-Rally/public/assets/images/listing-placeholder.webp";
+  const placeholder = "./public/assets/images/listing-placeholder.webp";
+  mainImage.src = auctionData?.media?.[0]?.url || placeholder;
   mainImage.alt = auctionData?.media?.[0]?.alt || `image of ${auctionData?.title}`;
   mainImage.className = "h-96 w-full rounded-lg object-cover";
+
+  // If images has access issues or other errors
+  mainImage.onerror = () => {
+    mainImage.onerror = null;
+
+    mainImage.src = placeholder;
+  };
 
   imageWrapper.appendChild(mainImage);
   imageContainer.appendChild(imageWrapper);
