@@ -46,20 +46,8 @@ export function createAuctionListingBidHistory(auctionData = { bids: [] }) {
   bidList.id = "bid-list";
   bidList.className = "divide-gray/30 divide-y";
 
-  // A simple "no bids" message (hidden by default)
-  const emptyState = createEmptyBidsHistory();
-
-  // If we have bids, sort and render them. If not, show the empty state.
-  if (count > 0) {
-    renderBidsHistory(bids, bidList);
-    emptyState.classList.add("hidden");
-    bidList.classList.remove("hidden");
-  } else {
-    emptyState.classList.remove("hidden");
-    bidList.classList.add("hidden");
-  }
-
   // If not logged in
+  const loggedIn = isLoggedIn();
   const loginLink = document.createElement("a");
   loginLink.href = "../login/";
   loginLink.textContent = "here";
@@ -73,17 +61,27 @@ export function createAuctionListingBidHistory(auctionData = { bids: [] }) {
   loginLink.setAttribute("aria-label", "Click here to login and see the bid history");
 
   const notLoggedInInfoText = document.createElement("p");
-  notLoggedInInfoText.classList.add("text-sm", "text-center", "py-4");
+  notLoggedInInfoText.classList.add("text-md", "text-center", "py-4");
 
   notLoggedInInfoText.append("Click ");
   notLoggedInInfoText.appendChild(loginLink);
   notLoggedInInfoText.append(" to log in and see the bid history");
 
-  // ---
+  // A simple "no bids" message (hidden by default)
+  const emptyState = createEmptyBidsHistory();
+
+  // If we have bids, sort and render them. If not, show the empty state.
+  if (count > 0 || !loggedIn) {
+    renderBidsHistory(bids, bidList);
+    emptyState.classList.add("hidden");
+    bidList.classList.remove("hidden");
+  } else {
+    emptyState.classList.remove("hidden");
+    bidList.classList.add("hidden");
+  }
 
   wrapper.appendChild(header);
 
-  const loggedIn = isLoggedIn();
   if (loggedIn) {
     wrapper.appendChild(bidList);
   } else {
