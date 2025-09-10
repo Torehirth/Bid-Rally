@@ -10,5 +10,4 @@ export const initRegisterPage = () => {
   updateCopyright();
   redirectUsersByAuth();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init register page");
 };

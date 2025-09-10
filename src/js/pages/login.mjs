@@ -10,5 +10,4 @@ export const initLoginPage = () => {
   updateCopyright();
   redirectUsersByAuth();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init login page");
 };

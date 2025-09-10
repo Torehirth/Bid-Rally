@@ -24,5 +24,4 @@ export const initProfilePage = () => {
   redirectUsersByAuthProfilePage();
   initAuthStates();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init profile page");
 };

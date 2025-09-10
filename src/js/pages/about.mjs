@@ -10,5 +10,4 @@ export const initAboutPage = () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init about page");
 };

@@ -14,5 +14,4 @@ export const initAuctionsPage = async () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init Auctions page");
 };

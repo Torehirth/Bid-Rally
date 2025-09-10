@@ -10,5 +10,4 @@ export const initContactPage = () => {
   initAuthStates();
   logoutUser();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init Contact page");
 };

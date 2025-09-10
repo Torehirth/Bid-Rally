@@ -12,5 +12,4 @@ export const initNewListingPage = () => {
   logoutUser();
   redirectUsersByAuth();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
-  console.log("init new listing page");
 };

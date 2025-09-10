@@ -1,6 +1,5 @@
 import { getHighestBid } from "../../../utils/auctions/getHighestBid.mjs";
 import { updateCountDown } from "../../../utils/auctions/updateCountDown.mjs";
-import { isImageUrlValid } from "../../../utils/common/isImageUrlValid.mjs";
 import { createAuctionCard } from "./createAuctionCard.mjs";
 
 /**
