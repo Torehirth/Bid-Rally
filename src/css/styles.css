@@ -10,7 +10,7 @@
   --color-gray: #a1a1a1;
   --color-gray-base: color-mix(in srgb, var(--color-gray) 20%, transparent);
   --color-warning: #ff8904;
-  --color-error: #e7000b;
+  --color-error: #d6151e;
   /* --- Font */
   --font-sans: "Poppins", sans-serif;
 }

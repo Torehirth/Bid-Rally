@@ -8,6 +8,6 @@ export const initContactPage = () => {
   toggleMobileNav();
   updateCopyright();
   initAuthStates();
-  logoutUser();
+  logoutUser("../");
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
 };

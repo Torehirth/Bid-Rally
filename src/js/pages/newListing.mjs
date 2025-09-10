@@ -9,7 +9,7 @@ export const initNewListingPage = () => {
   toggleMobileNav();
   updateCopyright();
   submitNewListing();
-  logoutUser();
+  logoutUser("../");
   redirectUsersByAuth();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
 };

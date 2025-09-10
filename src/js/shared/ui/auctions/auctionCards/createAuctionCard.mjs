@@ -44,9 +44,7 @@ export const createAuctionCard = (
   // If images has access issues or other errors
   image.onerror = () => {
     image.onerror = null;
-
     image.src = placeholder;
-    console.log("error", image.src);
   };
 
   // time badge
@@ -59,7 +57,6 @@ export const createAuctionCard = (
     ? "bg-warning rounded-full px-2 py-1 text-xs font-medium text-black"
     : "bg-mint-green rounded-full px-2 py-1 text-xs font-medium text-black";
   timeBadge.className = badgeClasses;
-  timeBadge.setAttribute("aria-label", "Time left in auction");
   timeBadge.textContent = timeLeft || "";
 
   badgeContainer.appendChild(timeBadge);
@@ -94,7 +91,6 @@ export const createAuctionCard = (
 
   const bidAmount = document.createElement("p");
   bidAmount.className = "text-dark-green text-xl font-bold";
-  bidAmount.setAttribute("aria-label", "Current bid amount");
   bidAmount.textContent = currentBid;
 
   const bidCountNumber = document.createElement("p");

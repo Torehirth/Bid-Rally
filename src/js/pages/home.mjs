@@ -9,7 +9,7 @@ export const initHomePage = () => {
   toggleMobileNav();
   updateCopyright();
   initAuthStates();
-  logoutUser();
+  logoutUser("./");
   renderUserButtonsInNav("./login/", "./register/", "./profile/");
   displayListingsEndingSoon("./auctions/item.html");
 };

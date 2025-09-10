@@ -8,6 +8,6 @@ export const initAboutPage = () => {
   toggleMobileNav();
   updateCopyright();
   initAuthStates();
-  logoutUser();
+  logoutUser("../");
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
 };

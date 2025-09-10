@@ -13,7 +13,7 @@ export const initAuctionDetailsPage = () => {
   updateCopyright();
   submitBid();
   initAuthStates();
-  logoutUser();
+  logoutUser("../");
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
   displayListingsEndingSoon("../auctions/item.html");
 };

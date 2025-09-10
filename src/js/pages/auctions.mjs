@@ -12,6 +12,6 @@ export const initAuctionsPage = async () => {
   initAuctionPagination();
   searchInputListener();
   initAuthStates();
-  logoutUser();
+  logoutUser("../");
   renderUserButtonsInNav("../login/", "../register/", "../profile/");
 };

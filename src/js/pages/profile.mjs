@@ -20,7 +20,7 @@ export const initProfilePage = () => {
   closeModalListener();
   openModalListener();
   handleAvatarSubmit();
-  logoutUser();
+  logoutUser("../");
   redirectUsersByAuthProfilePage();
   initAuthStates();
   renderUserButtonsInNav("../login/", "../register/", "../profile/");

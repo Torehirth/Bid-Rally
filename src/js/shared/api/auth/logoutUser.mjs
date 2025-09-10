@@ -20,15 +20,11 @@ import { removeFromLocalStorage } from "../../helper/removeFromLocalStorage.mjs"
  * - Navigates to "../login/" path after logout
  * - Returns early if clicked element is not the logout button
  */
-export const logoutUser = () => {
+export const logoutUser = (pathname) => {
   document.addEventListener("click", (e) => {
     if (e.target.closest("#logout-btn")) {
       removeFromLocalStorage("user");
-      if (window.location.pathname === "./Bid-Rally/") {
-        navigateTo("./");
-      } else {
-        navigateTo("./Bid-Rally/");
-      }
+      navigateTo(pathname);
     } else return;
   });
 };
