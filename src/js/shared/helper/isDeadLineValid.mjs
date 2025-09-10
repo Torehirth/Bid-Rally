@@ -15,6 +15,8 @@
  * console.log(notExpired); // false if current date is before January 1st, 2025
  */
 export const isDeadlineValid = (date) => {
+  if (!date) return false;
+
   const today = new Date().getTime();
   const deadline = new Date(date).getTime();
   return today >= deadline;
