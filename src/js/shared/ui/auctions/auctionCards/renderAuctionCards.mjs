@@ -1,5 +1,6 @@
 import { getHighestBid } from "../../../utils/auctions/getHighestBid.mjs";
 import { updateCountDown } from "../../../utils/auctions/updateCountDown.mjs";
+import { isImageUrlValid } from "../../../utils/common/isImageUrlValid.mjs";
 import { createAuctionCard } from "./createAuctionCard.mjs";
 
 /**
@@ -45,11 +46,12 @@ import { createAuctionCard } from "./createAuctionCard.mjs";
  */
 export const renderAuctionCards = (allAuctions, containerID, pathname) => {
   allAuctions.forEach((auction) => {
-    const id = auction?.id;
+    const id = auction?.id || "No ID";
     const title = auction?.title || "Untitled Auction";
     const description = auction?.description || "No description available";
-    const mediaURL =
-      auction?.media?.[0]?.url || "/Bid-Rally/public/assets/images/listing-placeholder.webp";
+
+    const imageURL = auction?.media?.[0]?.url;
+
     const mediaAltText = auction?.media?.[0]?.alt || `image of ${title}`;
     const timeData = updateCountDown(auction?.endsAt);
 
@@ -60,7 +62,7 @@ export const renderAuctionCards = (allAuctions, containerID, pathname) => {
     createAuctionCard(
       title,
       description,
-      mediaURL,
+      imageURL,
       mediaAltText,
       timeData.timeLeft,
       currentBid,

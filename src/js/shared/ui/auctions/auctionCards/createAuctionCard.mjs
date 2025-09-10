@@ -32,10 +32,19 @@ export const createAuctionCard = (
   const imageContainer = document.createElement("div");
   imageContainer.className = "relative";
 
+  const placeholder = "/Bid-Rally/public/assets/images/listing-placeholder.webp";
+
   const image = document.createElement("img");
-  image.src = mediaURL;
+  image.src = mediaURL || placeholder;
   image.alt = mediaAltText;
+  image.referrerPolicy = "no-referrer";
   image.className = "h-48 w-full object-cover";
+
+  // If images has access issues or other errors
+  image.onerror = () => {
+    image.onerror = null;
+    image.src = placeholder;
+  };
 
   // time badge
   const badgeContainer = document.createElement("div");
