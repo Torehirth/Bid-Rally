@@ -13,12 +13,13 @@
   "license": "ISC",
   "author": "Tore Hirth <torehirth@gmail.com>",
   "type": "module",
-  "main": "index.js",
+  "main": "main.mjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "echo \"No tests yet\"",
+    "unit": "vitest",
+    "unit:ui": "vitest --ui",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -26,14 +27,17 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
     "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "vite": "^7.0.6"
+    "vite": "^7.0.6",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
