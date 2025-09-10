@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { getUserData } from "./getUserData";
+import { getUserData } from "./getUserData.mjs";
 
 describe("getUserData", () => {
   let form;
