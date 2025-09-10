@@ -36,6 +36,7 @@ export const createAuctionCard = (
 
   const image = document.createElement("img");
   image.src = mediaURL || placeholder;
+
   image.alt = mediaAltText;
   image.referrerPolicy = "no-referrer";
   image.className = "h-48 w-full object-cover";
@@ -43,7 +44,9 @@ export const createAuctionCard = (
   // If images has access issues or other errors
   image.onerror = () => {
     image.onerror = null;
+
     image.src = placeholder;
+    console.log("error", image.src);
   };
 
   // time badge
