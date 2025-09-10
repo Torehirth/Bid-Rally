@@ -32,8 +32,7 @@ export const createAuctionCard = (
   const imageContainer = document.createElement("div");
   imageContainer.className = "relative";
 
-  const placeholder =
-    "https://github.com/Torehirth/Bid-Rally/blob/main/public/assets/images/listing-placeholder.webp";
+  const placeholder = "./public/assets/images/listing-placeholder.webp";
 
   const image = document.createElement("img");
   image.src = mediaURL || placeholder;
