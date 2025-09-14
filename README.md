@@ -4,6 +4,8 @@ A modern and responsive auction platform where users can create listings, place 
 
 [Live Demo](https://torehirth.github.io/Bid-Rally/)
 
+![Image](https://github.com/user-attachments/assets/fb02c99a-281a-476d-a250-a88079a91b2d)
+
 ## Features
 
 - User registration & login (stud.noroff.no email required)
