@@ -45,3 +45,7 @@ A modern and responsive auction platform where users can create listings, place 
 ## License
 
 This project is for educational purposes as part of the Noroff Front-End Development course.
+
+## Contributing
+
+Read more here - [Contributing](https://github.com/Torehirth/Bid-Rally?tab=contributing-ov-file)
